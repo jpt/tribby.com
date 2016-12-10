@@ -45,8 +45,39 @@ npm start
 ```
 
 ## Serve
-To serve as a reverse proxy:
+To serve your built assets on 8080 for a reverse proxy
 
 ``` bash
 ./serve.sh
+```
+
+## Nginx config
+
+(*.*.*.* replaced with actual IP).
+
+```
+server {
+    listen         80;
+    server_name    tribby.com;
+    return         301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443;
+
+    ssl on;
+    ssl_certificate /etc/nginx/keys/tribby.com.pem;
+    ssl_certificate_key /etc/nginx/keys/tribby.com.key;
+
+    server_name tribby.com;
+    
+    location / {
+        proxy_pass http://*.*.*.*:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
 ```
