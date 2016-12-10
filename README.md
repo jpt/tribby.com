@@ -28,7 +28,7 @@ nvm use 6.9.2
 npm i pm2 -g 
 ```
 
-## Build or Develop
+## Build or develop Vue app:
 
 ``` bash
 # install dependencies
