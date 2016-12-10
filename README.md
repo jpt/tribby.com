@@ -20,7 +20,23 @@ npm run build
 npm start
 ```
 
-To serve in actual-production, use pm2:
+## Install
+
+First install npm through apt, node through nvm, and pm2 through npm:
+
+```
+sudo apt-get update
+sudo apt-get install build-essential libssl-dev`npm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+source ~/.profile
+nvm install 6.9.2
+nvm use 6.9.2
+npm i pm2 -g 
+```
+
+## Serve
+To serve as a reverse proxy on port 8080:
+
 ```
 ./serve.sh
 ```
