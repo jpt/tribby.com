@@ -19,3 +19,8 @@ npm run build
 # serve in production mode
 npm start
 ```
+
+To serve in actual-production, use pm2:
+```
+./serve.sh
+```
