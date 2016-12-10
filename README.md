@@ -1,28 +1,12 @@
 # tribby.com
 
-Website for tribby.com build using Vue 2.0 + vue-router, with server-side rendering.
+Website for tribby.com build using:
 
-## Build Setup
-
-**Requires Node.js 6+**
-
-``` bash
-# install dependencies
-npm install # or yarn
-
-# serve in dev mode, with hot reload at localhost:8080
-npm run dev
-
-# build for production
-npm run build
-
-# serve in production mode
-npm start
-```
+Node, Vue (server-side rendering), vue-router, Express, Sass, Pug, Susy.
 
 ## Install
 
-First install npm through apt, node through nvm, and pm2 through npm:
+First install npm through apt (or whatever), node through nvm, and pm2 through npm:
 
 ```
 sudo apt-get update
@@ -34,8 +18,24 @@ nvm use 6.9.2
 npm i pm2 -g 
 ```
 
+## Build or Develop
+
+``` bash
+# install dependencies
+npm install
+
+# serve in dev mode, with hot reload at localhost:8080
+npm run dev
+
+# build for production
+npm run build
+
+# serve in production mode, also at 8080
+npm start
+```
+
 ## Serve
-To serve as a reverse proxy on port 8080:
+To serve as a reverse proxy:
 
 ```
 ./serve.sh
