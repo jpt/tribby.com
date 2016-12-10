@@ -2,7 +2,8 @@
 
 Website for tribby.com build using:
 
-Node, Vue (server-side rendering), vue-router, Express, Sass, Pug, Susy.
+Front end: Vue, Sass, Pug, Susy
+Back end: Nginx, Node, Express, PM2
 
 ## Install
 
