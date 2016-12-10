@@ -14,9 +14,13 @@ First install npm through apt (or whatever), node through nvm, and pm2 through n
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev`npm
 
-# install nvm and default to 6.9.2
+# install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+
+# prevent need for reboot to use nvm command
 source ~/.profile
+
+# install node 6.9.2, and use it by default
 nvm install 6.9.2
 nvm use 6.9.2
 
