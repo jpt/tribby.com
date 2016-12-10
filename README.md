@@ -8,13 +8,19 @@ Node, Vue (server-side rendering), vue-router, Express, Sass, Pug, Susy.
 
 First install npm through apt (or whatever), node through nvm, and pm2 through npm:
 
-```
+``` bash
+
+# install build tools
 sudo apt-get update
 sudo apt-get install build-essential libssl-dev`npm
+
+# install nvm and default to 6.9.2
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 source ~/.profile
 nvm install 6.9.2
 nvm use 6.9.2
+
+#install pm2
 npm i pm2 -g 
 ```
 
