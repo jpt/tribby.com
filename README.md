@@ -53,7 +53,7 @@ To serve your built assets on 8080 for a reverse proxy
 
 ## Nginx config
 
-Replace `\*.\*.\*.\*` with actual IP.
+Replace `*.*.*.*` with actual IP.
 
 ```
 server {
