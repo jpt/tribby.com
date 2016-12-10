@@ -47,6 +47,6 @@ npm start
 ## Serve
 To serve as a reverse proxy:
 
-```
+``` bash
 ./serve.sh
 ```
