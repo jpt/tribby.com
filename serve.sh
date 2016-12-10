@@ -1,1 +1,1 @@
-pm2 start npm --name "tribby" -- run start
+pm2 start npm --name "tribby" --watch -- run start
