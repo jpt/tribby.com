@@ -10,9 +10,9 @@ First install npm through apt (or whatever), node through nvm, and pm2 through n
 
 ``` bash
 
-# install build tools
+# install build tools and npm
 sudo apt-get update
-sudo apt-get install build-essential libssl-dev`npm
+sudo apt-get install build-essential libssl-dev npm
 
 # install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
