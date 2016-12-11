@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
   // so they are extracted.
   vueConfig.loaders = {
     sass: ExtractTextPlugin.extract({
-      loader: 'css-loader!sass-loader',
+      loader: 'css-loader!sass-loader!./styles/variables.sass',
       fallbackLoader: 'vue-style-loader' // <- this is a dep of vue-loader
     })
   }

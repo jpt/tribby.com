@@ -1,31 +1,50 @@
 <template lang="pug">
   #app
-    | I'll be back in a minute.
-    br
-    br
-    | jeremy@tribby.com | + 1 (510) NUMERAL | ricochet:a4nzm6g6ouva6uix
-    br
-    br
-    | PGP: 1E7A 94B8 BC75 4DF7 88EF 66CA 7B50 4EF1 371D F7AA
+    nav-bar
+    div.container
+      transition(name='fade' mode='out-in')
+        router-view(class='view')
+
 </template>
 
-<style lang="sass">
-html {
-  padding: 0;
-  margin: 0;
+<script>
+import NavBar from './components/NavBar.vue'
+export default {
+  components: { NavBar },
+  data () {
+    return {
+      lol: true
+    }
+  }
 }
-body {
-  font-family: courier;
-  color: #111;
-  padding: 0;
-  margin: 0;
-  background-color: #fdfdfd;
-}
-#app {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+</script>
+
+<style lang="sass?indentedSyntax=true">
+@import 'node_modules/susy/sass/susy'
+@import 'styles/globals.sass'
+
+html
+  padding: 0
+  margin: 0
+
+body
+  font-family: courier
+  color: #111
+  padding: 0
+  margin: 0
+  background-color: #fdfdfd
+
+#app
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+
+.fade-enter-active, .fade-leave-active
+  transition: all .15s ease
+
+.fade-enter, .fade-leave-active
+  opacity: 0
+
 </style>
