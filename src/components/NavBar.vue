@@ -7,30 +7,37 @@ div.navbar
 <script>
 
 </script>
-<style lang="sass?indentedSyntax=true" scoped>
-@import '../styles/globals.sass'
-.navbar
-  position: fixed
-  height: 40px
-  line-height: 40px
-  top: 0
-  left: 0
-  width: 100%
+<style lang="sass" scoped>
+@import '../styles/globals.scss';
 
-ul
-  padding: 0
-  margin: 0
-  list-style: none
+.navbar {
+  position: fixed;
+  height: 40px;
+  line-height: 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
-li
-  display: inline
-  margin-right: 1em
-a
-  color: $grey-dark
-  text-decoration: none
-  &:visited
-    color: $grey-medium
-  &:hover
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  display: inline;
+  margin-right: 1em;
+}
+
+a {
+  color: $grey-dark;
+  text-decoration: none;
+  &:visited {
+    color: $grey-medium;
+  }
+  &:hover {
     text-decoration: underline
-
+  }
+}
 </style>

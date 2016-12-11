@@ -19,32 +19,35 @@ export default {
 }
 </script>
 
-<style lang="sass?indentedSyntax=true">
-@import 'node_modules/susy/sass/susy'
-@import 'styles/globals.sass'
+<style lang="sass">
+@import 'styles/globals.scss';
 
-html
-  padding: 0
-  margin: 0
+html {
+  padding: 0;
+  margin: 0;
+}
 
-body
-  font-family: courier
-  color: #111
-  padding: 0
-  margin: 0
-  background-color: #fdfdfd
+body {
+  font-family: courier;
+  color: #111;
+  padding: 0;
+  margin: 0;
+  background-color: #fdfdfd;
+}
 
-#app
-  height: 100vh
-  display: flex
-  align-items: center
-  justify-content: center
-  text-align: center
+#app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-.fade-enter-active, .fade-leave-active
-  transition: all .15s ease
+.fade-enter-active, .fade-leave-active {
+  transition: all .15s ease;
+}
 
-.fade-enter, .fade-leave-active
-  opacity: 0
-
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
 </style>
