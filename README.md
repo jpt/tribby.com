@@ -1,6 +1,6 @@
 # tribby.com
 
-Website for tribby.com build using Vue, Sass, Pug, and Susy on the front-end, and Nginx, Node, Express, and PM2 on the back-end.
+Website for tribby.com build using Vue, Sass, Pug, and Susy on the front-end, and Nginx, Node, Express, PM2, and Clourflare on the back-end. There is no database.
 
 ## Install
 
