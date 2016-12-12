@@ -1,5 +1,4 @@
-@import '../../node_modules/susy/sass/susy';
-
+@import 'node_modules/susy/sass/susy';
 $susy: (columns: 12, gutters: 0, math: fluid, output: float, gutter-position: inside, global-box-sizing: border-box);
 
 $xs: 12em;
@@ -8,6 +7,17 @@ $ph: 34em;
 $md: 48em;
 $lg: 66em;
 $xl: 79em;
+$xxl: 88em;
 
-$grey-dark: rgba(12,12,12,1);
+$grey-white: rgba(254,254,254,1);
+$grey-light: rgba(140,140,140,1);
+$grey-black: rgba(12,12,12,1);
+$grey-dark: rgba(77,77,77,1);
 $grey-medium: rgba(120,120,120,1);
+
+$body-bg-color: $grey-white;
+$heading-font-family: 'Barlow';
+$heading-font-weight: 600;
+
+$body-font-family: 'Escrow';
+$body-font-weight: 300;

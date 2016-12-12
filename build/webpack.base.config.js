@@ -2,7 +2,7 @@ const path = require('path')
 const vueConfig = require('./vue-loader.config')
 
 module.exports = {
-  devtool: '#source-map',
+  // devtool: '#source-map',
   entry: {
     app: './src/client-entry.js',
     vendor: [
@@ -38,10 +38,18 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url-loader',
-        options: {
+        loader: 'file-loader',
+        query: {
           limit: 10000,
-          name: '[name].[ext]?[hash]'
+          name: './public/[name].[ext]?[hash]'
+        }
+      },
+      {
+        test: /\.(woff2?|woff|woff2|eot|ttf|otf)(\?.*)?$/,
+        loader: 'file-loader',
+        query: {
+          limit: 10000,
+          name: './public/[name].[ext]?[hash]'
         }
       }
     ]
