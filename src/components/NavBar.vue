@@ -58,10 +58,10 @@ li {
 
 li.heading {
   color: $grey-dark;
-  font-size: 1.2em;
+  font-size: 1.05em;
 
   font-family: $heading-font-family;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.012em;
   @include susy-media(0 $sm) {
     font-size: 1.1em;
