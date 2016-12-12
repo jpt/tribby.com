@@ -8,10 +8,13 @@ div.page
 </script>
 <style lang="sass">
 @import "../styles/globals.scss";
-.page > div {
+.page div {
   a {
     text-decoration: none;
     color: rgba(18,133,277,1);
+  }
+  h1 {
+    margin-bottom: 0.6em;
   }
   p {
     font-size: 1.2em;
@@ -19,6 +22,7 @@ div.page
     max-width: 28em;
     margin-bottom: 1em;
   }
+
   img {
     margin-top: 20px;
     margin-bottom: 40px;

@@ -6,7 +6,18 @@ div.home
 </template>
 <style lang="sass">
 @import "../styles/globals.scss";
-h5 {
-  color: $grey-medium;
+
+div.home {
+  h1 {
+    margin-bottom: 0em;
+  }
+
+  h5 {
+    line-height: 1.6em;
+    color: $grey-medium;
+  }
+  p:first-of-type {
+    margin-top: 22px;
+  }
 }
 </style>

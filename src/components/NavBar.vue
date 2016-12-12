@@ -57,7 +57,7 @@ li {
 }
 
 li.heading {
-  color: $grey-dark;
+  color: $grey-black;
   font-size: 1.05em;
 
   font-family: $heading-font-family;
@@ -65,9 +65,6 @@ li.heading {
   letter-spacing: 0.012em;
   @include susy-media(0 $sm) {
     font-size: 1.1em;
-  }
-  a {
-    color: $grey-dark;
   }
 }
 
@@ -86,28 +83,28 @@ ul li a.router-link-active {
   // }
 }
 
-li:not(.heading) a {
-  &:hover {
-    cursor: pointer;
-    color: $grey-black;
-    // &::after {
-    //   width: 100%;
-    // }
-  }
+// li:not(.heading) a {
+//   &:hover {
+//     cursor: pointer;
+//     color: $grey-black;
+//     // &::after {
+//     //   width: 100%;
+//     // }
+//   }
 
-  // &::after {
-  //   content: '';
-  //   position: relative;
-  //   display: block;
-  //   width: 0px;
-  //   top: -3px;
-  //   height: 4px;
-  //   margin-left: 1px;
-  //   background: $grey-dark;
-  //   transition: width 0.2s;
+//   // &::after {
+//   //   content: '';
+//   //   position: relative;
+//   //   display: block;
+//   //   width: 0px;
+//   //   top: -3px;
+//   //   height: 4px;
+//   //   margin-left: 1px;
+//   //   background: $grey-dark;
+//   //   transition: width 0.2s;
   
-  // }
-}
+//   // }
+// }
     
 
 a {

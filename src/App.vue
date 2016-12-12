@@ -69,7 +69,6 @@ h1 {
   font-size: 2.5em;
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
-  margin-bottom: 0.5em;
 }
 
 h5 {
@@ -77,7 +76,6 @@ h5 {
   font-family: $interface-font-family;
   font-weight: 400;
   letter-spacing: 0.03em;
-  margin-bottom: 0.32em;
 }
 
 hr {
