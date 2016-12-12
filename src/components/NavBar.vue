@@ -44,8 +44,9 @@ li {
   display: block;
   line-height: 1.8em;
   margin-right: 1em;
-  font-family: $body-font-family;
-  font-weight: $body-font-weight;
+  font-family: $interface-font-family;
+  font-weight: 400;
+  letter-spacing: 0.024em;
   font-size: 1em;
   @include susy-media(0 $sm) {
     font-size: 0.86em;
@@ -60,7 +61,7 @@ li.heading {
   font-size: 1.2em;
 
   font-family: $heading-font-family;
-  font-weight: $heading-font-weight;
+  font-weight: 600;
   letter-spacing: 0.012em;
   @include susy-media(0 $sm) {
     font-size: 1.1em;

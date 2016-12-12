@@ -72,6 +72,14 @@ h1 {
   margin-bottom: 0.5em;
 }
 
+h5 {
+  font-size: 0.9em;
+  font-family: $interface-font-family;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.32em;
+}
+
 hr {
   padding: 0;
   border: none;
