@@ -1,5 +1,7 @@
 <template lang="pug">
 div.navbar
+  router-link(to='/' exact)
+    img.home(src='../assets/home.svg' alt='home')
   ul
     li.heading Projects
     li #[router-link(to='/projects/ricochet' exact) Ricochet]
@@ -12,22 +14,24 @@ div.navbar
 <style lang="sass" scoped>
 @import '../styles/globals.scss';
 
-
+.home {
+  height: 14px;
+  width: 14px;
+  margin-top: 0.36em;
+  margin-right: 1em;
+}
 .navbar {
   clear: both;
   position: relative;
   margin-top: 66px;
-  width: 260px;
   @include susy-media($sm) {
-    width: 350px;
+    max-width: 400px;
   }
-  @include susy-media($md) {
-    width: 500px;
-  }
+ 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 500px;
+  
 }
 
 ul {
@@ -70,42 +74,8 @@ li.heading {
 
 ul li a.router-link-active {
   color: $grey-black;
-  // &::after {
-  //   content: '';
-  //   position: relative;
-  //   display: block;
-  //   width: 100%;
-  //   top: -3px;
-  //   height: 4px;
-  //   margin-left: 1px;
-  //   background: $grey-dark;
-  //   transition: width 0.1s;
-  // }
 }
 
-// li:not(.heading) a {
-//   &:hover {
-//     cursor: pointer;
-//     color: $grey-black;
-//     // &::after {
-//     //   width: 100%;
-//     // }
-//   }
-
-//   // &::after {
-//   //   content: '';
-//   //   position: relative;
-//   //   display: block;
-//   //   width: 0px;
-//   //   top: -3px;
-//   //   height: 4px;
-//   //   margin-left: 1px;
-//   //   background: $grey-dark;
-//   //   transition: width 0.2s;
-  
-//   // }
-// }
-    
 
 a {
   color: $grey-medium;
