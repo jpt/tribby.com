@@ -54,9 +54,7 @@ li {
   font-weight: 400;
   letter-spacing: 0.024em;
   font-size: 1em;
-  @include susy-media(0 $sm) {
-    font-size: 0.86em;
-  }
+
   a {
     display: inline-block;
   }
