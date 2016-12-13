@@ -8,7 +8,7 @@ div.page
 </script>
 <style lang="sass">
 @import "../styles/globals.scss";
-div.page div {
+.page div {
 
   &:first-of-type {
 
