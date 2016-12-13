@@ -8,14 +8,32 @@ div.page
 </script>
 <style lang="sass">
 @import "../styles/globals.scss";
-.page div {
+
+
+div.page div.container {
+
+  @include container(80%);
+  @include susy-media($md) {
+    @include container(100%);
+  }
+}
+
+div.page > div { // subpage
+  @include susy-media($md) {
+    @include container(80%);
+  } 
+}
+
+div.page div {
+
 
   &:first-of-type {
 
-    margin-top: 80px;
-    @include susy-breakpoint($sm) {
-      margin-top: 40px;
+    margin-top: 22px;
+    @include susy-media($sm) {
+      margin-top: 48px;
     }
+
   }
   a {
     text-decoration: none;
@@ -39,9 +57,7 @@ div.page
     margin-top: 20px;
     margin-bottom: 40px;
     max-width: 100%;
-    @include susy-media($md) {
-      max-width: 40em;
-    }
+
     border: 1px solid #e6e6e6;
   }
 }

@@ -20,7 +20,7 @@ export default new Router({
         { path: '/', component: Home }
       ]
     },
-  	{ path: '/projects', component: Page,
+  	{ path: '/open-source', component: Page,
   	  children: [
         { path: 'ricochet', component: Ricochet },
         { path: 'barlow', component: Barlow },

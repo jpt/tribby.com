@@ -40,6 +40,8 @@ body {
 }
 .branding {
   margin-bottom: 50px;
+  
+  @include container(80%);
 }
 #app {
   display: block;
@@ -53,21 +55,22 @@ body {
 
       
     
-    padding: 0 2em;
-    @include susy-media($sm) {
-      padding: 0;
-
+    // padding: 0 2em;
+    @include susy-media($md) {
+      
       hr {
+        @include container(80%)
+
         display: block;
       }
-      @include container(80%);
+      // @include container(80%);
     }
-    @include susy-media($xl) {
-      @include container($lg);
-    }
-    @include susy-media($xxl) {
-      @include container($xl);
-    }
+    // @include susy-media($xl) {
+    //   @include container($lg);
+    // }
+    // @include susy-media($xxl) {
+    //   @include container($xl);
+    // }
   }
 }
 
