@@ -8,7 +8,6 @@
       hr
       transition(name='fade' mode='out-in')
         router-view(class='view' v-bind:key='$route.fullPath')
-
 </template>
 
 <script>
@@ -47,13 +46,20 @@ body {
   margin-top: 20px;
   padding-bottom: 52px;
   div.container {
-    @include susy-media(0 $sm) {
-      > *:not(hr) {
-        padding: 0 2em;
-      }
-      
+  
+    hr {
+      display: none;
     }
+
+      
+    
+    padding: 0 2em;
     @include susy-media($sm) {
+      padding: 0;
+
+      hr {
+        display: block;
+      }
       @include container(80%);
     }
     @include susy-media($xl) {
@@ -81,8 +87,8 @@ h5 {
 hr {
   padding: 0;
   border: none;
-  margin-top: 25px;
-  margin-bottom: 40px;
+  // margin-top: 25px;
+  // margin-bottom: 40px;
   border-top: 12px solid $grey-black;
   color: $grey-light;
   text-align: center;
