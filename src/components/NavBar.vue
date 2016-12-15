@@ -4,7 +4,7 @@ div.overflow-container
     ul(v-for='route in routes')
       template(v-if="route.path==='/'")
         router-link.img(to='/' exact)
-          img.home(src='../assets/home.svg' alt='home')
+          img.home(v-bind:class="{ active: isParent(route.path) }" src='../assets/home.svg' alt='home')
       template(v-else)
         li.heading(v-bind:class="{ active: isParent(route.path) }") {{ route.name }}
         li(v-for='child in route.children')
@@ -25,7 +25,8 @@ export default {
   },
   methods: {
     isParent(route) {
-      return this.$route.matched[0].path === route
+      let path = this.$route.matched[0].path === '' ? '/' : this.$route.matched[0].path
+      return path === route
     }
   }
 }
@@ -50,14 +51,22 @@ ul:nth-of-type(1) {
     display: block;
   }
 }
-.home {
+img.home {
   height: 14px;
   width: 14px;
   margin-top: 0.36em;
   margin-right: 1em;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  transition: opacity 0.2s;
+  &.active {
+    opacity: 1;
+  }
 }
 .navbar {
-  padding-left: 10%;
+  padding-left: $container / 8;
   padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 30px;
@@ -65,13 +74,17 @@ ul:nth-of-type(1) {
   // padding: 15px 30px 30px 105
   @include susy-media($sm) {
     padding-left: 0;
-    margin-left: 10%;
+    margin-left: $container / 8;
   }
-  width: 540px;
+  width: 500px;
   @include susy-media($md) {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
   }
-  max-width: 700px;
+  @include susy-media($lg) {
+    max-width: 800px;
+  }
+
   
   display: flex;
   flex-direction: row;

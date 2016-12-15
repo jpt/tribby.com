@@ -23,11 +23,15 @@ div.page > div > div.container { // subpage
     @include container(80%);
   } 
 }
-div.page > div > img {
-   max-width: 100%;
-   @include susy-media($md) {
-    margin-left: 10%;
-    max-width: 80%;
+div.page > div > div.container img {
+  
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  @include susy-media($md) {
+    position: relative;
+    width: auto;
   }
 }
 

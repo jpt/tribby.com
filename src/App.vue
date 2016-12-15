@@ -4,6 +4,7 @@
       div.branding
         router-link(to='/' exact)
           img.logo(src='./assets/tribby.svg' alt='Tribby')
+        p.intro Established in 1999, Tribby offers product design, custom typography, and web development to social good enterprises.
       nav-bar
       hr
       transition(name='fade' mode='out-in')
@@ -39,6 +40,20 @@ body {
   color: #111;
 }
 .branding {
+  img {
+    float: left;
+  }
+  p {
+    display: none;
+    max-width: 320px;
+    padding-top: 17px;
+    margin-left: 107px;
+    font-size: 0.9em;
+    color: $grey-medium;
+    @include susy-media($lg) {
+      display: block;
+    }
+  }
   margin-bottom: 50px;
   
   @include container(80%);
