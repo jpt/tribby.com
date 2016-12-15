@@ -78,6 +78,7 @@ h1 {
   font-size: 2.5em;
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
+  margin-bottom: 0.6em;
 }
 
 h5 {

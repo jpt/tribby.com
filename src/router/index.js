@@ -17,19 +17,21 @@ export default new Router({
   routes: [
   	{ path: '/', component: Page, 
       children: [
-        { path: '/', component: Home }
+        { path: '/', name: 'Home', component: Home }
       ]
     },
-  	{ path: '/open-source', component: Page,
+  	{ path: '/open-source', name: 'Open Source', component: Page,
   	  children: [
-        { path: 'ricochet', component: Ricochet },
-        { path: 'barlow', component: Barlow },
-        { path: 'EFF', component: EFF }
+        { path: 'ricochet', name: 'Ricochet', component: Ricochet },
+        { path: 'barlow', name: 'Barlow', component: Barlow },
+        { path: 'eff', name: 'EFF', component: EFF }
       ]
     },
-   	{ path: '/about', component: Page, 
+    { path: '/publications', name: 'Publications', component: Page },
+    { path: '/sketchbook', name: 'Sketchbook', component: Page },
+   	{ path: '/about', name: 'About', component: Page, 
       children: [
-        { path: 'contact', component: Contact }
+        { path: 'contact', name: 'Contact', component: Contact }
       ]
     },
   	{ path: '/about', redirect: '/' },

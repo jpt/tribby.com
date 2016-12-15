@@ -1,9 +1,9 @@
 <template lang="pug">
 div.home
   div.container
-    h1 I'm back, sort of.
+    h1 Cleanup on aisle you.
     h5 12 Dec 2016
-    p Slowly building out a new website. Hopefully I'll have some stuff from the archives, soon, and space for art as well.
+    p Slowly building out a new website. I'll have some stuff from the archives, soon.
 </template>
 <style lang="sass">
 @import "../styles/globals.scss";

@@ -18,10 +18,17 @@ div.page div.container {
   }
 }
 
-div.page > div { // subpage
+div.page > div > div.container { // subpage
   @include susy-media($md) {
     @include container(80%);
   } 
+}
+div.page > div > img {
+   max-width: 100%;
+   @include susy-media($md) {
+    margin-left: 10%;
+    max-width: 80%;
+  }
 }
 
 div.page div {
@@ -39,9 +46,7 @@ div.page div {
     text-decoration: none;
     color: rgba(18,133,277,1);
   }
-  h1 {
-    margin-bottom: 0.6em;
-  }
+
   p {
     font-size: 1.05em;
     line-height: 1.8em;
@@ -56,7 +61,7 @@ div.page div {
   img {
     margin-top: 20px;
     margin-bottom: 40px;
-    max-width: 100%;
+    // max-width: 100%;
 
     border: 1px solid #e6e6e6;
   }
