@@ -1,10 +1,6 @@
 <template lang="pug">
   #app
     div.container
-      div.branding
-        router-link(to='/' exact)
-          img.logo(src='./assets/tribby.svg' alt='Tribby')
-        p.intro Established in 1999, Tribby offers product design, custom typography, and web development to social good enterprises.
       nav-bar
       hr
       transition(name='fade' mode='out-in')
@@ -39,25 +35,7 @@ body {
   font-family: courier;
   color: #111;
 }
-.branding {
-  img {
-    float: left;
-  }
-  p {
-    display: none;
-    max-width: 320px;
-    padding-top: 17px;
-    margin-left: 107px;
-    font-size: 0.9em;
-    color: $grey-medium;
-    @include susy-media($lg) {
-      display: block;
-    }
-  }
-  margin-bottom: 50px;
-  
-  @include container(80%);
-}
+
 #app {
   display: block;
   margin-top: 20px;
@@ -94,10 +72,12 @@ h1 {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
   margin-bottom: 0.6em;
+  line-height: 0.85em;
 }
 
 h5 {
   font-size: 0.9em;
+  margin-top: 0.6em;
   font-family: $interface-font-family;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -115,13 +95,6 @@ hr {
 
 .view {
   clear: both;
-}
-
-img.logo {
-  position: relative;
-  margin-top: 20px;
-  width: 50px;
-  height: auto;
 }
 
 .fade-enter-active, .fade-leave-active {

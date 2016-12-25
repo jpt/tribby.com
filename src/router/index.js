@@ -33,7 +33,6 @@ export default new Router({
       children: [
         { path: 'contact', name: 'Contact', component: Contact }
       ]
-    },
-  	{ path: '/about', redirect: '/' },
+    }
   ]
 })

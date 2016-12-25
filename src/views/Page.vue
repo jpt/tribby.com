@@ -32,6 +32,7 @@ div.page > div > div.container img {
   @include susy-media($md) {
     position: relative;
     width: auto;
+    max-width: 100%;
   }
 }
 
@@ -56,7 +57,7 @@ div.page div {
     line-height: 1.8em;
     @include susy-media($sm) {
       font-size: 1.2em;
-      line-height: 1.7em;
+      line-height: 1.5em;
     }
     max-width: 28em;
     margin-bottom: 1em;
