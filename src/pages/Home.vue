@@ -2,8 +2,8 @@
 div.home
   div.container
     h1 Cleanup on aisle you.
-    h5 12 Dec 2016
-    p Slowly building out a new website. I'll have some stuff from the archives, soon. Don't even try on mobile :-)
+    h5 02 Feb 2016
+    p Slowly building out a new website. I'll have some stuff from the archives, soon.
 </template>
 <style lang="sass">
 @import "../styles/globals.scss";

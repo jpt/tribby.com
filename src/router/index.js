@@ -9,6 +9,10 @@ import Barlow from '../pages/Barlow.vue';
 import Ricochet from '../pages/Ricochet.vue';
 import EFF from '../pages/EFF.vue';
 import Contact from '../pages/Contact.vue';
+import About from '../pages/About.vue';
+import Current from '../pages/Current.vue';
+import Past from '../pages/Past.vue';
+import Store from '../pages/Store.vue';
 
 Vue.use(Router)
 
@@ -20,18 +24,28 @@ export default new Router({
         { path: '/', name: 'Home', component: Home }
       ]
     },
-  	{ path: '/open-source', name: 'Open Source', component: Page,
+  	{ path: '/current', component: Page,
   	  children: [
+        { path: '', name: 'Current', component: Current },
         { path: 'ricochet', name: 'Ricochet', component: Ricochet },
         { path: 'barlow', name: 'Barlow', component: Barlow },
         { path: 'eff', name: 'EFF', component: EFF }
       ]
     },
-    { path: '/publications', name: 'Publications', component: Page },
-    { path: '/sketchbook', name: 'Sketchbook', component: Page },
-   	{ path: '/about', name: 'About', component: Page, 
+    { path: '/past', component: Page,
       children: [
+        { path: '', name: 'Past', component: Past }
+      ]
+    },
+   	{ path: '/about', component: Page, 
+      children: [
+        { path: '', name: 'About', component: About },
         { path: 'contact', name: 'Contact', component: Contact }
+      ]
+    },
+    { path: '/store', component: Page,
+      children: [
+        { path: '', name: 'Store', component: Store }
       ]
     }
   ]

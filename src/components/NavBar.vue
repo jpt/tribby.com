@@ -1,19 +1,22 @@
 <template lang="pug">
 nav.navbar
   div.branding
-    router-link(to='/' exact)
-      img.logo(src='../assets/tribby.svg' alt='Tribby')
+    router-link(to="/" exact)
+      img.logo(src="../assets/tribby.svg" alt="Tribby")
     p.intro Product design, web development, illustration, branding, and custom type since 1999.
   ul
     template(v-for='route in routes')
       li(v-if="route.path==='/'")
-        router-link.img(to='/' exact)
-          img.home(v-bind:class="{ active: isParent(route.path) }" src='../assets/home.svg' alt='home')
-      li(v-else v-bind:class="{ active: isParent(route.path) }")
-        router-link(v-bind:to='route.path') {{ route.name }}
-        ul(v-if="route.children")
+        router-link.img(to="/")
+          img.home(:class="{ active: isParent(route.path) }" src="../assets/home.svg" alt="home")
+      li(v-else :class="{ active: isParent(route.path) }")
+        router-link(:to="route.path") {{ route.children[0].name }}
+        ul(v-if="route.children[1]")
           li(v-for="child in route.children")
-            router-link(v-bind:to="route.path + '/' + child.path" exact) {{ child.name }}
+            template(v-if="child.path!=''")
+              router-link(:to="route.path + '/' + child.path" exact) {{ child.name }}
+    li.menu
+      img(src="../assets/nav.svg" alt="Menu")
 </template>
 <script>
 import Route from '../router'
@@ -33,6 +36,17 @@ export default {
       let path = this.$route.matched[0].path === '' ? '/' : this.$route.matched[0].path
       return path === route
     }
+  },
+  mounted () {
+    let nav = this.$el
+    // let body = document.body
+
+    // let navClone = nav.cloneNode(true)
+    // navClone.classList.add('clone')
+
+    // body.insertBefore(navClone, nav.nextSibling)
+
+
   }
 }
 
@@ -40,20 +54,31 @@ export default {
 <style lang="sass" scoped>
 @import '../styles/globals.scss';
 
+li.menu {
+  img {
+    height: 1.2em;
+    width: auto;
+  }
+  @include susy-media($md) {
+    display: none;
+  }
+}
+
 .branding {
   a {
     padding: 0;
-    margin-top: -3px;
+    margin-top: -4px;
     float: left;
   }
+
   p {
     display: none;
-    max-width: 320px;
-    // margin-top: -2px;
-    margin-left: 107px;
+    max-width: 220px;
+    margin-left: 100px;
     font-size: 0.9em;
     color: $grey-medium;
     @include susy-media($lg) {
+      
       display: block;
     }
   }
@@ -68,14 +93,12 @@ a {
   margin-right: 1em;
   font-family: $interface-font-family;
   font-weight: 400;
-  font-size: 1em;
+  font-size: 0.9em;
   color: $grey-medium;
   transition: color 0.1s;
   text-decoration: none;
+  letter-spacing: 0.03em;
 
-  // &:visited {
-  //   color: $grey-black;
-  // }
   &:hover {
     color: $grey-black;
   }
@@ -91,8 +114,8 @@ img.logo {
 img.home {
   height: 14px;
   width: 14px;
-  margin-top: 0.18em;
-  margin-right: 1.5em;
+  margin-top: 2px;
+  // margin-right: 1.5em;
   opacity: 0.5;
   &:hover {
     opacity: 1;
@@ -114,12 +137,13 @@ nav.navbar {
 }
 
 nav > ul {
-  // width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   @include susy-media($md) {
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-left: auto;
+    max-width: 420px;
   }
 }
 
@@ -141,14 +165,24 @@ li.active > a {
   }
 }
 
-nav > ul > li:nth-child(n+2):nth-last-child(n+2) {
-  margin-right: 1em;
+
+
+// nav > ul > li:nth-child(n+2):nth-last-child(n+3) { // not first and not last or menu
+//   // margin-right: 0.2em;
+//   min-width: 90px;
+// }
+
+nav > ul > li:not(.menu) {
+  display: none;
+  @include susy-media($md) {
+    display: block;
+  }
 }
 
-nav > ul > li > a {
+nav > ul > li > a { // headings
   line-height: 0.9em;
   color: $grey-black;
-  font-size: 0.95em;
+  font-size: 1em;
   margin-bottom: 8px;
   &:after {
     content: '';
@@ -165,7 +199,4 @@ nav > ul > li > a {
 ul li a.router-link-active {
   color: $grey-black;
 }
-
-
-
 </style>

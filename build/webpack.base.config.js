@@ -7,7 +7,8 @@ module.exports = {
     app: './src/client-entry.js',
     vendor: [
       'vue',
-      'vue-router'
+      'vue-router',
+      'vue-headroom'
     ]
   },
   output: {

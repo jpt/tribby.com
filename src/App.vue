@@ -4,7 +4,7 @@
       nav-bar
       hr
       transition(name='fade' mode='out-in')
-        router-view(class='view' v-bind:key='$route.fullPath')
+        router-view(:key='$route.fullPath' class='view')
 </template>
 
 <script>
