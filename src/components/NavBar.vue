@@ -182,7 +182,7 @@ nav > ul > li:not(.menu) {
 nav > ul > li > a { // headings
   line-height: 0.9em;
   color: $grey-black;
-  font-size: 1.05em;
+  font-size: 1em;
   margin-bottom: 8px;
   &:after {
     content: '';
