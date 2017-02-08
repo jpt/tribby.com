@@ -3,7 +3,7 @@ nav.navbar
   div.branding
     router-link(to="/" exact)
       img.logo(src="../assets/tribby.svg" alt="Tribby")
-    p.intro Product design, web development, illustration, branding, and custom type since 1999.
+    p.intro Products, web development, and custom type since 1999.
   ul
     template(v-for='route in routes')
       li(v-if="route.path==='/'")
