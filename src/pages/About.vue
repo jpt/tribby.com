@@ -6,7 +6,7 @@ div.about
 
     p I help out at the Electronic Frontier Foundation when I can, and more recently I've begun to focus on the Ricochet project, and a libre typeface called Barlow.
 
-    p Feel free to #[router-link(to="/about/contact") contact me] about interesting problems looking for solutions.
+    p Feel free to #[router-link(to="/about/contact") contact me]. I like working on interesting problems.
 </template>
 <style lang="sass">
 </style>

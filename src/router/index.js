@@ -10,8 +10,7 @@ import Ricochet from '../pages/Ricochet.vue';
 import EFF from '../pages/EFF.vue';
 import Contact from '../pages/Contact.vue';
 import About from '../pages/About.vue';
-import Current from '../pages/Current.vue';
-import Past from '../pages/Past.vue';
+import Projects from '../pages/Projects.vue';
 import Store from '../pages/Store.vue';
 
 Vue.use(Router)
@@ -24,17 +23,14 @@ export default new Router({
         { path: '/', name: 'Home', component: Home }
       ]
     },
-  	{ path: '/current', component: Page,
+  	{ path: '/projects', component: Page,
   	  children: [
-        { path: '', name: 'Current', component: Current },
+        { path: '', name: 'Projects', component: Projects },
         { path: 'ricochet', name: 'Ricochet', component: Ricochet },
         { path: 'barlow', name: 'Barlow', component: Barlow },
-        { path: 'eff', name: 'EFF', component: EFF }
-      ]
-    },
-    { path: '/past', component: Page,
-      children: [
-        { path: '', name: 'Past', component: Past }
+        { path: 'eff', name: 'EFF', component: EFF },
+        { path: '', name: 'More...', component: Projects },
+
       ]
     },
    	{ path: '/about', component: Page, 

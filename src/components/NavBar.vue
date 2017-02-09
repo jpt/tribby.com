@@ -13,7 +13,7 @@ nav.navbar
         router-link(:to="route.path") {{ route.children[0].name }}
         ul(v-if="route.children[1]")
           li(v-for="child in route.children")
-            template(v-if="child.path!=''")
+            template(v-if="child.path != '' || child.name === 'More...'")
               router-link(:to="route.path + '/' + child.path" exact) {{ child.name }}
     li.menu
       img(src="../assets/nav.svg" alt="Menu")

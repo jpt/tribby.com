@@ -2,7 +2,7 @@
 div.store
   div.container
     h1 Store
-    p Everything is sold out at the moment. Keep an eye on this page.
+    p Closed for renovations.
 </template>
 <style lang="sass">
 </style>
