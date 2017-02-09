@@ -2,7 +2,7 @@
 div.current
   div.container
     h1 Certbot
-    p While working at the Electronic Frontier Foundation as a front-end engineer and UI/UX designer, I designed and developed the the website for Certbot, EFF's cli tool for Let's Encrypt SSL certificate management.
+    p While working at the Electronic Frontier Foundation as a front-end engineer and designer, I designed and developed the the website for Certbot, EFF's cli tool for Let's Encrypt SSL certificate management.
     h1 Turner
     p Turner is a static site generator I built at EFF for rapid UX/UI prototyping that could easy move to production.
     h1 Barlow
