@@ -7,14 +7,14 @@ div.current
     p Stuff about Barlow
     h1 Ricochet
     p Stuff about Ricochet
-    h1 Encrypt, Inc.
-    p Some stuff about Encrypt, Inc
+    h1 Encryptly
+    p Some stuff about Encryptly
     h1 Chefs Feed
     p Some stuff about Chefs Feed
     h1 Edupath
     p Some stuff about Edupath
-    h1 ValleyVPN LLC
-    p Some stuff about ValleyVPN, LLC
+    h1 ValleyVPN
+    p Some stuff about ValleyVPN
     h1 Front Drive
     p Some stuff about Front Drive
     h1 Electra Bicycle Co.
