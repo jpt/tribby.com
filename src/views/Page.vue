@@ -50,13 +50,17 @@ div.page > div > *:not(img):not(div):not(p) {
   @include container($container);
 }
 
-div.container img:not(.logo) {
+div.container img {
   
 
   position: relative;
   display: inline-block;
   width: 100%;
 
+
+}
+
+div.container img:not(.logo) {
   @include susy-media($md) {
     width: auto;
     margin-left: (100% - $container) / 2;
