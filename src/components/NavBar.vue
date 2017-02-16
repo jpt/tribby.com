@@ -181,7 +181,7 @@ nav.navbar {
   }
   margin: 0 auto;
   padding-top: 15px;
-  // padding-bottom: 40px;
+  padding-bottom: 8px;
   background-color: rgba(255,255,255,0.9);
 }
 
