@@ -1,5 +1,5 @@
 <template lang="pug">
-headroom(v-bind:pinStart="200")
+headroom()
   nav.navbar(v-bind:class="{ active: menuOpen }" v-on:mouseout.self.capture="closeMenu")
     div.branding
       router-link(to="/" exact)

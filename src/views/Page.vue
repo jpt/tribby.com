@@ -50,7 +50,7 @@ div.page > div > *:not(img):not(div):not(p) {
   @include container($container);
 }
 
-div.container img {
+div.container img:not(.logo) {
   
 
   position: relative;
