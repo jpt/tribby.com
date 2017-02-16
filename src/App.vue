@@ -84,7 +84,7 @@ h1 {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
   margin-bottom: 0.6em;
-  line-height: 0.85em;
+  line-height: 1.1em;
 }
 
 h5 {
