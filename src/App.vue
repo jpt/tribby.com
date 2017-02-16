@@ -52,6 +52,9 @@ body {
   display: block;
   margin-top: 20px;
   padding-bottom: 52px;
+  @include susy-media($md) {
+    padding-top: 200px;
+  }
   div.container {
   
     hr {
@@ -78,7 +81,9 @@ body {
     // }
   }
 }
-
+img {
+  z-index: -1;
+}
 h1 {
   font-size: 1.8em;
   font-family: $heading-font-family;

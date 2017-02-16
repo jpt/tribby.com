@@ -1,5 +1,5 @@
 <template lang="pug">
-headroom()
+headroom(style="position:fixed!important")
   nav.navbar(v-bind:class="{ active: menuOpen }" v-on:mouseout.self.capture="closeMenu")
     div.branding
       router-link(to="/" exact)
@@ -21,7 +21,7 @@ headroom()
 </template>
 <script>
 import Route from '../router'
-import headroom from 'vue-headroom'
+import headroom from '../vendor/vue-headroom/headroom.vue'
 
 let routes = Route.options.routes
 // console.log(this.default);
@@ -93,6 +93,18 @@ export default {
 //   left: 0;
 // }
 
+.headroom {
+  position: fixed !important;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 9999;
+  transform: translateY(0px);
+  transition: all 250ms ease-in-out;
+}
+.navbar {
+  position: fixed;
+}
 li.menu {
   display: inline-block;
   img {
@@ -148,6 +160,7 @@ a {
 img.logo {
   position: relative;
   width: 50px;
+
   height: auto;
 }
 
