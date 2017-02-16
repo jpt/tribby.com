@@ -90,6 +90,7 @@ h1 {
   font-weight: $heading-font-weight;
   margin-bottom: 0.6em;
   line-height: 1.1em;
+  letter-spacing: 0.02em;
 }
 
 h5 {
