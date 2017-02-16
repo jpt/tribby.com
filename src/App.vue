@@ -50,7 +50,7 @@ body {
 
 #app {
   display: block;
-  margin-top: 20px;
+  margin-top: 40px;
   padding-bottom: 52px;
   @include susy-media($md) {
     padding-top: 200px;
