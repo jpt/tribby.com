@@ -10,6 +10,7 @@
 <script>
 import NavBar from './components/NavBar.vue'
 
+ 
 export default {
   components: { NavBar }
 }
@@ -18,6 +19,17 @@ export default {
 <style lang="sass">
 @import 'styles/fonts.scss';
 @import 'styles/globals.scss';
+// div.headroom-wrapper > div.headroom {
+//   // position: fixed !important;
+//   top: 0;
+// }
+
+// .pinned > div.headroom {
+//   position: fixed !important;
+// }
+// .navbar.clone {
+//   // display: none;
+// }
 
 * {
   box-model: border-box;
@@ -52,7 +64,7 @@ body {
     @include susy-media($md) {
       
       hr {
-        @include container(80%)
+        @include container($container)
 
         display: block;
       }
@@ -68,7 +80,7 @@ body {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 1.8em;
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
   margin-bottom: 0.6em;

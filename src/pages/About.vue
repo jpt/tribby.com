@@ -4,9 +4,9 @@ div.about
     h1 About
     p I like building products. I work the entire process, from typography design to bare metal at the datacenter.
 
-    p I help out at the Electronic Frontier Foundation when I can, and more recently I've begun to focus on the Ricochet project, and a libre typeface called Barlow.
+    p I help out at the Electronic Frontier Foundation with engineering and design when I can, and more recently I've been working on a typeface called Barlow.
 
-    p Feel free to #[router-link(to="/about/contact") contact me]. I like working on interesting problems.
+    p Feel free to #[router-link(to="/about/contact") contact me] if you have an interesting problem you think I'd like to work on.
 </template>
 <style lang="sass">
 </style>

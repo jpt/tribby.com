@@ -1,44 +1,69 @@
 <template lang="pug">
-nav.navbar
-  div.branding
-    router-link(to="/" exact)
-      img.logo(src="../assets/tribby.svg" alt="Tribby")
-    p.intro Products, web development, and custom type since 1999.
-  ul
-    template(v-for='route in routes')
-      li(v-if="route.path==='/'")
-        router-link.img(to="/")
-          img.home(:class="{ active: isParent(route.path) }" src="../assets/home.svg" alt="home")
-      li(v-else :class="{ active: isParent(route.path) }")
-        router-link(:to="route.path") {{ route.children[0].name }}
-        ul(v-if="route.children[1]")
-          li(v-for="child in route.children")
-            template(v-if="child.path != '' || child.name === 'More...'")
-              router-link(:to="route.path + '/' + child.path" exact) {{ child.name }}
-    li.menu
-      img(src="../assets/nav.svg" alt="Menu")
+headroom(v-bind:pinStart="200")
+  nav.navbar(v-bind:class="{ active: menuOpen }" v-on:mouseout.self.capture="closeMenu")
+    div.branding
+      router-link(to="/" exact)
+        img.logo(src="../assets/tribby.svg" alt="Tribby")
+      p.intro Products, web development, and custom type since 1999.
+    ul
+      template(v-for='route in routes')
+        li(v-if="route.path==='/'")
+          router-link.img(to="/")
+            img.home(:class="{ active: isParent(route.path) }" src="../assets/home.svg" alt="home")
+        li(v-else :class="{ active: isParent(route.path) }")
+          router-link(v-on:mouseover.native.self="openMenu" v-bind:to="route.path") {{ route.children[0].name }}
+          ul(v-if="route.children[1]")
+            li(v-for="child in route.children")
+              template(v-if="child.path != '' || child.name === 'More...'")
+                router-link(:to="route.path + '/' + child.path" exact) {{ child.name }}
+      li.menu
+        img(src="../assets/nav.svg" alt="Menu")
 </template>
 <script>
 import Route from '../router'
+import headroom from 'vue-headroom'
 
 let routes = Route.options.routes
+// console.log(this.default);
+// let nav = this.$el.children[0].children[0];
 
 export default {
-
   data: function() {
     return {
       route: '/',
-      routes: routes
+      routes: routes,
+      active: false,
+      menuOpen: false,
+      menuPinned: false
+
     }
   },
   methods: {
     isParent(route) {
       let path = this.$route.matched[0].path === '' ? '/' : this.$route.matched[0].path
       return path === route
+    },
+    openMenu() {
+      this.menuOpen = true;
+    },
+    closeMenu() {
+      this.menuOpen = false;
     }
+    // menuPin() {
+    //   let nav = this.$el.children[0].children[0];
+    //   // nav.style.height='0px';
+    //   nav.style.overflow='hidden';
+    //   this.menuPinned = true;
+    // },
+    // menuUnpin() {
+    //   let nav = this.$el.children[0].children[0];
+    //   // nav.style.height='auto';
+    //   this.menuPinned = false;
+    // }
+
   },
   mounted () {
-    let nav = this.$el
+    // let nav = this.$el
     // let body = document.body
 
     // let navClone = nav.cloneNode(true)
@@ -47,14 +72,29 @@ export default {
     // body.insertBefore(navClone, nav.nextSibling)
 
 
+  },
+  components: {
+    headroom
   }
 }
 
 </script>
 <style lang="sass" scoped>
+
 @import '../styles/globals.scss';
 
+// .navbar.clone {
+//  display: none;
+// }
+// .navbar.clone.active {
+//   display: block;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+// }
+
 li.menu {
+  display: inline-block;
   img {
     height: 1.2em;
     width: auto;
@@ -131,10 +171,20 @@ img.home {
 }
 
 nav.navbar {
-  width: $container;
+  width: 100%;
+  max-width: $container;
+  padding-left: (100% - $container) / 2;
+  padding-right: (100% - $container) / 2;
+  @include susy-media($md) {
+    // width: $container;
+    padding-bottom: 40px;
+  }
   margin: 0 auto;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  // padding-bottom: 40px;
+  background-color: rgba(255,255,255,0.9);
 }
+
 
 nav > ul {
   display: flex;
@@ -148,6 +198,7 @@ nav > ul {
 }
 
 ul {
+  display: block;
   padding: 0;
   margin: 0;
   list-style: none;

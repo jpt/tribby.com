@@ -10,34 +10,62 @@ div.page
 @import "../styles/globals.scss";
 
 
-div.page div.container {
+// div.page div.container {
 
-  @include container(80%);
+//   @include container($container);
+//   @include susy-media($md) {
+//     @include container(100%);
+//   }
+// }
+
+div.page > div > div.container > *:not(img):not(div):not(p) { // subpage
+  @include container($container);
+
+}
+
+// div.page > div > div.container > p {
+//   @include container(28em);
+// }
+
+// div.page > div > div.container > div > p {
+//   @include container(28em);
+// }
+
+// div.page > div > p {
+//   @include container(28em);
+// }
+
+
+div.page {
+  padding-top: 2em;
   @include susy-media($md) {
-    @include container(100%);
+    padding-top: 0em;
   }
 }
-
-div.page > div > div.container { // subpage
-  @include susy-media($md) {
-    @include container(80%);
-  } 
+div.page > div > div.container > div > *:not(img):not(p) {
+  @include container($container);
 }
-div.page > div > div.container img {
+
+div.page > div > *:not(img):not(div):not(p) {
+  @include container($container);
+}
+
+div.container img {
   
-  position: absolute;
-  left: 0;
+
+  position: relative;
+  display: inline-block;
   width: 100%;
 
   @include susy-media($md) {
-    position: relative;
     width: auto;
-    max-width: 100%;
+    margin-left: (100% - $container) / 2;
+    margin-right: (100% - $container) / 2;
+    max-width: $container;
   }
 }
 
-div.page div {
-
+div.page > div, div.page > div > div {
 
   &:first-of-type {
 
@@ -59,6 +87,8 @@ div.page div {
       font-size: 1.2em;
       line-height: 1.5em;
     }
+    margin-left: (100% - $container) / 2;
+    margin-right: (100% - $container) / 2;
     max-width: 28em;
     margin-bottom: 1em;
   }
