@@ -92,7 +92,7 @@ export default {
 
     wrapperStyles () {
       return {
-        height: this.elemHeight ? `${this.elemHeight}px` : null
+        
       }
     },
 
