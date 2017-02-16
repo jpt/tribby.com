@@ -148,7 +148,7 @@ export default {
       if (this.onUnpin) {
         this.onUnpin()
       }
-      this.translate = '-200px'
+      this.translate = '-250px'
       setTimeout(() => {
         this.state = 'unpinned'
       }, 0)

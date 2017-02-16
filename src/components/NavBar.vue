@@ -145,7 +145,7 @@ a {
   margin-right: 1em;
   font-family: $interface-font-family;
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: 1em;
   color: $grey-medium;
   transition: color 0.1s;
   text-decoration: none;
@@ -184,6 +184,12 @@ img.home {
 }
 
 nav.navbar {
+  filter: blur(30px);
+  -webkit-filter: blur(30px);
+  -moz-filter: blur(30px);
+  -o-filter: blur(30px);
+  -ms-filter: blur(30px);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='30' /></filter></svg>#svgMask");
   width: 100%;
   max-width: $container;
   padding-left: (100% - $container) / 2;
@@ -247,7 +253,7 @@ nav > ul > li:not(.menu) {
 nav > ul > li > a { // headings
   line-height: 0.9em;
   color: $grey-black;
-  font-size: 1em;
+  font-size: 1.08em;
   margin-bottom: 8px;
   &:after {
     content: '';
