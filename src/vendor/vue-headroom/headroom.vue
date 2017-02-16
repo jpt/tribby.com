@@ -16,7 +16,7 @@ export default {
       currentScrollY: 0,
       lastScrollY: 0,
       elemHeight: 0,
-      state: '',
+      state: 'pinned',
       translate: 0
     }
   },
@@ -80,19 +80,19 @@ export default {
   computed: {
     innerStyle () {
       return {
-        'position': 'fixed',
+        'position': this.isInTop ? 'fixed' : 'fixed',
         'top': '0',
         'left': '0',
         'right': '0',
-        'z-index': 1000,
+        'z-index': this.isInTop ? this.zIndex : 1,
         'transform': `translateY(${this.translate})`,
-        'transition': `all ${this.speed}ms ${this.easing}`
+        'transition': this.isInTop ? `all ${this.speed}ms ${this.easing}` : null
       }
     },
 
     wrapperStyles () {
       return {
-        
+        height: 'auto'
       }
     },
 
