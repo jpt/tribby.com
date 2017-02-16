@@ -190,7 +190,8 @@ nav.navbar {
   padding-right: (100% - $container) / 2;
   @include susy-media($md) {
     // width: $container;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+    padding-top: 30px;
   }
   margin: 0 auto;
   padding-top: 15px;
