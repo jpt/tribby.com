@@ -221,7 +221,7 @@ li.active > a {
   &:after {
     content: '';
     display: block;
-    margin-top: 4px;
+    margin-top: 3px;
     height: 3px;
     width: 100%;
     background: $grey-black;
@@ -251,13 +251,13 @@ nav > ul > li > a { // headings
   &:after {
     content: '';
     display: block;
-    margin-top: 4px;
+    margin-top: 3px;
     height: 3px;
     width: 0%;
   }
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
-  letter-spacing: 0.032em;
+  letter-spacing: 0.012em;
 }
 
 ul li a.router-link-active {
