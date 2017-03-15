@@ -11,7 +11,7 @@ div.current
     p I was head of interactive at Chefs Feed, a food media company in SF that I helped raise a series A with. 
     img(src="../assets/chefsfeed.png")
     h1 Turner
-    p Turner is a front-end prototyping framework I built for EFF. 
+    p Turner is a front-end prototyping framework I built for EFF. Unfortunately it's not open source yet.
     img(src="../assets/turner.png")
     h1 Edupath
     p I was a senior UX/UI designer and front-end dev at Edupath, where we made an SAT prep app and gave away tutoring to kids in Richmond. I built most of the user-facing stuff. Product design, branding, type design, web design, front-end engineering -- for a dashboard to the app as well.

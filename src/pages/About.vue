@@ -2,7 +2,7 @@
 div.about
   div.container
     h1 About
-    p I like building products. I work the entire process, from typography design to bare metal at the datacenter.
+    p I like building products. I work the entire process, from typography design to user research to bare metal at the datacenter.
 
     p I help out at the Electronic Frontier Foundation with engineering and design when I can, and more recently I've been working on a typeface called Barlow.
 

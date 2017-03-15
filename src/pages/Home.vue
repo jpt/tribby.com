@@ -1,14 +1,16 @@
 <template lang="pug">
 div.home
-  div.container
-    h1 Cleanup on aisle you.
-    h5 02 Feb 2016
-    p Slowly building out a new website. I'll have some stuff from the archives, soon.
+  section.blog
+    article
+      h1 Cleanup on aisle you.
+      h5 02 Feb 2016
+      p Slowly building out a new website. I'll have some stuff from the archives, soon.
 </template>
 <style lang="sass">
 @import "../styles/globals.scss";
 
-div.home {
+section.blog {
+
   h1 {
     margin-bottom: 0em;
   }

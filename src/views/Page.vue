@@ -10,44 +10,11 @@ div.page
 @import "../styles/globals.scss";
 
 
-// div.page div.container {
-
-//   @include container($container);
-//   @include susy-media($md) {
-//     @include container(100%);
-//   }
-// }
-
-div.page > div > div.container > *:not(img):not(div):not(p) { // subpage
-  @include container($container);
-
-}
-
-// div.page > div > div.container > p {
-//   @include container(28em);
-// }
-
-// div.page > div > div.container > div > p {
-//   @include container(28em);
-// }
-
-// div.page > div > p {
-//   @include container(28em);
-// }
-
-
 div.page {
   padding-top: 2em;
   @include susy-media($md) {
     padding-top: 0em;
   }
-}
-div.page > div > div.container > div > *:not(img):not(p) {
-  @include container($container);
-}
-
-div.page > div > *:not(img):not(div):not(p) {
-  @include container($container);
 }
 
 div.container img {
@@ -95,6 +62,12 @@ div.page > div, div.page > div > div {
     margin-right: (100% - $container) / 2;
     max-width: 28em;
     margin-bottom: 1em;
+  }
+
+  h1, h5 {
+    margin-left: (100% - $container) / 2;
+    margin-right: (100% - $container) / 2;
+    max-width: 28em;
   }
 
   img {

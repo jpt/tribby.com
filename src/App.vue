@@ -1,7 +1,9 @@
 <template lang="pug">
   #app
-    div.container
+    headroom
       nav-bar
+    nav-bar.sidebar
+    div.container
       hr
       transition(name='fade' mode='out-in')
         router-view(:key='$route.fullPath' class='view')
@@ -9,16 +11,22 @@
 
 <script>
 import NavBar from './components/NavBar.vue'
-
+import headroom from './vendor/vue-headroom/headroom.vue'
  
 export default {
-  components: { NavBar }
+  components: { NavBar, headroom }
 }
 </script>
 
 <style lang="sass">
 @import 'styles/fonts.scss';
 @import 'styles/globals.scss';
+
+.navbar.sidebar {
+  position: absolute;
+  left: -100%;
+  display: none;
+}
 // div.headroom-wrapper > div.headroom {
 //   // position: fixed !important;
 //   top: 0;

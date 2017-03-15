@@ -1,23 +1,22 @@
 <template lang="pug">
-headroom(style="position:fixed!important")
-  nav.navbar(v-bind:class="{ active: menuOpen }" v-on:mouseout.self.capture="closeMenu")
-    div.branding
-      router-link(to="/" exact)
-        img.logo(src="../assets/tribby.svg" alt="Tribby")
-      p.intro Products, web development, and custom type since 1999.
-    ul
-      template(v-for='route in routes')
-        li(v-if="route.path==='/'")
-          router-link.img(to="/")
-            img.home(:class="{ active: isParent(route.path) }" src="../assets/home.svg" alt="home")
-        li(v-else :class="{ active: isParent(route.path) }")
-          router-link(v-on:mouseover.native.self="openMenu" v-bind:to="route.path") {{ route.children[0].name }}
-          ul(v-if="route.children[1]")
-            li(v-for="child in route.children")
-              template(v-if="child.path != '' || child.name === 'More...'")
-                router-link(:to="route.path + '/' + child.path" exact) {{ child.name }}
-      li.menu
-        img(src="../assets/nav.svg" alt="Menu")
+nav.navbar(v-bind:class="{ active: menuOpen }" v-on:mouseout.self.capture="closeMenu")
+  div.branding
+    router-link(to="/" exact)
+      img.logo(src="../assets/tribby.svg" alt="Tribby")
+    p.intro Products, web development, and custom type since 1999.
+  ul
+    template(v-for='route in routes')
+      li(v-if="route.path==='/'")
+        router-link.img(to="/")
+          img.home(:class="{ active: isParent(route.path) }" src="../assets/home.svg" alt="home")
+      li(v-else :class="{ active: isParent(route.path) }")
+        router-link(v-on:mouseover.native.self="openMenu" v-bind:to="route.path") {{ route.children[0].name }}
+        ul(v-if="route.children[1]")
+          li(v-for="child in route.children")
+            template(v-if="child.path != '' || child.name === 'More...'")
+              router-link(:to="route.path + '/' + child.path" exact) {{ child.name }}
+    li.menu
+      img(src="../assets/nav.svg" alt="Menu")
 </template>
 <script>
 import Route from '../router'
@@ -93,6 +92,9 @@ export default {
 //   left: 0;
 // }
 
+ul li ul li a {
+  line-height: 1.66em;
+}
 .headroom {
   position: fixed !important;
   top: 0px;
@@ -184,12 +186,6 @@ img.home {
 }
 
 nav.navbar {
-  filter: blur(30px);
-  -webkit-filter: blur(30px);
-  -moz-filter: blur(30px);
-  -o-filter: blur(30px);
-  -ms-filter: blur(30px);
-  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='30' /></filter></svg>#svgMask");
   width: 100%;
   max-width: $container;
   padding-left: (100% - $container) / 2;

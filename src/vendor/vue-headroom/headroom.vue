@@ -84,7 +84,7 @@ export default {
         'top': '0',
         'left': '0',
         'right': '0',
-        'z-index': this.isInTop ? this.zIndex : 1,
+        'z-index': this.isInTop ? this.zIndex : 9999,
         'transform': `translateY(${this.translate})`,
         'transition': this.isInTop ? `all ${this.speed}ms ${this.easing}` : null
       }
@@ -155,7 +155,7 @@ export default {
     },
 
     unfix () {
-      this.state = 'unfixed'
+      this.state = 'pinned'
     }
   }
 
