@@ -1,0 +1,306 @@
+: customer
+Password: ebkejyija1m2
+69.30.214.18
+
+I lit a thin green candle
+
+apt-get install software-properties-common -y
+sudo add-apt-repository ppa:transmissionbt/ppa
+sudo apt-get update
+sudo apt-get install transmission-cli transmission-common transmission-daemon -y
+
+#pm2 start npm --name "tribby" -- run start
+
+adduser media
+sudo usermod -a -G debian-transmission media
+
+cd ~
+mkdir /home/media/
+cd /home/media/
+mkdir transmission
+cd transmission
+mkdir completed incomplete torrents
+
+
+sudo chgrp -R debian-transmission /home/media/transmission
+sudo chmod -R 775 /home/media/transmission
+sudo chgrp -R debian-transmission /home/media/transmission
+sudo chmod -R 775 /home/media/transmission
+
+
+usermod -a -G debian-transmission customer
+
+sudo chgrp -R customer /home/media/
+sudo chmod -R 775 /home/media/
+
+sudo chgrp -R customer /home/media/
+sudo chmod -R 775 /home/media/
+
+158.69.243.213
+sudo service transmission-daemon stop
+
+sudo nano /etc/transmission-daemon/settings.json
+
+{
+    "alt-speed-down": 50,
+    "alt-speed-enabled": false,
+    "alt-speed-time-begin": 540,
+    "alt-speed-time-day": 127,
+    "alt-speed-time-enabled": false,
+    "alt-speed-time-end": 1020,
+    "alt-speed-up": 50,
+    "bind-address-ipv4": "0.0.0.0",
+    "bind-address-ipv6": "::",
+    "blocklist-enabled": false,
+    "blocklist-url": "http://www.example.com/blocklist",
+    "cache-size-mb": 4,
+    "dht-enabled": true,
+    "download-dir": "/home/media/transmission/completed",
+    "download-limit": 100,
+    "download-limit-enabled": 0,
+    "download-queue-enabled": true,
+    "download-queue-size": 5,
+    "encryption": 1,
+    "idle-seeding-limit": 30,
+    "idle-seeding-limit-enabled": false,
+    "incomplete-dir": "/home/media/transmission/incomplete",
+    "incomplete-dir-enabled": false,
+    "lpd-enabled": false,
+    "max-peers-global": 200,
+    "message-level": 1,
+    "peer-congestion-algorithm": "",
+    "peer-id-ttl-hours": 6,
+    "peer-limit-global": 200,
+    "peer-limit-per-torrent": 50,
+    "peer-port": 51413,
+    "peer-port-random-high": 65535,
+    "peer-port-random-low": 49152,
+    "peer-port-random-on-start": false,
+    "peer-socket-tos": "default",
+    "pex-enabled": true,
+    "port-forwarding-enabled": false,
+    "preallocation": 1,
+    "prefetch-enabled": true,
+    "queue-stalled-enabled": true,
+    "queue-stalled-minutes": 30,
+    "ratio-limit": 2,
+    "ratio-limit-enabled": false,
+    "rename-partial-files": true,
+    "rpc-authentication-required": true,
+    "rpc-bind-address": "0.0.0.0",
+    "rpc-enabled": true,
+    "rpc-password": "$unsh1ne",
+    "rpc-port": 1100,
+    "rpc-url": "/gearshift/",
+    "rpc-username": "transmission",
+    "rpc-whitelist": "107.170.243.158,73.231.154.250,127.0.0.1",
+    "rpc-whitelist-enabled": true,
+    "scrape-paused-torrents-enabled": true,
+    "script-torrent-done-enabled": false,
+    "script-torrent-done-filename": "",
+    "seed-queue-enabled": false,
+    "seed-queue-size": 10,
+    "speed-limit-down": 100,
+    "speed-limit-down-enabled": false,
+    "speed-limit-up": 100,
+    "speed-limit-up-enabled": false,
+    "start-added-torrents": true,
+    "trash-original-torrent-files": false,
+    "umask": 18,
+    "upload-limit": 100,
+    "upload-limit-enabled": 0,
+    "upload-slots-per-torrent": 14,
+    "utp-enabled": true
+}
+
+sudo service transmission-daemon start
+
+cd ~
+
+wget https://downloads.plex.tv/plex-media-server/1.3.3.3148-b38628e/plexmediaserver_1.3.3.3148-b38628e_amd64.deb
+
+dpkg -i plexmediaserver_1.3.3.3148-b38628e_amd64.deb
+
+
+on mac:
+
+ssh -L 32400:localhost:32400 root@charity.bottlenosed.com
+
+visit http://localhost:32400/web/index.html
+cd ~
+wget https://download2.code42.com/installs/linux/install/CrashPlan/CrashPlan_4.8.0_Linux.tgz
+tar -xvzf CrashPlan_4.8.0_Linux.tgz
+cd crashplan-install
+./install.sh
+cat /var/lib/crashplan/.ui_info
+#4243,1e654d2c-4aa7-4160-96e5-db1734fddd8c,127.0.0.1
+4200,bed343bf-684f-47b7-b4b5-fb65c2f07bc5,127.0.0.1
+
+on mac
+cd /Library/Application\ Support/CrashPlan/
+sudo cp .ui_info old.ui_info
+sudo subl .ui_info
+
+replace mac with
+4200,bed343bf-684f-47b7-b4b5-fb65c2f07bc5,127.0.0.1 (for ex)
+
+ssh -L 4200:localhost:4243 root@charity.bottlenosed.com
+
+sudo mount /dev/sdb3 /home
+
+ntfs-3g -t /dev/sdb3 /home
+
+transmission-create -p -o  /home/media/transmission/torrents/mg-pl.torrent -t https://please.passtheheadphones.me/1d1ab28060a27a7f3532c5a5519ae828/announce /home/media/Music/Mike#-c "My comments"
+
+Heiress Sarah Winchester and her Winchester Mystery House — the bizarre gothic mansion she built to defend herself from the ghosts of those killed by the rifles that made her family famous — are the inspiration for Jeremy Blake's suite of digital animations, the Winchester trilogy. Employing hand-painted imagery, film footage, vector graphics, and sound in a process the artist calls "time-based painting" Blake's visually opulent works offer an empathetic experience of Winchester's madness. Representational images morph into kinetic inkblots and back again. Traditional modes of storytelling are questioned, as are the relationships between reality and simulation. Shown together for the first time, Winchester (2002), 1906 (2003), and Century 21 (2004) are presented as a triptych in three adjacent projections.
+
+
+https://picload.org/image/rapopclc/blo.png
+
+
+[mediainfo]
+
+
+
+# mediainfo VTS_01_1.VOB 
+General
+Complete name                            : VTS_01_1.VOB
+Format                                   : MPEG-PS
+File size                                : 1 024 MiB
+Duration                                 : 17mn 5s
+Overall bit rate                         : 8 376 Kbps
+
+Video
+ID                                       : 224 (0xE0)
+Format                                   : MPEG Video
+Format version                           : Version 2
+Format profile                           : Main@Main
+Format settings, BVOP                    : Yes
+Format settings, Matrix                  : Default
+Format settings, GOP                     : M=3, N=13
+Format settings, picture structure       : Frame
+Duration                                 : 17mn 5s
+Bit rate                                 : 8 000 Kbps
+Width                                    : 720 pixels
+Height                                   : 480 pixels
+Display aspect ratio                     : 2.40:1
+Frame rate                               : 29.970 (30000/1001) fps
+Standard                                 : NTSC
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Interlaced
+Scan order                               : Top Field First
+Compression mode                         : Lossy
+Bits/(Pixel*Frame)                       : 0.772
+Time code of first frame                 : 01:00:00:00
+Time code source                         : Group of pictures header
+GOP, Open/Closed                         : Open
+Stream size                              : 976 MiB (95%)
+Color primaries                          : BT.601 NTSC
+Transfer characteristics                 : BT.601
+Matrix coefficients                      : BT.601
+
+Audio
+ID                                       : 189 (0xBD)-128 (0x80)
+Format                                   : AC-3
+Format/Info                              : Audio Coding 3
+Mode extension                           : CM (complete main)
+Format settings, Endianness              : Big
+Muxing mode                              : DVD-Video
+Duration                                 : 17mn 5s
+Bit rate mode                            : Constant
+Bit rate                                 : 224 Kbps
+Channel(s)                               : 2 channels
+Channel positions                        : Front: L R
+Sampling rate                            : 48.0 KHz
+Frame rate                               : 31.250 fps (1536 spf)
+Compression mode                         : Lossy
+Stream size                              : 27.4 MiB (3%)
+
+Menu
+
+
+[/mediainfo]
+
+
+[img]https://picload.org/image/rapopiop/vlcsnap-2017-01-01-23h10m15s51.png[/img]
+
+[img]https://picload.org/image/rapopioc/vlcsnap-2017-01-01-23h10m22s17.png[/img]
+
+[img]https://picload.org/image/rapopioo/vlcsnap-2017-01-01-23h10m33s22.png[/img]
+
+bWFyaWEgcGxlYXNlIGRvbid0IGxlYXZlIG1lIG5vdyBJIG5lZWQgeWEAAAAAAAAAAAAAAAAAAAA=
+
+
+
+
+
+ZySzxfZ4yEDYwb
+
+
+ssh -W root@144.76.237.119:4747
+H3tZ3kmfsWLz4N
+
+rsync -azr -e 'ssh -p 4747' /home/media root@144.76.237.119:/home/
+
+rsync -azr /home/media root@144.76.237.119:/home/
+
+
+sudo ssh root@158.69.243.213
+sudo ssh root@144.76.237.119 -p 4747
+
+ssh -p 4747 -L 32400:localhost:32400 root@144.76.237.119
+
+crashplan
+
+ssh -L 4200:localhost:4243 root@charity.bottlenosed.com
+
+
+^Z
+bg %1
+disown -h %1
+
+
+kill %1 && fg
+
+hetz pw reset=
+rescue
+reboot
+mount /dev/md2 /mnt
+chroot /mnt
+passed
+reboot
+
+
+
+
+
+
+
+
+
+
+#!/bin/sh
+
+DOWNLOAD=$(curl https://plex.tv/api/downloads/1.json | perl -ne'/"build":"linux-ubuntu-x86_64","distro":"ubuntu","url":"(.*?)"/ && print($1) && exit')
+wget $DOWNLOAD
+FILE=$(echo $DOWNLOAD | perl -ne'/.*\/(.*)/ && print($1) && exit')
+dpkg -i $FILE
+rm $FILE
+
+#!/bin/sh
+
+CRASHPLAN=$(curl https://www.crashplan.com/shared/js/cp.download.js | perl -ne'/cp.download.CPPRO_CLIENT_VERSION = '\''(.*?)'\'';/ && print("https://download.code42.com/installs/linux/install/CrashPlan/CrashPlan_$1_Linux.tgz") && exit')
+wget $CRASHPLAN
+FILE=$(echo $CRASHPLAN | perl -ne'/.*\/(.*)/ && print($1) && exit')
+tar xvfs $FILE
+cd crashplan-install
+chmod +x install.sh
+./install.sh
+cd ..
+rm $FILE
+rm -rf crashplan-install
+cat /var/lib/crashplan/.ui_info
+
+ssh -L 4200:localhost:4243 root@144.76.237.119
