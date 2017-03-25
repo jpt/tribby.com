@@ -29,7 +29,7 @@ export default {
       route: '/',
       routes: routes,
       active: false,
-      menuOpen: true
+      menuOpen: false
 
     }
   },
