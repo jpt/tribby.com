@@ -17,7 +17,8 @@ export default {
       lastScrollY: 0,
       elemHeight: 0,
       state: 'pinned',
-      translate: 0
+      translate: 0,
+      display: 'none'
     }
   },
 
@@ -47,6 +48,11 @@ export default {
       default: 'ease-in-out'
     },
 
+    start: {
+      type: Number,
+      default: 200
+    },
+
     zIndex: {
       type: Number,
       default: 9999
@@ -57,7 +63,7 @@ export default {
 
     pinStart: {
       type: Number,
-      default: 10
+      default: 0
     }
   },
 
@@ -86,7 +92,8 @@ export default {
         'right': '0',
         'z-index': this.isInTop ? this.zIndex : 9999,
         'transform': `translateY(${this.translate})`,
-        'transition': this.isInTop ? `all ${this.speed}ms ${this.easing}` : null
+        'transition': this.isInTop ? `all ${this.speed}ms ${this.easing}` : null,
+        'display': this.currentScrollY > 210 ? 'block' : 'none'
       }
     },
 

@@ -1,8 +1,9 @@
 <template lang="pug">
   #app
+    nav-bar
+    
     headroom(v-bind:onPin="menuPin" v-bind:onUnpin="menuUnpin" v-bind:class="{ pinned: menuPinned }")
       nav-bar
-    nav-bar.sidebar
     div.container
       hr
       transition(name='fade' mode='out-in')
@@ -35,14 +36,18 @@ export default {
 @import 'styles/fonts.scss';
 @import 'styles/globals.scss';
 
-.headroom-wrapper.pinned > div > nav {
+// .headroom {
+//   translate 
+// }
+// .headroom-wrapper.pinned > div > nav {
 
-}
+// }
 
-.navbar.sidebar {
+.sidebar {
   position: absolute;
   left: -100%;
-  display: none;
+  display: none !important;
+  visibility: hidden;
 }
 // div.headroom-wrapper > div.headroom {
 //   // position: fixed !important;
@@ -75,11 +80,11 @@ body {
 
 #app {
   display: block;
-  margin-top: 40px;
+  // margin-top: 40px;
   padding-bottom: 52px;
-  @include susy-media($md) {
-    padding-top: 200px;
-  }
+  // @include susy-media($md) {
+  //   padding-top: 200px;
+  // }
   div.container {
   
     hr {
@@ -106,9 +111,9 @@ body {
     // }
   }
 }
-img {
-  z-index: -1;
-}
+// img {
+//   z-index: -1;
+// }
 h1 {
   font-size: 1.8em;
   font-family: $heading-font-family;
