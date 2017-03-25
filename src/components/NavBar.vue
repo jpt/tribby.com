@@ -1,5 +1,5 @@
 <template lang="pug">
-nav.navbar(v-bind:class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="closeMenu")
+nav.navbar(:class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="closeMenu")
   div.branding
     router-link(to="/" exact)
       img.logo(src="../assets/tribby.svg" alt="Tribby")
@@ -10,12 +10,12 @@ nav.navbar(v-bind:class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleav
         router-link.img(to="/")
           img.home(:class="{ active: isParent(route.path) }" src="../assets/home.svg" alt="home")
       li(v-else :class="{ active: isParent(route.path) }")
-        router-link(v-bind:to="route.path" class="title") {{ route.children[0].name }}
+        router-link(:to="route.path" class="title") {{ route.children[0].name }}
         ul(v-if="route.children[1]")
           li(v-for="child in route.children")
             template(v-if="child.path != '' || child.name === 'More...'")
-              router-link(v-bind:to="route.path + '/' + child.path" exact class="child") {{ child.name }}
-    li.menu
+              router-link(:to="route.path + '/' + child.path" exact class="child") {{ child.name }}
+    li.menu(@click="sideMenu")
       img(src="../assets/nav.svg" alt="Menu")
 </template>
 <script>
@@ -29,11 +29,16 @@ export default {
       route: '/',
       routes: routes,
       active: false,
-      menuOpen: false
+      menuOpen: false,
+      sideOpen: false
 
     }
   },
   methods: {
+    sideMenu() {
+
+
+    },
     isParent(route) {
       let path = this.$route.matched[0].path === '' ? '/' : this.$route.matched[0].path
       return path === route
@@ -86,6 +91,42 @@ nav > ul > li:not(.menu) {
   }
 }
 
+nav.side {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 270px;
+  height: 100%;
+  z-index: 500000;
+  transform: translateX(270px);
+  padding: 0;
+
+}
+
+nav.side {
+  padding-top: 40px;
+  div.branding {
+    display: none;
+  }
+}
+nav.side > ul > li:not(.menu) {
+  display: block;
+}
+
+nav.side > ul > li.menu {
+  display: none;
+}
+
+nav.side > ul > li > ul {
+  margin-bottom: 50px;
+}
+
+nav.side ul.menu {
+  margin-left: 50px;
+  float: left;
+  flex-direction: column;
+}
+
 .headroom .navbar {
   padding-top: 15px;
   padding-bottom: 0px;
@@ -93,7 +134,7 @@ nav > ul > li:not(.menu) {
   p {
     display: none;
   }
-  height: 35px;
+  height: 34px;
   transition: height 120ms ease-in-out;
   overflow: hidden;
 }
@@ -128,12 +169,19 @@ nav > ul > li:not(.menu) {
 
 li.menu {
   display: inline-block;
+  position: absolute;
+  right: 20px;
   img {
+    position: relative;
+    right: 0;
     height: 1.2em;
     width: auto;
   }
   @include susy-media($md) {
     display: none;
+  }
+  &:hover {
+    cursor: pointer
   }
 }
 

@@ -4,6 +4,7 @@
     
     headroom(v-bind:onPin="menuPin" v-bind:onUnpin="menuUnpin" v-bind:class="{ pinned: menuPinned }")
       nav-bar
+    nav-bar.side
     div.container
       hr
       transition(name='fade' mode='out-in')
