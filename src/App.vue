@@ -1,6 +1,6 @@
 <template lang="pug">
   #app
-    headroom
+    headroom(v-bind:onPin="menuPin" v-bind:onUnpin="menuUnpin" v-bind:class="{ pinned: menuPinned }")
       nav-bar
     nav-bar.sidebar
     div.container
@@ -12,8 +12,21 @@
 <script>
 import NavBar from './components/NavBar.vue'
 import headroom from './vendor/vue-headroom/headroom.vue'
- 
+
 export default {
+  data: function() {
+    return {
+      menuPinned: false
+    }
+  },
+  methods: {
+    menuPin() {
+      this.menuPinned = true
+    },
+    menuUnpin() {
+      this.menuPinned = false
+    }
+  },
   components: { NavBar, headroom }
 }
 </script>
@@ -21,6 +34,10 @@ export default {
 <style lang="sass">
 @import 'styles/fonts.scss';
 @import 'styles/globals.scss';
+
+.headroom-wrapper.pinned > div > nav {
+
+}
 
 .navbar.sidebar {
   position: absolute;

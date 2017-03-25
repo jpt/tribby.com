@@ -57,7 +57,7 @@ export default {
 
     pinStart: {
       type: Number,
-      default: 0
+      default: 10
     }
   },
 
