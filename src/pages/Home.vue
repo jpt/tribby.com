@@ -5,7 +5,8 @@ div.home
       h1 Coming Soon: Barlow
       h5 March 25th
       img(src="https://raw.githubusercontent.com/jpt/barlow/master/documentation/barlow.gif")
-      p I've been working on a type family called Barlow (coming soon to Google Fonts). It's pretty usable right now with 165/219 glyphs completed so far -- you can #[a(href="https://github.com/jpt/barlow") download the work in progress on GitHub].
+
+      p Barlow is a variable font superfamily I've been working on. It comes out of the box with roman and obliques spanning 54 suggested styles in three widths and nine weights. It's pretty usable right now with 165/219 glyphs completed so far -- you can #[a(href="https://github.com/jpt/barlow") download the work in progress on GitHub].
     article
       h1 Cleanup on aisle you.
       h5 March 15th

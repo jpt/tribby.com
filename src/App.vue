@@ -2,9 +2,13 @@
   #app
     nav-bar
     
-    headroom(v-bind:onPin="menuPin" v-bind:onUnpin="menuUnpin" v-bind:class="{ pinned: menuPinned }")
+    img.hamburger.top(@click="toggleSide" src="./assets/nav.svg" alt="Open Menu")
+    headroom(:onPin="menuPin" v-bind:onUnpin="menuUnpin" v-bind:class="{ pinned: menuPinned }")
       nav-bar
+      img.hamburger(@click="toggleSide" src="./assets/nav.svg" alt="Open Menu")
+
     nav-bar.side
+    img.close(@click="toggleSide" src="./assets/close.svg" alt="Close Menu")
     div.container
       hr
       transition(name='fade' mode='out-in')
@@ -14,6 +18,8 @@
 <script>
 import NavBar from './components/NavBar.vue'
 import headroom from './vendor/vue-headroom/headroom.vue'
+import router from './router'
+
 
 export default {
   data: function() {
@@ -22,6 +28,13 @@ export default {
     }
   },
   methods: {
+    toggleSide() {
+      if(document.body.classList == 'active') {
+        document.body.classList = '';
+      } else {
+        document.body.classList = 'active';
+      }
+    },
     menuPin() {
       this.menuPinned = true
     },
@@ -31,36 +44,70 @@ export default {
   },
   components: { NavBar, headroom }
 }
+
+
 </script>
 
 <style lang="sass">
 @import 'styles/fonts.scss';
 @import 'styles/globals.scss';
 
-// .headroom {
-//   translate 
-// }
-// .headroom-wrapper.pinned > div > nav {
 
-// }
+body.active {
+  overflow: hidden;
+  #app > *:not(.headroom-wrapper):not(.close) {
 
-.sidebar {
-  position: absolute;
-  left: -100%;
-  display: none !important;
-  visibility: hidden;
+    transform: translate3d(-270px, 0, 0);
+
+  }
+  #app > .headroom-wrapper > .headroom {
+    overflow: hidden;
+    transform: translate3d(-270px,0,0) !important;
+    top: 0;
+  }
+
+  #app {
+    img.close {
+      display: block;
+    }
+  }
 }
-// div.headroom-wrapper > div.headroom {
-//   // position: fixed !important;
-//   top: 0;
-// }
 
-// .pinned > div.headroom {
-//   position: fixed !important;
-// }
-// .navbar.clone {
-//   // display: none;
-// }
+#app > * {
+  transition: transform 120ms ease-in-out;
+}
+
+
+
+img.close {
+  display: none;
+}
+
+
+
+
+img.hamburger,img.close {
+
+  position: fixed;
+  right: 20px;
+  height: 1.2em;
+  top: 14px;
+  width: auto;
+  z-index: 9999999;
+
+  &:hover {
+    cursor: pointer;
+  }
+  @include susy-media($md) {
+    display: none;
+  }
+
+}
+
+.hamburger.top {
+  position: absolute;
+}
+
 
 * {
   box-model: border-box;
@@ -102,19 +149,12 @@ body {
 
         display: block;
       }
-      // @include container(80%);
+
     }
-    // @include susy-media($xl) {
-    //   @include container($lg);
-    // }
-    // @include susy-media($xxl) {
-    //   @include container($xl);
-    // }
+
   }
 }
-// img {
-//   z-index: -1;
-// }
+
 h1 {
   font-size: 1.8em;
   font-family: $heading-font-family;
@@ -134,8 +174,6 @@ h5 {
 hr {
   padding: 0;
   border: none;
-  // margin-top: 25px;
-  // margin-bottom: 40px;
   border-top: 12px solid $grey-black;
   color: $grey-light;
   text-align: center;

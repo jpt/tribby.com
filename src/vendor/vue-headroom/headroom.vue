@@ -40,7 +40,7 @@ export default {
 
     speed: {
       type: Number,
-      default: 250
+      default: 120
     },
 
     easing: {
@@ -90,7 +90,8 @@ export default {
         'top': '0',
         'left': '0',
         'right': '0',
-        'z-index': this.isInTop ? this.zIndex : 9999,
+        'width': '100%',
+        'z-index': this.isInTop ? 9999 : 9999,
         'transform': `translateY(${this.translate})`,
         'transition': this.isInTop ? `all ${this.speed}ms ${this.easing}` : null,
         'display': this.currentScrollY > 210 ? 'block' : 'none'

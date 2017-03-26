@@ -10,16 +10,15 @@ nav.navbar(:class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="clo
         router-link.img(to="/")
           img.home(:class="{ active: isParent(route.path) }" src="../assets/home.svg" alt="home")
       li(v-else :class="{ active: isParent(route.path) }")
-        router-link(:to="route.path" class="title") {{ route.children[0].name }}
+        router-link(:to="route.path" class="title" @click.native="removeActive") {{ route.children[0].name }}
         ul(v-if="route.children[1]")
           li(v-for="child in route.children")
             template(v-if="child.path != '' || child.name === 'More...'")
-              router-link(:to="route.path + '/' + child.path" exact class="child") {{ child.name }}
-    li.menu(@click="sideMenu")
-      img(src="../assets/nav.svg" alt="Menu")
+              router-link(:to="route.path + '/' + child.path" @click.native="removeActive" exact class="child") {{ child.name }}
 </template>
 <script>
 import Route from '../router'
+
 
 let routes = Route.options.routes
 
@@ -29,15 +28,15 @@ export default {
       route: '/',
       routes: routes,
       active: false,
-      menuOpen: false,
-      sideOpen: false
+      menuOpen: false
 
     }
   },
   methods: {
-    sideMenu() {
-
-
+    removeActive() {
+      if(document.body.classList == 'active') {
+        document.body.classList = ''
+      }
     },
     isParent(route) {
       let path = this.$route.matched[0].path === '' ? '/' : this.$route.matched[0].path
@@ -55,35 +54,11 @@ export default {
 </script>
 <style lang="sass" scoped>
 
-// nav > div {
-//   width: 100%;
-//   height: 100%;
-// }
+
 @import '../styles/globals.scss';
 
-// .headroom {
-//   position: fixed !important;
-//   display: block;
-//   top: 0px;
-//   left: 0px;
-//   right: 0px;
-//   z-index: 9999;
-//   transform: translateY(0px);
-//   transition: all 250ms ease-in-out;
-// }
-
-// .headroom {
-
-//   transform: translateY(-250px);
-// }
 
 
-// .headroom .clone {
-//   display: none !important;
-// }
-.headroom-wrapper.pinned nav {
-
-}
 nav > ul > li:not(.menu) {
   display: none;
   @include susy-media($md) {
@@ -92,13 +67,13 @@ nav > ul > li:not(.menu) {
 }
 
 nav.side {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  right: -270px;
   width: 270px;
   height: 100%;
-  z-index: 500000;
-  transform: translateX(270px);
+  z-index: 1;
+  display: block;
   padding: 0;
 
 }
@@ -118,7 +93,7 @@ nav.side > ul > li.menu {
 }
 
 nav.side > ul > li > ul {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 nav.side ul.menu {
@@ -126,6 +101,7 @@ nav.side ul.menu {
   float: left;
   flex-direction: column;
 }
+
 
 .headroom .navbar {
   padding-top: 15px;

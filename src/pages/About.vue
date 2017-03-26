@@ -8,5 +8,3 @@ div.about
 
     p Feel free to #[router-link(to="/about/contact") contact me] if you have an interesting problem you think I'd like to work on.
 </template>
-<style lang="sass">
-</style>
