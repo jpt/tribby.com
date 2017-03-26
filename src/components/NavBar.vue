@@ -110,6 +110,9 @@ nav.side ul.menu {
   p {
     display: none;
   }
+  img.home {
+    display: none;
+  }
   height: 34px;
   transition: height 120ms ease-in-out;
   overflow: hidden;
