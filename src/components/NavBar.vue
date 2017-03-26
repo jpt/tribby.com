@@ -108,10 +108,10 @@ nav.side ul.menu {
   padding-bottom: 0px;
 
   p {
-    display: none;
+    visibility: hidden;
   }
   img.home {
-    display: none;
+    visibility: hidden;
   }
   height: 34px;
   transition: height 120ms ease-in-out;
