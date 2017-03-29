@@ -110,6 +110,7 @@ img.hamburger,img.close {
 
 
 * {
+  -webkit-font-smoothing: subpixel-antialiased;
   box-model: border-box;
   padding: 0;
   margin: 0;

@@ -16,7 +16,7 @@ div.home
 
 @import "../styles/globals.scss";
 
-section.bog {
+section.blog {
   margin-top: 22px;
 }
 section.blog article {
@@ -32,4 +32,23 @@ section.blog article {
 
   margin-bottom: 50px;
 }
+
+// overrideing: 
+// div.container img:not(.logo) {
+//   @include susy-media($md) {
+//     width: auto;
+//     margin-left: (100% - $container) / 2;
+//     margin-right: (100% - $container) / 2;
+//     max-width: $container;
+//   }
+// }
+
+// div.home img:not(.logo) {
+//   @include susy-media($md) {
+//     width: auto;
+//     margin-left: (90% - $container) / 2;
+//     margin-right: (90% - $container) / 2;
+//     max-width: $container + 10%;
+//   }
+// }
 </style>
