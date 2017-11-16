@@ -116,6 +116,7 @@ img.hamburger,img.close {
   margin: 0;
 }
 
+
 body,div,p {
   font-family: $body-font-family;
   font-size: 16px;

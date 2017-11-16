@@ -1,7 +1,7 @@
 <template lang="pug">
 div.barlow
   h1 Barlow
-  p #[a(href="https://github.com/jpt/barlow") Barlow] is a libre, open source typeface I am currently developing. It's named after activist, co-founding EFF internet pioneer, and songwriter John Perry Barlow.
-  p #[a(href="https://github.com/jpt/barlow/archive/master.zip") Download]
-  img(src="https://raw.githubusercontent.com/jpt/barlow/master/documentation/barlow.gif")
+  p Barlow is a libre, open source typeface designed by Jeremy Tribby. #[a(href='') View the Barlow minisite] or access the specimen on Google Fonts: #[a(href='https://fonts.google.com/specimen/Barlow') Barlow], #[a(href='https://fonts.google.com/specimen/Barlow+Condensed') Barlow Condensed], and #[a(href='https://fonts.google.com/specimen/Barlow+Semi+Condensed') Barlow Semi Condensed].
+  p You can also #[a(href='https://github.com/jpt/barlow/archive/master.zip') download Barlow directly].
+  img(src='../assets/barlowp.png')
 </template>
