@@ -1,0 +1,30 @@
+@import '~susy/sass/susy';
+$susy: (columns: 12, gutters: 0, math: fluid, output: float, gutter-position: inside, global-box-sizing: border-box);
+
+$container: 85%;
+
+$xs: 12em;
+$sm: 30em;
+$ph: 34em;
+$md: 48em;
+$lg: 66em;
+$xl: 79em;
+$xxl: 88em;
+
+$max-width: 1100px;
+
+$grey-white: rgba(254,254,254,1);
+$grey-light: rgba(140,140,140,1);
+$grey-black: rgba(12,12,12,1);
+$grey-dark: rgba(77,77,77,1);
+$grey-medium: rgba(120,120,120,1);
+
+$body-bg-color: $grey-white;
+
+$heading-font-family: 'Akademie';
+$heading-font-weight: 700;
+
+$body-font-family: 'Escrow';
+$body-font-weight: 300;
+
+$interface-font-family: 'Barlow';
