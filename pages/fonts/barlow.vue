@@ -7,13 +7,28 @@
     </div>
     <div class="top">
       <div class="header">
-        <h1>Barlow</h1>
+        <div class="menu">
+          <h1>Barlow</h1>
+          <ul>
+            <li><a>Features</a></li>
+            <li><a>Interactive Specimen</a></li>
+            <li><a>Story</a></li>
+            <li>Contact</li>
+          </ul>
+        </div>
         <hr>
-        <p>Barlow is a slightly rounded, low-contrast, grotesk type family designed by Jeremy Tribby. Drawing from the visual style of the California public, Barlow shares qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software.</p>
-      </div>
-      <div class="download">
-        <a href="https://github.com/jpt/barlow/archive/master.zip">Download Barlow v1.2</a>
-        <a href="https://fonts.google.com/specimen/Barlow" target="_blank">Google Fonts</a>
+        <div class="intro">
+          <div class="mono">
+            <h1>Ba</h1>
+          </div>
+          <div>
+            <p>Barlow is a slightly rounded, low-contrast, grotesk font family designed by Jeremy Tribby. The typeface draws from the visual style of the California public, sharing qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software.</p>
+            <div class="download">
+              <a href="https://github.com/jpt/barlow/archive/master.zip">Download Barlow v1.2</a>
+              <a href="https://fonts.google.com/specimen/Barlow" target="_blank">Google Fonts</a>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <hr class="thin">
@@ -59,6 +74,9 @@
           <p contenteditable spellcheck="false" @input="updateText" :style="{ fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
         </div>
       </div> -->
+    <div>
+      <p style="font-family:'Barlow-ExtraLight';margin-left:10%;margin-top:50px;font-size:24px;">Full minisite coming soon! Features, interactive specimen, story and contact will all be here shorty.</p>
+    </div>
     </div>
   </div>
 </template>
@@ -293,11 +311,23 @@ export default {
 
 $sm: 480px;
 $md: 786px;
-$lg: 1440px;
+$lg: 1024px;
+$xl: 1220px;
+$xxl: 1440px;
+
 $bg: #15161c;
 $white: #fafaf0;
 $black: #15161c;
 
+.menu li {
+  font-family: 'Barlow-Medium';
+}
+.menu {
+  display: none;
+  @include breakpoint($md) {
+    display: block;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -323,6 +353,37 @@ body,html {
   font-style: italic;
 }
 
+div.menu ul {
+  display: none;
+  @include breakpoint($md) {
+    display: flex;
+  }
+}
+div.menu {
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    display: inline-block;
+    font-feature-settings: "smcp"; 
+    text-transform: lowercase;
+    font-family: 'Barlow-SemiBold';
+    letter-spacing: 0.07em;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 28px;
+    margin-right: 3em;
+
+  }
+  ul li:last-of-type {
+    margin-right: 0;
+  }
+}
+
 span {
   display: none;
   @include breakpoint($md) {
@@ -336,6 +397,7 @@ span {
     padding: 0 10%;
   }
 }
+
 
 .top {
   padding-bottom: 10em;
@@ -371,19 +433,33 @@ hr.thin {
    margin-bottom: 2.5em;
    display: flex;
    flex-direction: column;
+   font-size: 16px;
    a {
     min-width: 310px;
     margin-bottom: 1em;
     width: 100%;
     text-align: center;
    }
-   @include breakpoint($md) {
+   @include breakpoint($xl) {
     flex-direction: row;
     a {
       margin-bottom: 0;
       max-width: 310px;
     }
    }
+}
+.mono h1 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-size: 300px;
+  // transform: rotate(8deg);
+  line-height: 190px;
+  vertical-align: top;
+  text-transform: none;
+  font-family: 'Barlow-SemiBold';
+  font-weight: 600;
+  margin-left: -20px;
 }
 .download a {
 
@@ -405,11 +481,32 @@ hr.thin {
 }
 .intro {
 
+  display: flex;
+  flex-direction: column;
+  @include breakpoint($lg) {
+    flex-direction: row;
+  }
+  @include breakpoint($lg) {
+    div:first-of-type {
+      margin-right: 80px;
+    }
+  }
+
+  div > p {
+    margin-top: 90px;
+    @include breakpoint($lg) {
+      margin-top: 0;
+    }
+  }
+
 }
 
 
 .top {
-  padding-top: 80px;
+  padding-top: 50px;
+  @include breakpoint($md) {
+    padding-top: 80px;
+  }
   background-color: $black;
 }
 
@@ -417,14 +514,14 @@ hr.thin {
 
 }
 .hero {
-  max-width: $lg;
+  max-width: $xxl;
   overflow-x: auto;
 
   // padding-top: 30px;
   padding-bottom: 90px;
   font-size: 3.3vw;
 
-  @include breakpoint($lg) {
+  @include breakpoint($xxl) {
     font-size: 48px;
   }
 
@@ -449,7 +546,18 @@ hr.thin {
   // @include breakpoint($md) {
   //   margin-left: 5em;
   // }
-  max-width: 700px;
+  max-width: 100%;
+  width: 100%;
+  @include breakpoint($lg) {
+    width: 420px;
+    max-width: 700px;
+  }
+  @include breakpoint($xl) {
+    width: 580px;
+  }
+  @include breakpoint($xxl) {
+    width: 700px;
+  }
   font-family: 'Barlow-Medium';
   font-weight: 500;
   font-size: 16px;
@@ -520,12 +628,7 @@ h1 {
   }
 
 }
-p {
-  margin-bottom: 2em;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-}
+
 ul {
   list-style-type: none;
   margin-bottom: 2em;
