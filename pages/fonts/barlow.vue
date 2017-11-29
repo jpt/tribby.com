@@ -32,20 +32,29 @@
       </div>
       <div>
         <hr class="thin">
+
       </div>
       <div class="hero">
         <div class="carousel">
+          <h1 class="style">{{ carouselStateToStyle }}</h1>
           <template v-for="(width, wi) in widths">
             <template v-for="(style, si) in styles">
-              <div class="slide" :class="{ italic: style === 'Italic', active: isActive(wi,si)}" v-for="weight in reversedWeights">
-                <h2 :style="{ fontFamily: barlowFamily(width,weight.name,style), fontWeight: barlowWeight(weight) }">You weary giants of flesh and steel.</h2>
-              </div>
+              <transition>
+                <div class="slide">
+                  <div class="line" :class="{ italic: style === 'Italic', active: isActive(wi,si)}" v-for="weight in reversedWeights">
+                    <h2 :style="{ fontFamily: barlowFamily(width,weight.name,style), fontWeight: barlowWeight(weight) }">You weary giants of flesh and steel.</h2>
+                  </div>
+                </div>
+              </transition>
             </template>
           </template>
         </div>
       </div>
     </div>
-    <!-- <div class="middle">
+    <div class="comingsoon">
+      <p style="font-family:'Barlow-ExtraLight';margin-left:10%;margin-top:50px;font-size:24px;">Full minisite coming soon! Features, interactive specimen, story and contact will all be here shorty.</p>
+    </div>
+    <div class="specimen">
       <div class="styles">
         <ul>
           <li v-for="weight in weights">
@@ -73,17 +82,13 @@
           <div class="size">{{ pair[0] }}px / {{ pair[1] }}px</div>
           <p contenteditable spellcheck="false" @input="updateText" :style="{ fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
         </div>
-      </div> -->
-    <div>
-      <p style="font-family:'Barlow-ExtraLight';margin-left:10%;margin-top:50px;font-size:24px;">Full minisite coming soon! Features, interactive specimen, story and contact will all be here shorty.</p>
-    </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import _ from 'lodash'
-
 export default {
   head () {
     return {
@@ -168,11 +173,28 @@ export default {
     }
   },
   methods: {
+    // requestAnimFrame: function (fn, delay) {
+    //   var start = new Date().getTime()
+    //   var handle = {}
+
+    //   function loop () {
+    //     var current = new Date().getTime()
+    //     var delta = current - start
+
+    //     if (delta >= delay) {
+    //       fn.call()
+    //       start = new Date().getTime()
+    //     }
+    //     handle.value = requestAnimFrame(loop)
+    //   }
+
+    //   handle.value = this.requestAnimFrame(loop)
+    //   return handle
+    // },
     isActive: function (wi, si) {
       return wi === this.carouselState && si === this.carouselItalic
     },
     onInterval: function () {
-      console.log(this.carouselItalic)
       if (this.carouselItalic === 0) {
         this.carouselItalic = 1
       } else if (this.carouselItalic === 1) {
@@ -237,8 +259,19 @@ export default {
   },
   mounted () {
     setInterval(this.onInterval, 2000)
+    // this.requestAnimFrame(this.onInterval, 2000)
   },
   computed: {
+    carouselStateToStyle: function () {
+      switch (this.carouselState) {
+        case 0:
+          return 'Regular'
+        case 1:
+          return 'SemiCondensed'
+        case 2:
+          return 'Condensed'
+      }
+    },
     activeCarouselState: function () {
       return this.carouselState
     },
@@ -319,6 +352,9 @@ $bg: #15161c;
 $white: #fafaf0;
 $black: #15161c;
 
+
+
+
 .menu li {
   font-family: 'Barlow-Medium';
 }
@@ -341,13 +377,53 @@ body,html {
 
 }
 
-.slide {
-  display: none;
+
+.carousel h1.style {
+  font-family: 'Barlow-Bold';
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  font-feature-settings: "smcp";
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.25);
 }
 
+// .slide:nth-of-type(1) {
+//   opacity: 1;
+// }
+// .slide {
+//   position: absolute;
+//   opacity: 1;
+//   height: 100%;
+// }
+
+.line {
+  display: none;
+}
 .active {
   display: block;
 }
+
+.slide:nth-of-type(1) {
+  animation:fade 8s infinite;
+} 
+.slide:nth-of-type(2) {
+  animation:fade2 8s infinite;
+}
+.slide:nth-of-type(3) {
+  animation: fade3 8s infinite;
+}
+.slide:nth-of-type(4) {
+  animation: fade4 8s infinite;
+}
+
+.slide:nth-of-type(5) {
+  animation: fade5 8s infinite;
+}
+.slide:nth-of-type(6) {
+  animation: fade6 8s infinite;
+}
+
 
 .italic {
   font-style: italic;
@@ -391,7 +467,7 @@ span {
   }
 }
 
-.top > div {
+.section {
   padding: 0 5%;
   @include breakpoint($md) {
     padding: 0 10%;
@@ -399,16 +475,14 @@ span {
 }
 
 
-.top {
-  padding-bottom: 10em;
-}
+
 hr {
   border-top: 8px solid $white;
   position: relative;
   max-width: 1200px;
   align: left;
   &:first-of-type {
-    margin-bottom: 40px;
+    margin-bottom: 2em;
   }
 
 }
@@ -429,23 +503,45 @@ hr.thin {
 }
 
 .download {
-   margin-top: 4.8em;
-   margin-bottom: 2.5em;
+
+   margin-top: 2.8em;
+   @inclide breakpoint($xl) {
+    margin-top: 4.8em;
+   }
    display: flex;
    flex-direction: column;
    font-size: 16px;
    a {
-    min-width: 310px;
+    width: 350px;
     margin-bottom: 1em;
     width: 100%;
     text-align: center;
+    border: 1px solid $white;
+    padding: 1em 4.5em;
+    margin-right: 1em;
+    color: $white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Barlow-Medium';
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    &:hover, &:first-of-type {
+      color: $black;
+      border: 1px solid $black;
+      background-color: $white;
+    }
    }
    @include breakpoint($xl) {
     flex-direction: row;
     a {
       margin-bottom: 0;
-      max-width: 310px;
+      margin-top: 20px;
+      max-width: 350px;
+      padding: 1.3em 2.1em;
     }
+    margin-top: 1.6em;
+
    }
 }
 .mono h1 {
@@ -457,28 +553,11 @@ hr.thin {
   line-height: 190px;
   vertical-align: top;
   text-transform: none;
-  font-family: 'Barlow-SemiBold';
-  font-weight: 600;
-  margin-left: -20px;
+  font-family: 'Barlow-ExtraLight';
+  font-weight: 275;
+  margin-left: -32px;
 }
-.download a {
 
-  border: 1px solid $white;
-  padding: 1em 4.5em;
-  margin-right: 1em;
-  color: $white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-family: 'Barlow-Medium';
-  font-weight: 500;
-  letter-spacing: 0.3px;
-
-  &:hover, &:first-of-type {
-    color: $black;
-    border: 1px solid $black;
-    background-color: $white;
-  }
-}
 .intro {
 
   display: flex;
@@ -502,23 +581,13 @@ hr.thin {
 }
 
 
-.top {
-  padding-top: 50px;
-  @include breakpoint($md) {
-    padding-top: 80px;
-  }
-  background-color: $black;
-}
 
-.top .container {
 
-}
 .hero {
   max-width: $xxl;
-  overflow-x: auto;
+  // overflow-x: auto;
 
   // padding-top: 30px;
-  padding-bottom: 90px;
   font-size: 3.3vw;
 
   @include breakpoint($xxl) {
@@ -534,8 +603,6 @@ hr.thin {
 
   color: $white;
   font-size: 1.5em;
-  padding: 0;
-  margin: 0;
 }
 
 .top h2 {
@@ -566,6 +633,7 @@ hr.thin {
 
 }
 
+
 h1 {
 
   font-family: 'BarlowCondensed-SemiBold';
@@ -591,13 +659,47 @@ h1 {
 
 .examples {
   // margin-left: 208px;
-  width: 100%;
-  max-width: 720px;
+
 }
+
+.examples p:focus {
+    outline: none;
+}
+
+.comingsoon {
+
+}
+.specimen {
+  // padding: 0 10%;
+  margin-top: 80px;
+
+  
+}
+
+.top > div, .examples > div {
+  padding: 0 5%;
+  @include breakpoint(420px) {
+    padding: 0 10%;
+  }
+  width: 100%;
+  padding: 0 10%;
+
+}
+.top {
+  padding-top: 50px;
+  @include breakpoint($md) {
+    padding-top: 80px;
+  }
+  background-color: $black;
+  padding-bottom: 10em;
+}
+
+
 
 .width {
   font-size: 1em;
 }
+
 
 .styles {
   display: flex;
@@ -605,7 +707,7 @@ h1 {
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
-  max-width: 720px;
+  // max-width: 720px;
   min-width: 590px;
   // float: left;
   overflow-x: scroll;
@@ -613,10 +715,11 @@ h1 {
 
 }
 
+
 .styles > ul > li {
   font-feature-settings: "smcp"; 
   text-transform: lowercase;
-  font-family: 'Barlow';
+  font-family: 'Barlow-Regular';
   letter-spacing: 0.07em;
   font-weight: 500;
   font-size: 14px;
@@ -626,43 +729,38 @@ h1 {
   &:hover {
     cursor: pointer;
   }
-
-}
-
-ul {
-  list-style-type: none;
-  margin-bottom: 2em;
-  margin-right: 2em;
-  float: left;
-}
-li {
-  overflow: hidden;
-  font-size: 1em;
-  line-height: 1.35em;
-  font-weight: 400;
-}
-
-
-li a {
-  display: inline-block;
-  &:after {
-    content: '';
-    display: block;
-    margin-top: -4px;
-    height: 1px;
-    width: 0%;
-    background: #000;
-    transition: width 150ms;
+  ul {
+    list-style-type: none;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    float: left;
   }
-  &.active {
+  li {
+    overflow: hidden;
+    font-size: 1em;
+    line-height: 1.35em;
+    font-weight: 400;
+  }
+
+
+  li a {
+    display: inline-block;
     &:after {
-      width: 100%;
+      content: '';
+      display: block;
+      margin-top: -4px;
+      height: 1px;
+      width: 0%;
+      background: #000;
+      transition: width 150ms;
+    }
+    &.active {
+      &:after {
+        width: 100%;
+      }
     }
   }
 }
 
 
-.examples p:focus {
-    outline: none;
-}
 </style>
