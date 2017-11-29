@@ -596,8 +596,17 @@ hr.thin {
       }
     }
   }
-   @include breakpoint($xl) {
+   @include breakpoint($lg) {
     flex-direction: row;
+    a {
+      min-width: 210px;
+      padding: 1.3em 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+   }
+    @include breakpoint($xl) {
+
     a {
       margin-bottom: 0;
       margin-top: 20px;
