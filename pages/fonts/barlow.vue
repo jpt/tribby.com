@@ -527,17 +527,21 @@ hr.thin {
 
 .download {
 
-   margin-top: 2.8em;
-   @include breakpoint($xl) {
+  margin-top: 2.8em;
+  @include breakpoint($xl) {
     margin-top: 1.4em !important;
-   }
-   @include breakpoint($xxl) {
+  }
+  @include breakpoint($xxl) {
     margin-top: 3.1em !important;
-   }
-   display: flex;
-   flex-direction: column;
-   font-size: 16px;
-   a {
+  }
+  display: flex;
+  flex-direction: column-reverse;
+  @include breakpoint($lg) {
+    flex-direction: column;
+  }
+  font-size: 16px;
+
+  a {
     width: 350px;
     margin-bottom: 1em;
     width: 100%;
@@ -552,24 +556,64 @@ hr.thin {
     font-weight: 500;
     letter-spacing: 0.3px;
 
+    @include breakpoint($md) {
+      a {
+        margin-bottom: 0;
+        margin-top: 20px;
+        max-width: 350px;
+        padding: 1.3em 2.1em;
+     }
+    }
+
     &:hover, &:first-of-type {
+      color: $white;
+      border: 1px solid $white;
+      background-color: $black;
+      @include breakpoint($lg) {
+        color: $black;
+        border: 1px solid $black;
+        background-color: $white;
+        &:hover, &:first-of-type {
+          color: $black;
+          border: 1px solid $black;
+          background-color: $white;
+        }
+      }
+    }
+    &:nth-of-type(2) {
       color: $black;
       border: 1px solid $black;
       background-color: $white;
+      &:hover, &:first-of-type {
+        color: $black;
+        border: 1px solid $black;
+        background-color: $white;
+      }
+      @include breakpoint($lg) {
+         color: $white;
+      border: 1px solid $white;
+      background-color: $black;
+      }
     }
-   }
+  }
    @include breakpoint($xl) {
     flex-direction: row;
     a {
       margin-bottom: 0;
       margin-top: 20px;
       max-width: 350px;
-      padding: 1.3em 2.1em;
+      min-width: 270px;
+      padding: 1.3em 2.4em;
     }
     margin-top: 1.6em;
 
    }
+  @include breakpoint($xl) {
+    flex-direction: row;
+    margin-top: 1.6em;
+  }
 }
+
 .mono h1 {
   position: relative;
   padding: 0;
