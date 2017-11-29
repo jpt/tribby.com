@@ -38,9 +38,9 @@
           <h1 class="style">{{ carouselStateToStyle }}</h1>
           <template v-for="(width, wi) in widths">
             <template v-for="(style, si) in styles">
-              <transition>
+              <transition name="ease-in-fast-out">
                 <div class="slide">
-                  <div class="line" :class="{ italic: style === 'Italic', active: isActive(wi,si)}" v-for="weight in reversedWeights">
+                  <div class="headline" :class="{ italic: style === 'Italic', active: isActive(wi,si)}" v-for="weight in reversedWeights">
                     <h2 :style="{ fontFamily: barlowFamily(width,weight.name,style), fontWeight: barlowWeight(weight) }">You weary giants of flesh and steel.</h2>
                   </div>
                 </div>
@@ -352,7 +352,13 @@ $white: #fafaf0;
 $black: #15161c;
 
 
-
+.ease-in-fast-out-enter-active, .ease-in-fast-out-leave-active {
+  transition: opacity .5s;
+  opacity: 1;
+}
+.ease-in-fast-out-enter, .ease-in-fast-out-leave-to {
+  opacity: 0;
+}
 
 .menu li {
   font-family: 'Barlow-Medium';
@@ -414,7 +420,7 @@ h1.style {
 //   height: 100%;
 // }
 
-.line {
+.headline {
   display: none;
 }
 .active {
