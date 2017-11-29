@@ -172,24 +172,6 @@ export default {
     }
   },
   methods: {
-    // requestAnimFrame: function (fn, delay) {
-    //   var start = new Date().getTime()
-    //   var handle = {}
-
-    //   function loop () {
-    //     var current = new Date().getTime()
-    //     var delta = current - start
-
-    //     if (delta >= delay) {
-    //       fn.call()
-    //       start = new Date().getTime()
-    //     }
-    //     handle.value = requestAnimFrame(loop)
-    //   }
-
-    //   handle.value = this.requestAnimFrame(loop)
-    //   return handle
-    // },
     isActive: function (wi, si) {
       return wi === this.carouselState && si === this.carouselItalic
     },
@@ -651,7 +633,7 @@ hr.thin {
   }
 
   div > p {
-    margin-top: 90px;
+    margin-top: 75px;
     @include breakpoint($lg) {
       margin-top: 0;
     }
