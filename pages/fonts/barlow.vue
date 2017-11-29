@@ -22,7 +22,7 @@
             <h1>Ba</h1>
           </div>
           <div>
-            <p>Barlow is a slightly rounded, low-contrast, grotesk font family designed by Jeremy Tribby. The typeface draws from the visual style of the California public, sharing qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software.</p>
+            <p>Barlow is a slightly rounded, low-contrast, grotesk font superfamily designed by Jeremy Tribby. The typeface draws from the visual style of the California public, sharing qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software.</p>
             <div class="download">
               <a href="https://github.com/jpt/barlow/archive/master.zip">Download Barlow v1.2</a>
               <a href="https://fonts.google.com/specimen/Barlow" target="_blank">Google Fonts</a>
@@ -32,7 +32,6 @@
       </div>
       <div>
         <hr class="thin">
-
       </div>
       <div class="hero">
         <div class="carousel">
@@ -52,7 +51,7 @@
       </div>
     </div>
     <div class="comingsoon">
-      <p style="font-family:'Barlow-ExtraLight';margin-left:10%;margin-top:50px;font-size:24px;">Full minisite coming soon! Features, interactive specimen, story and contact will all be here shorty.</p>
+      <h1 class="title">Full minisite coming soon! The various sections -- "Features," "Interactive Specimen," "Story," and "Contact," will all be here shorty. Everything below the dark area above<sup>[1]</sup>, i.e. everything after you finish reading this very paragraph is currently being built right now! Keep checking back and email <a href="mailto:jeremy@tribby.com">jeremy@tribby.com</a> to be on the mailing list.<br><br><sup>1. A.K.A., all the things in the top menu that I lied to you about exisiting.</sup></h1>
     </div>
     <div class="specimen">
       <div class="styles">
@@ -372,15 +371,33 @@ $black: #15161c;
 body,html {
   background-color: $black;
 }
-#minisite {
 
-
+sup,sub {
+  font-size: 0.5em;
+  font-family: 'Barlow-Regular';
+  font-weight: 400;
 }
 
+h1.title {
+  font-family: 'Barlow-Light';
+  font-size: 30px;
+  @include breakpoint($xl) {
+    font-size: 40px;
+  }
+  max-width: 1200px;
+  font-weight: 300;
+  margin-bottom: 1.2em;
+  letter-spacing: 1px;
+  text-transform: none;
+  color: rgba(255,255,255,0.25);
+  margin-top: 1.5em;
+  padding: 0 10%;
+  color: $black;
+}
 
-.carousel h1.style {
-  font-family: 'Barlow-Bold';
-  font-size: 16px;
+h1.style {
+  font-family: 'Barlow-ExtraLight';
+  font-size: 13px;
   font-weight: 700;
   margin-bottom: 35px;
   font-feature-settings: "smcp";
@@ -505,8 +522,11 @@ hr.thin {
 .download {
 
    margin-top: 2.8em;
-   @inclide breakpoint($xl) {
-    margin-top: 4.8em;
+   @include breakpoint($xl) {
+    margin-top: 1.4em !important;
+   }
+   @include breakpoint($xxl) {
+    margin-top: 3.1em !important;
    }
    display: flex;
    flex-direction: column;
@@ -641,7 +661,7 @@ h1 {
   margin-bottom: 2.5em;
   padding: 0;
   letter-spacing: 2px;
-  text-transform: uppercase;
+
 }
 
 
