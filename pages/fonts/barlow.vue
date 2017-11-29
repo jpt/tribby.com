@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="comingsoon">
-      <h1 class="title">Full minisite coming soon! The various sections -- "Features," "Interactive Specimen," "Story," and "Contact," will all be here shorty. Everything below the dark area above<sup>[1]</sup>, i.e. everything after you finish reading this very paragraph is currently being built right now! Keep checking back and email <a href="mailto:jeremy@tribby.com">jeremy@tribby.com</a> to be on the mailing list.<br><br><sup>1. A.K.A., all the things in the top menu that I lied to you about exisiting.</sup></h1>
+      <h1 class="title">Full minisite coming soon! The various sections -- "Features," "Interactive Specimen," "Story," and "Contact," will all be here shorty. Everything below the dark area above<sup>[1]</sup>, i.e. everything after you finish reading this very paragraph is currently being built right now! Keep checking back and email <a href="mailto:jeremy@tribby.com">jeremy@tribby.com</a> to be on the mailing list.<br><br><sup>1. A.K.A., all the things in the menu at the very top of this page that I lied to you about exisiting.</sup></h1>
     </div>
     <div class="specimen">
       <div class="styles">
