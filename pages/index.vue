@@ -13,6 +13,9 @@
 </template>
 
 <style scoped>
+html {
+  -webkit-font-smoothing: antialiased;
+}
 .container {
   padding: 0 1em;
   min-height: 100vh;
