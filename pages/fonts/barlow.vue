@@ -11,6 +11,7 @@
           <h1 class="barlow">Barlow</h1>
           <ul>
             <li><nuxt-link to="#specimen">Interactive Specimen</nuxt-link></li>
+            <li><nuxt-link to="#story">Story</nuxt-link></li>
             <li><a href="https://github.com/jpt/barlow" target="_new">Github</a></li>
             <li><a href="mailto:jeremy@tribby.com">Contact</a></li>
           </ul>
@@ -122,12 +123,14 @@
         </div> -->
 <!--       </div> -->
       <div class="section story black">
+        <a name="story" id="story"></a>
         <h1 class="title">Story</h1>
         <hr class="white thin">
-        <p>In 2015 I was working at the Electronic Frontier Foundation and quickly bonded with art director Hugh D'Andrade over our shared love of fonts derived from the DIN Engschrift grid. We agreed there wasn't a good libre, open source option. I got a good photo of the original Engschrift grid from designer <a href="http://nitrofurano.altervista.org/">Paulo Silva</a> and started to draw out some ideas. Over the next few months I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors Dave Crossland and Thomas Phinney, and then another, along with my colleague Soraya Okuda. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
+        <p>A few years ago I worked at the Electronic Frontier Foundation, where I quickly bonded with art director Hugh D'Andrade over our shared affinity for fonts derived from the DIN Engschrift grid, and we agreed there wasn't a good open source option. Somewhere along the line I got good photo of the original Engschrift grid from designer <a href="http://nitrofurano.altervista.org/">Paulo Silva</a> and started to draw out some ideas. Over the next few months I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors Dave Crossland and Thomas Phinney, and then another, along with my colleague Soraya Okuda. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
+        <img src="~/assets/early.jpg">
         <p>The font was named after EFF co-founder, activist, songwriter, and cattle wrancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked, so I met with him over at <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a>'s house. Gilmore and Barlow debated dystopia and utopia, respectively, as it can play out in the world of web fonts and web font distribution, which involves a lot of large, data-hungry companies. It was a fascinating conversation, and I was suprised and honored to walk away with Barlow's blessing.</p>
-        <p>As I worked on the font family and thought about my meeting with giants of activism in California, I looked at ways to incorporate the public aspects of my native state -- its highway and train signs, especially -- deeper into the font's aesthetic. Our BART train system uses typefaces a bit rounder than the average street sign, and you can see this especially in Barlow's heavier weights.</p>
-        <p>Barlow is free software, released under the SIL Open Font License. If you'd like to thrown a zillionth of a bitcoin my way, the address is 12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf.</p>
+        <p>I worked on the font family and thought about my meeting with giants of activism in California, I looked at ways to incorporate the public aspects of my native state -- its highway and train signs, especially -- deeper into the font's aesthetic. Our BART train system uses typefaces a bit rounder than the average street sign, and you can see this especially in Barlow's heavier weights.</p>
+        <p>Barlow is free software, released under the SIL Open Font License. If you'd like to throw a zillionth of a bitcoin my way, the address is 12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf.</p>
       </div>
     </div> 
 
@@ -408,21 +411,26 @@ $white: #fafaf0;
 $black: #15161c;
 
 div.story {
+  img {
+    max-width: 800px;
+    width: 100%;
+    padding-bottom: 60px;
+  }
   h1 {
     font-family: 'Barlow-Regular';
     font-weight: 400;
   }
   padding-bottom: 120px;
   p {
-    padding-bottom: 36px;
+    padding-bottom: 42px;
     font-family: 'Barlow-Medium';
     font-weight: 500;
     max-width: 700px;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 34px;
   }
   p:first-of-type {
-    padding-top: 40px;
+    padding-top: 45px;
   }
 }
 html, body {
