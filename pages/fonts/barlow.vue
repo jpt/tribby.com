@@ -124,7 +124,7 @@
       <div class="section story black">
         <h1 class="title">Story</h1>
         <hr class="white thin">
-        <p>Coming soon! TLDR till then: this font is named after John Perry Barlow :)</p>
+        <p>Coming soon! TLDR til then: this font is named after John Perry Barlow :)</p>
       </div>
     </div> 
 
