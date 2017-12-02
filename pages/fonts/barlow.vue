@@ -84,7 +84,7 @@
       </div>
       <div class="examples">
 
-        <h2 class="title sub">Click or tap the text to edit.</h2>
+        <!-- <h2 class="title sub">Click or tap the text to edit.</h2> -->
 <!--         <div v-for="pair in pairs">
           <div class="size">{{ pair[0] }}px / {{ pair[1] }}px</div>
           <div>
