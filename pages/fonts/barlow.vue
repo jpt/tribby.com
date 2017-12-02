@@ -432,9 +432,9 @@ div.story {
     line-height: 34px;
   }
   p.btc {
-    font-family: 'Barlow-Regular';
+    font-family: 'Barlow-SemiBold';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 13px;
   }
   p:first-of-type {
     padding-top: 45px;
