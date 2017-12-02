@@ -150,8 +150,8 @@ export default {
       selectedCase: 'Default',
       bodyText: '',
       types: [
-        'Headline',
-        'Sub headline',
+        // 'Headline',
+        // 'Sub headline',
         'Body text'
       ],
       weights: {
