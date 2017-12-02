@@ -871,7 +871,7 @@ hr.black {
   // overflow-x: auto;
 
   // padding-top: 30px;
-  font-size: 3vw;
+  font-size: 2.8vw;
   @included breakpoint($sm) {
     font-size: 3.3vw;
   }
