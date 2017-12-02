@@ -10,7 +10,7 @@
         <div class="menu">
           <h1 class="barlow">Barlow</h1>
           <ul>
-            <li><a href="specimen">Interactive Specimen</a></li>
+            <li><nuxt-link to="#specimen">Interactive Specimen</nuxt-link></li>
             <li><a>Story</a></li>
             <li><a>Contact</a></li>
           </ul>
@@ -50,6 +50,7 @@
       </div>
     </div>
     <div class="section comingsoon">
+      <a name="specimen" id="specimen"></a>
       <h1 class="title">Interactive Specimen (In development -- check back soon!)</h1>
       <hr class="thin black">
       <h2 class="title sub">Pick a weight, width, style, and case for the body text below.</h2>
@@ -494,6 +495,8 @@ div.menu {
     line-height: 28px;
     margin-right: 3em;
     a {
+      text-decoration: none;
+      color: $white;
       transition: opacity 120ms linear;
       opacity: 0.85;
       &:hover {

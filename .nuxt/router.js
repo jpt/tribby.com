@@ -3,9 +3,9 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _75cec15a = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
-const _223c7f18 = () => import('../pages/fonts/barlow.vue' /* webpackChunkName: "pages/fonts/barlow" */).then(m => m.default || m)
-const _270edff5 = () => import('../pages/fonts/blog.vue' /* webpackChunkName: "pages/fonts/blog" */).then(m => m.default || m)
+const _5a604784 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _fc4945e0 = () => import('../pages/fonts/barlow.vue' /* webpackChunkName: "pages/fonts/barlow" */).then(m => m.default || m)
+const _b48218de = () => import('../pages/fonts/blog.vue' /* webpackChunkName: "pages/fonts/blog" */).then(m => m.default || m)
 
 
 
@@ -43,17 +43,17 @@ export function createRouter () {
     routes: [
 		{
 			path: "/",
-			component: _75cec15a,
+			component: _5a604784,
 			name: "index"
 		},
 		{
 			path: "/fonts/barlow",
-			component: _223c7f18,
+			component: _fc4945e0,
 			name: "fonts-barlow"
 		},
 		{
 			path: "/fonts/blog",
-			component: _270edff5,
+			component: _b48218de,
 			name: "fonts-blog"
 		}
     ],
