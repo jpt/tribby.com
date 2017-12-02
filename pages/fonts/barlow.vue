@@ -827,14 +827,18 @@ hr.black {
   position: relative;
   padding: 0;
   margin: 0;
-  font-size: 300px;
+  font-size: 250px;
+  margin-left: -27px;
+  @include breakpoint($sm) {
+    font-size: 300px;
+    margin-left: -32px;
+  }
   // transform: rotate(8deg);
   line-height: 190px;
   vertical-align: top;
   text-transform: none;
   font-family: 'Barlow-ExtraLight';
   font-weight: 275;
-  margin-left: -32px;
 }
 
 .intro {
@@ -867,8 +871,11 @@ hr.black {
   // overflow-x: auto;
 
   // padding-top: 30px;
-  font-size: 3.3vw;
-
+  font-size: 3vw;
+  @included breakpoint($sm) {
+    font-size: 3.3vw;
+  }
+  
   @include breakpoint($xxl) {
     font-size: 48px;
   }
