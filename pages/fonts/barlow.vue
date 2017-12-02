@@ -61,7 +61,8 @@
         <div><a class="active">Headings</a></div>
         <div><a>Body text</a></div>
       </div> -->
-      <div class="styles-wrapper">
+      <div class="styles-wrapper" @scroll="removeStyles">
+        <div class="scroll" :class="{ active: scrollState === 'scrolled' }">Swipe &gt; for more</div>
         <div class="styles">
           <ul>
             <li v-for="type in types">
@@ -141,6 +142,7 @@ export default {
       elapsed: 0,
       carouselState: 0,
       carouselItalic: 0,
+      scrollState: 'unscrolled',
       carouselCurrentWidth: 'Regular',
       carouselCurrentStyle: 'Roman',
       selectedType: 'Body text',
@@ -235,6 +237,9 @@ export default {
     // isActive: function (width) {
     //   return width === this.carouselState
     // },
+    removeStyles: function () {
+      this.scrollState = 'scrolled'
+    },
     barlowFamily: function (width, weight, style) {
       if (style === 'Roman') {
         style = ''
@@ -255,6 +260,7 @@ export default {
     barlowWeight: function (weight) {
       return weight.css
     },
+
     updateText (e) {
       this.bodyText = e.target.innerText
     },
@@ -390,7 +396,11 @@ $bg: #15161c;
 $white: #fafaf0;
 $black: #15161c;
 
-
+html, body {
+  overflow: hidden;
+  // height: 100%;
+  // width: 100%;
+}
 .text-type {
   display: flex;
   flex-direction: coumn;
@@ -602,16 +612,17 @@ span {
   h3 {
     clear: both;
     display: block;
-    font-family: 'Barlow-Bold';
-    font-weight: 700;
+    font-family: 'Barlow-SemiBold';
+    font-weight: 600;
     font-size: 42px;
     padding-top: 30px;
     padding-bottom: 10px;
   }
   h4 {
-    font-family: 'Barlow-SemiBoldItalic';
+    font-family: 'Barlow-MediumItalic';
     opacity: 0.5;
     padding-bottom: 40px;
+    font-weight: 500;
     font-size: 30px;
   }
 }
@@ -912,9 +923,29 @@ h1.barlow {
   font-size: 1em;
 }
 
+.scroll.active {
+  opacity: 0;
+}
+.scroll {
+  opacity: 1; 
+  font-size: 12px;
+  font-family: 'Barlow-Medium';
+  font-weight: 500;
+  position: absolute;
+  margin-top: -30px;
+  text-align: right;
+  width: 100%;
+  display: block;
+  padding: 0 5%;
+
+  @include breakpoint(560px) {
+    opacity: 0;
+  }
+}
 .styles-wrapper {
   clear: both;
   display: block;
+  overflow-x: scroll;
   float: left;
   width: 100%;
   background-color: $white;
@@ -923,7 +954,7 @@ h1.barlow {
 
 .styles {
   padding-left: 10%;
-  width: 100%;
+  // width: 100%;
   color: $black;
   display: flex;
   flex-direction: row;
@@ -934,7 +965,6 @@ h1.barlow {
   max-width: 820px;
   min-width: 650px;
   float: left;
-  overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   // padding-bottom: 40px;
 
