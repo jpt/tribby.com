@@ -11,8 +11,8 @@
           <h1 class="barlow">Barlow</h1>
           <ul>
             <li><nuxt-link to="#specimen">Interactive Specimen</nuxt-link></li>
-            <li><a>Story</a></li>
-            <li><a>Contact</a></li>
+            <li><a href="https://github.com/jpt/barlow" target="_new">Github</a></li>
+            <li><a href="mailto:jeremy@tribby.com">Contact</a></li>
           </ul>
         </div>
         <hr>
@@ -64,6 +64,11 @@
       <div class="styles-wrapper">
         <div class="styles">
           <ul>
+            <li v-for="type in types">
+              <a :class="{ active: isType(type) }" @click="updateType(type)">{{ type }}</a>
+            </li>
+          </ul>
+          <ul>
             <li v-for="weight in weights">
               <a :class="{ active: isWeight(weight.name) }" @click="updateWeight(weight.name)">{{ weight.name }} </a>
             </li>
@@ -86,7 +91,9 @@
         </div>
       </div>
       <div class="section examples">
-        <div class="size">16px / 36px</div>
+        <h3>Vincent to Theo Van Gogh</h3>
+        <h4>The Hague, 1883</h4>
+        <!-- <div class="size">16px / 36px</div> -->
           <!-- <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: '18px', lineHeight: '25px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
  -->
 <!--   <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
@@ -136,11 +143,17 @@ export default {
       carouselItalic: 0,
       carouselCurrentWidth: 'Regular',
       carouselCurrentStyle: 'Roman',
+      selectedType: 'Headline',
       selectedStyle: 'Roman',
       selectedWidth: 'Regular',
       selectedWeight: 'Regular',
       selectedCase: 'Default',
       bodyText: '',
+      types: [
+        'Headline',
+        'Sub headline',
+        'Body text'
+      ],
       weights: {
         'Thin': {
           name: 'Thin',
@@ -257,6 +270,9 @@ export default {
     updateStyle: function (style) {
       this.selectedStyle = style
     },
+    updateType: function (type) {
+      this.selectedType = type
+    },
     fontWeightCSS: function (fontWeight) {
       return this.weights[fontWeight].css
     },
@@ -271,6 +287,9 @@ export default {
     },
     isCase: function (caseKind) {
       return this.selectedCase === caseKind
+    },
+    isType: function (type) {
+      return this.selectedType === type
     }
   },
   mounted () {
@@ -551,6 +570,7 @@ span {
 
 .section.examples {
   padding-top: 100px;
+
   margin-top: 0;
   p {
     font-size: 16px;
@@ -566,6 +586,7 @@ span {
       outline: none;
   }
   .example {
+    max-width: $xl;
     column-count: 1;
     @include breakpoint($md) {
      column-count: 2;
@@ -576,6 +597,22 @@ span {
       column-gap: 60px;
 
     }
+  }
+
+  h3 {
+    clear: both;
+    display: block;
+    font-family: 'Barlow-Bold';
+    font-weight: 700;
+    font-size: 42px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+  h4 {
+    font-family: 'Barlow-SemiBoldItalic';
+    opacity: 0.5;
+    padding-bottom: 40px;
+    font-size: 30px;
   }
 }
 
@@ -894,8 +931,8 @@ h1.barlow {
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
-  max-width: 720px;
-  min-width: 590px;
+  max-width: 820px;
+  min-width: 650px;
   float: left;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
