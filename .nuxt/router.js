@@ -5,7 +5,7 @@ Vue.use(Router)
 
 const _5a604784 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 const _fc4945e0 = () => import('../pages/fonts/barlow.vue' /* webpackChunkName: "pages/fonts/barlow" */).then(m => m.default || m)
-const _7751d793 = () => import('../pages/fonts/barlow/index.vue' /* webpackChunkName: "pages/fonts/barlow/index" */).then(m => m.default || m)
+const _e3407552 = () => import('../pages/fonts/barlow/download.vue' /* webpackChunkName: "pages/fonts/barlow/download" */).then(m => m.default || m)
 const _b48218de = () => import('../pages/fonts/blog.vue' /* webpackChunkName: "pages/fonts/blog" */).then(m => m.default || m)
 
 
@@ -50,11 +50,12 @@ export function createRouter () {
 		{
 			path: "/fonts/barlow",
 			component: _fc4945e0,
+			name: "fonts-barlow",
 			children: [
 				{
-					path: "",
-					component: _7751d793,
-					name: "fonts-barlow"
+					path: "download",
+					component: _e3407552,
+					name: "fonts-barlow-download"
 				}
 			]
 		},

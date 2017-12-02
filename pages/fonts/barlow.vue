@@ -124,9 +124,11 @@
       <div class="section story black">
         <h1 class="title">Story</h1>
         <hr class="white thin">
-        <p>Coming soon! TLDR til then: this font is named after John Perry Barlow :)</p>
+        <p>In 2015 I was working at the Electronic Frontier Foundation and quickly bonded with art director Hugh D'Andrade over our shared love of fonts derived from the DIN Engschrift grid. We agreed there wasn't a good libre, open source option. Over the next few months I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors Dave Crossland and Thomas Phinney, and then another, along with my colleague Soraya Okuda. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
+        <p> As I worked on this font family I looked at ways to incorporate the public aspects of my native state California -- its highway and train signs, especially -- into the font's aesthetic, in order to bring some roundness into the heavier weights. The font was named after EFF co-founder, activist, songwriter, and cattle wrancher <a target="_new">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway.</p>
       </div>
     </div> 
+
 
   </div>
 </template>
@@ -404,7 +406,22 @@ $white: #fafaf0;
 $black: #15161c;
 
 div.story {
-  padding-bottom: 90px;
+  h1 {
+    font-family: 'Barlow-Regular';
+    font-weight: 400;
+  }
+  padding-bottom: 120px;
+  p {
+    padding-bottom: 36px;
+    font-family: 'Barlow-Medium';
+    font-weight: 500;
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  p:first-of-type {
+    padding-top: 40px;
+  }
 }
 html, body {
   overflow: hidden;
