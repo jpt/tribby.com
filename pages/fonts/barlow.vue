@@ -560,9 +560,9 @@ h1.style {
 // }
 
 
-.italic {
-  font-style: italic;
-}
+// .italic {
+//   font-style: italic;
+// }
 
 div.menu ul {
   display: none;
