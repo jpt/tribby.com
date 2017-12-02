@@ -130,7 +130,8 @@
         <img src="~/assets/early.jpg">
         <p>The font was named after EFF co-founder, activist, songwriter, and cattle wrancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked, so I asked a lawyer who asked a designer who asked a squire, and eventually I met with him over at <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a>'s house. Gilmore and Barlow debated dystopia and utopia, respectively, as it can play out in the world of web fonts and web font distribution, which involves a lot of large, data-hungry companies. It was a fascinating conversation, and I was suprised and honored to walk away with Barlow's blessing.</p>
         <p>As I worked on the font family and thought about my meeting with giants of activism in California, I looked at ways to incorporate the public aspects of my native state -- its highway and train signs, especially -- deeper into the font's aesthetic. Our BART train system uses typefaces a bit rounder than the average street sign, and you can see this especially in Barlow's heavier weights.</p>
-        <p>Barlow is free software, released under the SIL Open Font License. If you'd like to throw a zillionth of a bitcoin my way, the address is 12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf.</p>
+        <p>Barlow is free software, released under the SIL Open Font License. If you find it useful and you'd like to throw a zillionth of a bitcoin my way, the address is:</p>
+        <p class="btc">12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf</p>
       </div>
     </div> 
 
@@ -410,6 +411,7 @@ $bg: #15161c;
 $white: #fafaf0;
 $black: #15161c;
 
+
 div.story {
   img {
     max-width: 800px;
@@ -428,6 +430,11 @@ div.story {
     max-width: 700px;
     font-size: 18px;
     line-height: 34px;
+  }
+  p.btc {
+    font-family: 'Barlow-Regular';
+    font-weight: 400;
+    font-size: 16px;
   }
   p:first-of-type {
     padding-top: 45px;
