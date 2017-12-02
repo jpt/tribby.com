@@ -630,11 +630,12 @@ span {
     padding-bottom: 10px;
   }
   h4 {
-    font-family: 'BarlowSemiCondensed-Medium';
+    font-family: 'BarlowSemiCondensed-Italic';
     opacity: 0.35;
+    font-style: italic;
     padding-bottom: 40px;
-    font-weight: 500;
-    font-size: 30px;
+    font-weight: 400;
+    font-size: 33px;
   }
 }
 
