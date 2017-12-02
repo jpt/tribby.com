@@ -121,10 +121,12 @@
           </div>
         </div> -->
 <!--       </div> -->
-      <div class="section">
-        <h1>&nbsp;</h1>
+      <div class="section story black">
+        <h1 class="title">Story</h1>
+        <hr class="white thin">
+        <p>Coming soon! TLDR till then: this font is named after John Perry Barlow :)</p>
       </div>
-    </div>
+    </div> 
 
   </div>
 </template>
@@ -401,6 +403,9 @@ $bg: #15161c;
 $white: #fafaf0;
 $black: #15161c;
 
+div.story {
+  padding-bottom: 90px;
+}
 html, body {
   overflow: hidden;
   // height: 100%;
@@ -585,6 +590,7 @@ span {
 
 .section.examples {
   padding-top: 100px;
+  padding-bottom: 140px;
 
   margin-top: 0;
   p {
@@ -617,15 +623,15 @@ span {
   h3 {
     clear: both;
     display: block;
-    font-family: 'Barlow-SemiBold';
-    font-weight: 600;
+    font-family: 'Barlow-ExtraBold';
+    font-weight: 800;
     font-size: 42px;
     padding-top: 30px;
     padding-bottom: 10px;
   }
   h4 {
-    font-family: 'Barlow-MediumItalic';
-    opacity: 0.5;
+    font-family: 'BarlowSemiCondensed-Medium';
+    opacity: 0.35;
     padding-bottom: 40px;
     font-weight: 500;
     font-size: 30px;
@@ -633,7 +639,11 @@ span {
 }
 
 .section.black {
+  background-color: $black;
+  margin: 0;
+
   * {
+    background-color: $black;
     color: $white;
   }
 }
