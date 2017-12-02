@@ -513,9 +513,9 @@ h2.title {
   margin-top: 0;
 }
 h1.style {
-  font-family: 'Barlow-ExtraLight';
+  font-family: 'Barlow-Regular';
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 35px;
   font-feature-settings: "smcp";
   letter-spacing: 3px;
@@ -759,6 +759,7 @@ hr.black {
     font-family: 'Barlow-Medium';
     font-weight: 500;
     letter-spacing: 0.3px;
+    transition: opacity 100ms ease-in-out;
 
     @include breakpoint($md) {
       a {
@@ -788,7 +789,9 @@ hr.black {
       color: $black;
       border: 1px solid $black;
       background-color: $white;
+      transition: background-color 90ms linear;
       &:hover, &:first-of-type {
+        transition: background-color 150ms ease-in;
         color: $black;
         border: 1px solid $black;
         background-color: $white;
@@ -1018,7 +1021,7 @@ h1.barlow {
 .styles {
   padding-left: 10%;
   // width: 100%;
-  
+
   color: $black;
   display: flex;
   flex-direction: row;
