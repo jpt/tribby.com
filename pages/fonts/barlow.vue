@@ -8,12 +8,11 @@
     <div class="top">
       <div class="header">
         <div class="menu">
-          <h1>Barlow</h1>
+          <h1 class="barlow">Barlow</h1>
           <ul>
-            <li><a>Features</a></li>
             <li><a>Interactive Specimen</a></li>
             <li><a>Story</a></li>
-            <li>Contact</li>
+            <li><a>Contact</a></li>
           </ul>
         </div>
         <hr>
@@ -50,10 +49,16 @@
         </div>
       </div>
     </div>
-    <div class="comingsoon">
-      <h1 class="title">Full minisite coming soon! The various sections -- "Features," "Interactive Specimen," "Story," and "Contact," will all be here shorty. Everything below the dark area above,<sup>[1]</sup> including this very paragraph, is currently being built right now! Keep checking back and email <a href="mailto:jeremy@tribby.com">jeremy@tribby.com</a> to be on the mailing list.<br><br><sup>1. A.K.A., all the things in the menu at the very top of this page that I lied to you about exisiting.</sup></h1>
+    <div class="section comingsoon">
+      <h1 class="title">Interactive Specimen</h1>
+      <hr class="thin black">
+      <h2 class="title sub">Pick a weight, width, style, and case for the body text below:</h2>
     </div>
-    <div class="specimen">
+    <div class="section specimen">
+<!--       <div class="texttype">
+        <div><a class="active">Headings</a></div>
+        <div><a>Body text</a></div>
+      </div> -->
       <div class="styles">
         <ul>
           <li v-for="weight in weights">
@@ -104,7 +109,7 @@ export default {
       selectedWidth: 'Regular',
       selectedWeight: 'Regular',
       selectedCase: 'Default',
-      bodyText: 'You weary giants of flesh and steel.',
+      bodyText: "There's a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can't take part! You can't even passively take part! And you've got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you've got to make it stop! And you've got to indicate to the people who run it, to the people who own it, that unless you're free, the machine will be prevented from working at all!",
       weights: {
         'Thin': {
           name: 'Thin',
@@ -159,14 +164,9 @@ export default {
         'Title Case'
       ],
       pairs: [
+        [72, 98],
         [54, 84],
-        [48, 82],
-        [36, 58],
-        [30, 52],
         [24, 42],
-        [18, 30],
-        [16, 27],
-        [14, 24],
         [12, 20]
       ]
     }
@@ -334,6 +334,10 @@ $white: #fafaf0;
 $black: #15161c;
 
 
+.text-type {
+  display: flex;
+  flex-direction: coumn;
+}
 .ease-in-fast-out-enter-active, .ease-in-fast-out-leave-active {
   transition: opacity .5s;
   opacity: 1;
@@ -367,22 +371,31 @@ sup,sub {
 }
 
 h1.title {
-  font-family: 'Barlow-Light';
-  font-size: 30px;
+  font-family: 'Barlow-ExtraLight';
+  font-size: 40px;
   @include breakpoint($xl) {
-    font-size: 40px;
+    font-size: 50px;
   }
   max-width: 1200px;
-  font-weight: 300;
-  margin-bottom: 1.2em;
+  font-weight: 275;
+  margin-bottom: 1em;
   letter-spacing: 1px;
   text-transform: none;
-  color: rgba(255,255,255,0.25);
-  margin-top: 1.5em;
-  padding: 0 10%;
   color: $black;
 }
-
+h2.title {
+  font-family: 'Barlow-Regular';
+  font-size: 20px;
+  // @include breakpoint($xl) {
+  //   font-size: 30px;
+  // }
+  max-width: 1200px;
+  font-weight: 400;
+  margin-bottom: 2.6em;
+  text-transform: none;
+  color: rgba(0,0,10,0.33);
+  margin-top: 0;
+}
 h1.style {
   font-family: 'Barlow-ExtraLight';
   font-size: 13px;
@@ -409,25 +422,25 @@ h1.style {
   display: block;
 }
 
-.slide:nth-of-type(1) {
-  animation:fade 8s infinite;
-} 
-.slide:nth-of-type(2) {
-  animation:fade2 8s infinite;
-}
-.slide:nth-of-type(3) {
-  animation: fade3 8s infinite;
-}
-.slide:nth-of-type(4) {
-  animation: fade4 8s infinite;
-}
+// .slide:nth-of-type(1) {
+//   animation:fade 8s infinite;
+// } 
+// .slide:nth-of-type(2) {
+//   animation:fade2 8s infinite;
+// }
+// .slide:nth-of-type(3) {
+//   animation: fade3 8s infinite;
+// }
+// .slide:nth-of-type(4) {
+//   animation: fade4 8s infinite;
+// }
 
-.slide:nth-of-type(5) {
-  animation: fade5 8s infinite;
-}
-.slide:nth-of-type(6) {
-  animation: fade6 8s infinite;
-}
+// .slide:nth-of-type(5) {
+//   animation: fade5 8s infinite;
+// }
+// .slide:nth-of-type(6) {
+//   animation: fade6 8s infinite;
+// }
 
 
 .italic {
@@ -449,7 +462,7 @@ div.menu {
     padding: 0;
   }
   ul li {
-    display: inline-block;
+    display: inline;
     font-feature-settings: "smcp"; 
     text-transform: lowercase;
     font-family: 'Barlow-SemiBold';
@@ -458,6 +471,15 @@ div.menu {
     font-size: 14px;
     line-height: 28px;
     margin-right: 3em;
+    a {
+      transition: opacity 120ms linear;
+      opacity: 0.85;
+      &:hover {
+        transition: opacity 220ms ease-in;
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
 
   }
   ul li:last-of-type {
@@ -477,10 +499,11 @@ span {
   @include breakpoint($md) {
     padding: 0 10%;
   }
+  margin-bottom: 80px;
 }
 
 
-
+.barlow {}
 hr {
   border-top: 8px solid $white;
   position: relative;
@@ -494,6 +517,10 @@ hr {
 hr.thin {
   margin-top: 90px;
   border-top: 1px solid $white;
+}
+hr.thin.black {
+  margin-top: 90px;
+  border-top: 1px solid $black;
 }
 .container {
 
@@ -695,14 +722,14 @@ hr.thin {
 }
 
 
-h1 {
+h1.barlow {
 
   font-family: 'BarlowCondensed-SemiBold';
   font-size: 28px;
   margin-bottom: 2.5em;
   padding: 0;
   letter-spacing: 2px;
-
+  text-transform: uppercase;
 }
 
 
@@ -730,14 +757,14 @@ h1 {
 .comingsoon {
 
 }
-.specimen {
+.section:not(.specimen) {
   // padding: 0 10%;
   margin-top: 80px;
 
   
 }
 
-.top > div, .examples > div {
+.top > div {
   padding: 0 5%;
   @include breakpoint(420px) {
     padding: 0 10%;
@@ -763,32 +790,39 @@ h1 {
 
 
 .styles {
+
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
-  // max-width: 720px;
+  max-width: 720px;
   min-width: 590px;
   // float: left;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
 
-}
+
+  > ul > li {
+    font-feature-settings: "smcp"; 
+    text-transform: lowercase;
+    font-family: 'Barlow-Regular';
+    letter-spacing: 0.07em;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 28px;
 
 
-.styles > ul > li {
-  font-feature-settings: "smcp"; 
-  text-transform: lowercase;
-  font-family: 'Barlow-Regular';
-  letter-spacing: 0.07em;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 28px;
+    &:hover {
+      cursor: pointer;
+    }
 
-
-  &:hover {
-    cursor: pointer;
+  }
+  p {
+    margin-bottom: 2em;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
   }
   ul {
     list-style-type: none;
@@ -803,7 +837,13 @@ h1 {
     font-weight: 400;
   }
 
-
+  h1 {
+    font-family: 'Barlow-ExtraBold';
+    font-size: 60px;
+    margin-bottom: 20px;
+    margin-left: -5px;
+    padding: 0;
+  }
   li a {
     display: inline-block;
     &:after {
@@ -821,6 +861,12 @@ h1 {
       }
     }
   }
+
+
+  .examples p:focus {
+      outline: none;
+  }
+
 }
 
 

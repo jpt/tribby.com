@@ -5,6 +5,8 @@
 
       <p>Interesting things ahead for tribby.com, which will be returning shortly. In the meantime, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my latest typeface.</p>
 
+      
+
       <p><a class="email" href="mailto:jeremy@tribby.com">Jeremy</a></p>
     </div>
   </section>
