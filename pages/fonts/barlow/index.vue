@@ -65,31 +65,26 @@
         <div class="scroll" :class="{ active: scrollState === 'scrolled' }">Swipe for more options &gt;</div>
         <div class="styles">
           <ul>
-            <li>Type</li>
             <li v-for="type in types">
               <a :class="{ active: isType(type) }" @click="updateType(type)">{{ type }}</a>
             </li>
           </ul>
           <ul>
-            <li>Weight</li>
             <li v-for="weight in weights">
               <a :class="{ active: isWeight(weight.name) }" @click="updateWeight(weight.name)">{{ weight.name }} </a>
             </li>
           </ul>
           <ul>
-            <li>Width</li>
             <li v-for="width in widths">
               <a :class="{ active: isWidth(width) }" @click="updateWidth(width)">{{ width }} </a>
             </li>
           </ul>
           <ul>
-            <li>Style</li>
             <li v-for="style in styles">
               <a :class="{ active: isStyle(style) }" @click="updateStyle(style)">{{ style }} </a>
             </li>
           </ul>
           <ul>
-            <li>Case</li>
             <li v-for="caseKind in cases">
               <a :class="{ active: isCase(caseKind) }" @click="updateCase(caseKind)">{{ caseKind }} </a>
             </li>
@@ -974,21 +969,16 @@ h1.barlow {
   -webkit-overflow-scrolling: touch;
   // padding-bottom: 40px;
 
+  > ul:nth-of-type(2) {
+    display: block;
+    column-count: 2;
+    margin-right: 00px;
 
-  // > ul:nth-of-type(2) {
-  //   li:first-of-type {
-  //     font-family: 'Barlow-SemiBold';
-  //     font-weight: 600;
-  //   }
-  //   // display: block;
-  //   // column-count: 2;
-  //   // margin-right: 00px;
-
-  //   // height: 200px;
-  //   li {
-  //     padding-right: 20px;
-  //   }
-  // }
+    height: 200px;
+    li {
+      padding-right: 20px;
+    }
+  }
 
   > ul > li {
     font-feature-settings: "smcp"; 
@@ -1027,10 +1017,6 @@ h1.barlow {
     font-size: 1em;
     line-height: 1.35em;
     font-weight: 400;
-  }
-  > ul > li:first-of-type {
-    font-family: 'Barlow-Bold';
-    font-weight: 700;
   }
 
   h1 {
