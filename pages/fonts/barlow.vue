@@ -1001,6 +1001,7 @@ h1.barlow {
   }
 }
 .styles-wrapper {
+  -webkit-overflow-scrolling: touch;
   clear: both;
   display: block;
   overflow-x: scroll;
