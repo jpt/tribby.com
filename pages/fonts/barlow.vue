@@ -98,8 +98,10 @@
         </div>
       </div>
       <div class="section examples">
+        <hr class="black">
         <h3>Vincent to Theo Van Gogh</h3>
         <h4>The Hague, 1883</h4>
+        <hr class="black thin">
         <!-- <div class="size">16px / 36px</div> -->
           <!-- <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: '18px', lineHeight: '25px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
  -->
@@ -634,12 +636,8 @@ span {
     line-height: 36px;
     letter-spacing: 0;
   }
-  .examples {
-    // margin-left: 208px;
 
-  }
-
-  .examples p:focus {
+  p:focus {
       outline: none;
   }
   .example {
@@ -655,23 +653,27 @@ span {
 
     }
   }
-
-  h3 {
+  hr:nth-of-type(1) {
     clear: both;
-    display: block;
+  }
+  h3 {
+
     font-family: 'Barlow-ExtraBold';
     font-weight: 800;
     font-size: 42px;
-    padding-top: 30px;
+
     padding-bottom: 10px;
   }
   h4 {
     font-family: 'BarlowSemiCondensed-Italic';
     opacity: 0.35;
     font-style: italic;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
     font-weight: 400;
     font-size: 33px;
+  }
+  hr.thin {
+    margin-bottom: 20px;
   }
 }
 
@@ -1016,6 +1018,7 @@ h1.barlow {
 .styles {
   padding-left: 10%;
   // width: 100%;
+  
   color: $black;
   display: flex;
   flex-direction: row;
@@ -1027,7 +1030,7 @@ h1.barlow {
   min-width: 650px;
   float: left;
   -webkit-overflow-scrolling: touch;
-  // padding-bottom: 40px;
+  padding-bottom: 40px;
 
 
   // > ul:nth-of-type(2) {
