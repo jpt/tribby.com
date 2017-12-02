@@ -482,7 +482,7 @@ sup,sub {
 }
 
 h1.title {
-  font-family: 'Barlow-Light';
+  font-family: 'Barlow-ExtraLight';
   font-size: 30px;
   @include breakpoint($md) {
     font-family: 'Barlow-ExtraLight';
