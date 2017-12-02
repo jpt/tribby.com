@@ -143,7 +143,7 @@ export default {
       carouselItalic: 0,
       carouselCurrentWidth: 'Regular',
       carouselCurrentStyle: 'Roman',
-      selectedType: 'Headline',
+      selectedType: 'Body text',
       selectedStyle: 'Roman',
       selectedWidth: 'Regular',
       selectedWeight: 'Regular',
