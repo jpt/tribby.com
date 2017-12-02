@@ -513,9 +513,9 @@ h2.title {
   margin-top: 0;
 }
 h1.style {
-  font-family: 'Barlow-Regular';
-  font-size: 13px;
-  font-weight: 400;
+  font-family: 'Barlow-Semibold';
+  font-size: 14px;
+  font-weight: 600;
   margin-bottom: 35px;
   font-feature-settings: "smcp";
   letter-spacing: 3px;
