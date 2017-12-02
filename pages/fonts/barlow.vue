@@ -63,7 +63,7 @@
         <div><a>Body text</a></div>
       </div> -->
       <div class="styles-wrapper" @scroll="removeStyles">
-        <div class="scroll" :class="{ active: scrollState === 'scrolled' }">Swipe for more options &gt;</div>
+        <div class="scroll" :class="{ active: scrollState === 'scrolled' }">Swipe for more options&nbsp;&nbsp;&nbsp;&nbsp;&gt;</div>
         <div class="styles">
           <ul>
             <li>Type</li>
@@ -411,6 +411,7 @@ $bg: #15161c;
 $white: #fafaf0;
 $black: #15161c;
 
+::-webkit-scrollbar { display: none; }
 
 div.story {
   img {
