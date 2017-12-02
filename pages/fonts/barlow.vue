@@ -38,7 +38,7 @@
           <template v-for="(width, wi) in widths">
             <template v-for="(style, si) in styles">
               <transition name="ease-in-fast-out">
-                <div class="slide" :class="{  }">
+                <div class="slide">
                   <div class="headline" :class="{ italic: style === 'Italic', active: isActive(wi,si) }" v-for="weight in reversedWeights">
                     <h2 :style="{ fontFamily: barlowFamily(width,weight.name,style), fontWeight: barlowWeight(weight) }">You weary giants of flesh and steel.</h2>
                   </div>
@@ -49,41 +49,57 @@
         </div>
       </div>
     </div>
-    <div class="section comingsoon">
-      <a name="specimen" id="specimen"></a>
-      <h1 class="title">Interactive Specimen (In development -- check back soon!)</h1>
-      <hr class="thin black">
-      <h2 class="title sub">Pick a weight, width, style, and case for the body text below.</h2>
-    </div>
     <div class="section specimen">
+      <div class="heading">
+        <a name="specimen" id="specimen"></a>
+          <h1 class="title">Interactive Specimen</h1>
+          <hr class="thin black">
+          <h2 class="title sub">Pick a weight, width, style, and case for the body text below.</h2>
+        </div>
+      </div>
 <!--       <div class="texttype">
         <div><a class="active">Headings</a></div>
         <div><a>Body text</a></div>
       </div> -->
-      <div class="styles">
-        <ul>
-          <li v-for="weight in weights">
-            <a :class="{ active: isWeight(weight.name) }" @click="updateWeight(weight.name)">{{ weight.name }} </a>
-          </li>
-        </ul>
-        <ul>
-          <li v-for="width in widths">
-            <a :class="{ active: isWidth(width) }" @click="updateWidth(width)">{{ width }} </a>
-          </li>
-        </ul>
-        <ul>
-          <li v-for="style in styles">
-            <a :class="{ active: isStyle(style) }" @click="updateStyle(style)">{{ style }} </a>
-          </li>
-        </ul>
-        <ul>
-          <li v-for="caseKind in cases">
-            <a :class="{ active: isCase(caseKind) }" @click="updateCase(caseKind)">{{ caseKind }} </a>
-          </li>
-        </ul>
+      <div class="styles-wrapper">
+        <div class="styles">
+          <ul>
+            <li v-for="weight in weights">
+              <a :class="{ active: isWeight(weight.name) }" @click="updateWeight(weight.name)">{{ weight.name }} </a>
+            </li>
+          </ul>
+          <ul>
+            <li v-for="width in widths">
+              <a :class="{ active: isWidth(width) }" @click="updateWidth(width)">{{ width }} </a>
+            </li>
+          </ul>
+          <ul>
+            <li v-for="style in styles">
+              <a :class="{ active: isStyle(style) }" @click="updateStyle(style)">{{ style }} </a>
+            </li>
+          </ul>
+          <ul>
+            <li v-for="caseKind in cases">
+              <a :class="{ active: isCase(caseKind) }" @click="updateCase(caseKind)">{{ caseKind }} </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="examples">
-
+      <div class="section examples">
+        <div class="size">16px / 36px</div>
+          <!-- <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: '18px', lineHeight: '25px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
+ -->
+<!--   <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
+</div> -->
+          <div class="example">
+            <p :style="{ display: 'inline', fontFamily: selectedFontFamily, textTransform: caseCSS }">In my opinion, I am often rich as Crœsus, not in money, but (though it doesn't happen every day) rich, because I have found in my work something to which I can devote myself heart and soul, and which gives inspiration and significance to life.
+            <br><br>Of course my moods vary, but there is an average of serenity. I have a sure faith in art, a sure confidence that it is a powerful stream, which hears a man to harbour, though he himself must do his bit too; and at all events I think it such a great blessing, when a man has found his work, that I cannot count myself among the unfortunate. I mean, I may be in certain relatively great difficulties, and there may be gloomy days in my life, but I shouldn't want to be counted among the unfortunate nor would it be correct.
+            <br><br>You write in your letter something which I sometimes feel also: “Sometimes I do not know how I shall pull through.”
+            <br><br>Look here, I often feel the same in more than one respect, not only in financial things, but in art itself, and in life in general. But do you think that something exceptional? Don't you think every man with a little pluck and energy has those moments?
+            <br><br>Moments of melancholy, of distress, of anguish, I think we all have them, more or less, and it is a condition of every conscious human life. It seems that some people have no self-consciousness. But those who have it, they may sometimes be in distress, but for all that they are not unhappy, nor is it something exceptional that happens to them.
+            <br><br>And sometimes there comes relief, sometimes there comes new inner energy, and one rises up from it, till at last, some day, one perhaps doesn't rise up any more, que soit, but that is nothing extraordinary, and I repeat, such is the common human fate, in my opinion.</p>
+          </div>
+        </div>
         <!-- <h2 class="title sub">Click or tap the text to edit.</h2> -->
 <!--         <div v-for="pair in pairs">
           <div class="size">{{ pair[0] }}px / {{ pair[1] }}px</div>
@@ -91,8 +107,12 @@
             <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
           </div>
         </div> -->
+<!--       </div> -->
+      <div class="section">
+        <h1>&nbsp;</h1>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -120,7 +140,7 @@ export default {
       selectedWidth: 'Regular',
       selectedWeight: 'Regular',
       selectedCase: 'Default',
-      bodyText: 'There\'s a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can\'t take part! You can\'t even passively take part! And you\'ve got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you\'ve got to make it stop! And you\'ve got to indicate to the people who run it, to the people who own it, that unless you\'re free, the machine will be prevented from working at all!',
+      bodyText: '',
       weights: {
         'Thin': {
           name: 'Thin',
@@ -378,7 +398,7 @@ $black: #15161c;
   margin: 0;
   padding: 0;
 }
-body,html {
+body, html, .top {
   background-color: $black;
 }
 
@@ -389,10 +409,11 @@ sup,sub {
 }
 
 h1.title {
-  font-family: 'Barlow-ExtraLight';
-  font-size: 40px;
-  @include breakpoint($xl) {
-    font-size: 50px;
+  font-family: 'Barlow-Light';
+  font-size: 30px;
+  @include breakpoint($md) {
+    font-family: 'Barlow-ExtraLight';
+    font-size: 42px;
   }
   max-width: 1200px;
   font-weight: 275;
@@ -520,15 +541,52 @@ span {
 }
 
 .section {
-  padding: 0 5%;
-  @include breakpoint($md) {
-    padding: 0 10%;
-  }
+  background-color: $white;
+  padding: 50px 10% 20px 10%;
+  // @include breakpoint($md) {
+  //   padding: 0px 5% 70px 5%;;
+  // }
   // margin-bottom: 80px;
 }
 
+.section.examples {
+  padding-top: 100px;
+  margin-top: 0;
+  p {
+    font-size: 16px;
+    line-height: 36px;
+    letter-spacing: 0;
+  }
+  .examples {
+    // margin-left: 208px;
+
+  }
+
+  .examples p:focus {
+      outline: none;
+  }
+  .example {
+    column-count: 1;
+    @include breakpoint($md) {
+     column-count: 2;
+     column-gap: 60px;
+    }
+    @include breakpoint($xl) {
+      column-count: 3;
+      column-gap: 60px;
+
+    }
+  }
+}
+
+.section.black {
+  * {
+    color: $white;
+  }
+}
 
 .barlow {}
+
 hr {
   border-top: 8px solid $white;
   position: relative;
@@ -538,6 +596,13 @@ hr {
     margin-bottom: 2em;
   }
 
+
+}
+.specimen hr {
+  margin-bottom: 1em;
+}
+.heading hr {
+
 }
 hr.thin {
   margin-top: 90px;
@@ -546,6 +611,9 @@ hr.thin {
 hr.thin.black {
   margin-top: 90px;
   border-top: 1px solid $black;
+}
+hr.black {
+  border-color: $black;
 }
 .container {
 
@@ -764,27 +832,22 @@ h1.barlow {
   z-index: -1;
 }
 .size {
-  margin-top: 35px;
+  clear: both;
+  display: block;
+  padding-top: 20px;
   font-size: 12px;
   color: #a9a9a9;
   margin-bottom: 7px;
 }
 
-.examples {
-  // margin-left: 208px;
 
-}
-
-.examples p:focus {
-    outline: none;
-}
 
 .comingsoon {
 
 }
-.section:not(.specimen) {
+.section {
   // padding: 0 10%;
-  margin-top: 80px;
+  // margin-top: 80px;
 
   
 }
@@ -803,8 +866,7 @@ h1.barlow {
   @include breakpoint($md) {
     padding-top: 80px;
   }
-  background-color: $black;
-  padding-bottom: 10em;
+  padding-bottom: 90px;
 }
 
 
@@ -813,9 +875,19 @@ h1.barlow {
   font-size: 1em;
 }
 
+.styles-wrapper {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%;
+  background-color: $white;
+
+}
 
 .styles {
-
+  padding-left: 10%;
+  width: 100%;
+  color: $black;
   display: flex;
   flex-direction: row;
   // direction: ltr;
@@ -827,7 +899,7 @@ h1.barlow {
   float: left;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 40px;
+  // padding-bottom: 40px;
 
 
   > ul > li {
@@ -838,6 +910,9 @@ h1.barlow {
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;
+    @include breakpoint($lg) {
+      line-height: 40px;
+    }
 
 
     &:hover {
@@ -879,7 +954,7 @@ h1.barlow {
       margin-top: -4px;
       height: 1px;
       width: 0%;
-      background: #000;
+      background: $black;
       transition: width 150ms;
     }
     &.active {
@@ -889,10 +964,6 @@ h1.barlow {
     }
   }
 
-
-  .examples p:focus {
-      outline: none;
-  }
 
 }
 
