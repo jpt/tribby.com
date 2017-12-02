@@ -1029,8 +1029,12 @@ h1.barlow {
     font-weight: 400;
   }
   > ul > li:first-of-type {
-    font-family: 'Barlow-Bold';
-    font-weight: 700;
+    font-family: 'Barlow-SemiBold';
+    font-feature-settings: normal;
+    letter-spacing: 0;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: none;
   }
 
   h1 {
