@@ -10,7 +10,7 @@
         <div class="menu">
           <h1 class="barlow">Barlow</h1>
           <ul>
-            <li><a>Interactive Specimen</a></li>
+            <li><a href="specimen">Interactive Specimen</a></li>
             <li><a>Story</a></li>
             <li><a>Contact</a></li>
           </ul>
@@ -34,12 +34,12 @@
       </div>
       <div class="hero">
         <div class="carousel">
-          <h1 class="style">{{ carouselStateToStyle }}</h1>
+          <h1 class="style">{{ carouselStateToStyle || 'Regular' }}</h1>
           <template v-for="(width, wi) in widths">
             <template v-for="(style, si) in styles">
               <transition name="ease-in-fast-out">
-                <div class="slide">
-                  <div class="headline" :class="{ italic: style === 'Italic', active: isActive(wi,si)}" v-for="weight in reversedWeights">
+                <div class="slide" :class="{  }">
+                  <div class="headline" :class="{ italic: style === 'Italic', active: isActive(wi,si) }" v-for="weight in reversedWeights">
                     <h2 :style="{ fontFamily: barlowFamily(width,weight.name,style), fontWeight: barlowWeight(weight) }">You weary giants of flesh and steel.</h2>
                   </div>
                 </div>
@@ -50,9 +50,9 @@
       </div>
     </div>
     <div class="section comingsoon">
-      <h1 class="title">Interactive Specimen</h1>
+      <h1 class="title">Interactive Specimen (In development -- check back soon!)</h1>
       <hr class="thin black">
-      <h2 class="title sub">Pick a weight, width, style, and case for the body text below:</h2>
+      <h2 class="title sub">Pick a weight, width, style, and case for the body text below.</h2>
     </div>
     <div class="section specimen">
 <!--       <div class="texttype">
@@ -82,10 +82,14 @@
         </ul>
       </div>
       <div class="examples">
-        <div v-for="pair in pairs">
+
+        <h2 class="title sub">Click or tap the text to edit.</h2>
+<!--         <div v-for="pair in pairs">
           <div class="size">{{ pair[0] }}px / {{ pair[1] }}px</div>
-          <p contenteditable spellcheck="false" @input="updateText" :style="{ fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
-        </div>
+          <div>
+            <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -101,6 +105,12 @@ export default {
   },
   data () {
     return {
+      fps: 0.4,
+      fpsInterval: 0,
+      startTime: 0,
+      now: 0,
+      then: 0,
+      elapsed: 0,
       carouselState: 0,
       carouselItalic: 0,
       carouselCurrentWidth: 'Regular',
@@ -109,7 +119,7 @@ export default {
       selectedWidth: 'Regular',
       selectedWeight: 'Regular',
       selectedCase: 'Default',
-      bodyText: "There's a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can't take part! You can't even passively take part! And you've got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you've got to make it stop! And you've got to indicate to the people who run it, to the people who own it, that unless you're free, the machine will be prevented from working at all!",
+      bodyText: 'There\'s a time when the operation of the machine becomes so odious, makes you so sick at heart, that you can\'t take part! You can\'t even passively take part! And you\'ve got to put your bodies upon the gears and upon the wheels…upon the levers, upon all the apparatus, and you\'ve got to make it stop! And you\'ve got to indicate to the people who run it, to the people who own it, that unless you\'re free, the machine will be prevented from working at all!',
       weights: {
         'Thin': {
           name: 'Thin',
@@ -162,12 +172,6 @@ export default {
         'Lowercase',
         'Default',
         'Title Case'
-      ],
-      pairs: [
-        [72, 98],
-        [54, 84],
-        [24, 42],
-        [12, 20]
       ]
     }
   },
@@ -176,17 +180,27 @@ export default {
       return wi === this.carouselState && si === this.carouselItalic
     },
     onInterval: function () {
-      if (this.carouselItalic === 0) {
-        this.carouselItalic = 1
-      } else if (this.carouselItalic === 1) {
-        this.carouselItalic = 0
-        if (this.carouselState === 2) {
-          this.carouselState = 0
-        } else {
-          this.carouselState += 1
+      let now = Date.now()
+      this.elapsed = now - this.then
+      if (this.elapsed > this.fpsInterval) {
+        this.then = now - (this.elapsed % this.fpsInterval)
+        if (this.carouselItalic === 0) {
+          this.carouselItalic = 1
+        } else if (this.carouselItalic === 1) {
+          this.carouselItalic = 0
+          if (this.carouselState === 2) {
+            this.carouselState = 0
+          } else {
+            this.carouselState += 1
+          }
         }
       }
+
+      requestAnimationFrame(this.onInterval)
     },
+    // isActive: function (width) {
+    //   return width === this.carouselState
+    // },
     barlowFamily: function (width, weight, style) {
       if (style === 'Roman') {
         style = ''
@@ -239,8 +253,11 @@ export default {
     }
   },
   mounted () {
-    setInterval(this.onInterval, 2000)
-    // this.requestAnimFrame(this.onInterval, 2000)
+    // setInterval(this.onInterval, 2000)
+    this.fpsInterval = 1000 / this.fps
+    this.then = Date.now()
+    this.startTime = this.then
+    requestAnimationFrame(this.onInterval)
   },
   computed: {
     carouselStateToStyle: function () {
@@ -416,10 +433,15 @@ h1.style {
 // }
 
 .headline {
-  display: none;
-}
-.active {
   display: block;
+  position: absolute;
+  opacity: 0;
+
+}
+.headline.active {
+  display: block;
+  opacity: 1;
+  position: relative;
 }
 
 // .slide:nth-of-type(1) {
@@ -499,7 +521,7 @@ span {
   @include breakpoint($md) {
     padding: 0 10%;
   }
-  margin-bottom: 80px;
+  // margin-bottom: 80px;
 }
 
 
@@ -793,14 +815,16 @@ h1.barlow {
 
   display: flex;
   flex-direction: row;
+  // direction: ltr;
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
   max-width: 720px;
   min-width: 590px;
-  // float: left;
+  float: left;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  margin-bottom: 40px;
 
 
   > ul > li {
