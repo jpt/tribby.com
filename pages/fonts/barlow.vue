@@ -489,7 +489,7 @@ h1.title {
     font-size: 42px;
   }
   max-width: 1200px;
-  font-weight: 275;
+  font-weight: 250;
   margin-bottom: 1em;
   letter-spacing: 1px;
   text-transform: none;
