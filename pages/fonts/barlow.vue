@@ -62,7 +62,7 @@
         <div><a>Body text</a></div>
       </div> -->
       <div class="styles-wrapper" @scroll="removeStyles">
-        <div class="scroll" :class="{ active: scrollState === 'scrolled' }">Swipe &gt; for more</div>
+        <div class="scroll" :class="{ active: scrollState === 'scrolled' }">Swipe for more options &gt;</div>
         <div class="styles">
           <ul>
             <li v-for="type in types">
@@ -925,6 +925,7 @@ h1.barlow {
 
 .scroll.active {
   opacity: 0;
+  transition: opacity 150ms ease-out;
 }
 .scroll {
   opacity: 1; 
@@ -936,7 +937,7 @@ h1.barlow {
   text-align: right;
   width: 100%;
   display: block;
-  padding: 0 5%;
+  padding: 0 10%;
 
   @include breakpoint(560px) {
     opacity: 0;
@@ -968,6 +969,16 @@ h1.barlow {
   -webkit-overflow-scrolling: touch;
   // padding-bottom: 40px;
 
+  > ul:nth-of-type(2) {
+    display: block;
+    column-count: 2;
+    margin-right: 00px;
+
+    height: 200px;
+    li {
+      padding-right: 20px;
+    }
+  }
 
   > ul > li {
     font-feature-settings: "smcp"; 
@@ -977,6 +988,8 @@ h1.barlow {
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;
+
+
     @include breakpoint($lg) {
       line-height: 40px;
     }
