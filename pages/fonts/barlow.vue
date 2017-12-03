@@ -134,7 +134,7 @@
         <p>As I worked on the font family and thought about my meeting with giants of activism in California, I looked at ways to incorporate the public aspects of my native state -- its highway and train signs, and license plates, especially -- deeper into the font's aesthetic. Parts of our train system (BART) use a Helvetica-like typeface, a bit rounder than the DIN heritage of the average street sign, and you can see this especially in Barlow's heavier weights.</p>
         <p>Barlow is free software, released under the SIL Open Font License. Please donate to the <a href="https://www.johnperrybarlow-wellnesstrust.com/">John Perry Barlow Wellness Trust</a>, and if you find the fonts useful and you'd like to throw a zillionth of a bitcoin my way, the address is:</p>
         <p class="btc">12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf</p>
-        <p>Jeremy</p>
+        <p>Jeremy, Tribby Type Co.</p>
       </div>
     </div> 
 
