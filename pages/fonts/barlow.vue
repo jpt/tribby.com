@@ -55,7 +55,7 @@
         <a name="specimen" id="specimen"></a>
           <h1 class="title">Interactive Specimen</h1>
           <hr class="thin black">
-          <h2 class="title sub">Specicify which part of the specimen you want to modify (currently body text only), then choose the width, style, and case. Tap the headers or body text to edit them.</h2>
+          <h2 class="title sub">Specicify which part of the specimen you want to modify (currently body text only), then choose the width, weight, style, and case. Tap the headers or body text to edit them.</h2>
         </div>
       </div>
 <!--       <div class="texttype">
