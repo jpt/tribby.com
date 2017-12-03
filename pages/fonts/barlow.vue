@@ -414,6 +414,9 @@ $bg: #15161c;
 $white: #fafaf0;
 $black: #15161c;
 
+* {
+  -webkit-font-smoothing: antialiased;
+}
 ::-webkit-scrollbar { display: none; }
 
 div.story {
