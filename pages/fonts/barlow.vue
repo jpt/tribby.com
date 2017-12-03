@@ -55,7 +55,7 @@
         <a name="specimen" id="specimen"></a>
           <h1 class="title">Interactive Specimen</h1>
           <hr class="thin black">
-          <h2 class="title sub">Click or tap the part of the specimen text you wish to modify, then choose the width, style, and case.</h2>
+          <h2 class="title sub">Specicify which part of the specimen you want to modify (currently body text only), then choose the width, style, and case. Tap the headers or body text to edit them.</h2>
         </div>
       </div>
 <!--       <div class="texttype">
@@ -99,8 +99,8 @@
       </div>
       <div class="section examples">
         <hr class="black">
-        <h3>Vincent to Theo Van Gogh</h3>
-        <h4>The Hague, 1883</h4>
+        <h3 contenteditable="true">Vincent to Theo Van Gogh</h3>
+        <h4 contenteditable="true">The Hague, 1883</h4>
         <hr class="black thin">
         <!-- <div class="size">16px / 36px</div> -->
           <!-- <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: '18px', lineHeight: '25px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
@@ -108,7 +108,7 @@
 <!--   <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
 </div> -->
           <div class="example">
-            <p :style="{ display: 'inline', fontFamily: selectedFontFamily, textTransform: caseCSS }">In my opinion, I am often rich as Crœsus, not in money, but (though it doesn't happen every day) rich, because I have found in my work something to which I can devote myself heart and soul, and which gives inspiration and significance to life.
+            <p :style="{ display: 'inline', fontFamily: selectedFontFamily, textTransform: caseCSS }" contenteditable="true">In my opinion, I am often rich as Crœsus, not in money, but (though it doesn't happen every day) rich, because I have found in my work something to which I can devote myself heart and soul, and which gives inspiration and significance to life.
             <br><br>Of course my moods vary, but there is an average of serenity. I have a sure faith in art, a sure confidence that it is a powerful stream, which hears a man to harbour, though he himself must do his bit too; and at all events I think it such a great blessing, when a man has found his work, that I cannot count myself among the unfortunate. I mean, I may be in certain relatively great difficulties, and there may be gloomy days in my life, but I shouldn't want to be counted among the unfortunate nor would it be correct.
             <br><br>You write in your letter something which I sometimes feel also: “Sometimes I do not know how I shall pull through.”
             <br><br>Look here, I often feel the same in more than one respect, not only in financial things, but in art itself, and in life in general. But do you think that something exceptional? Don't you think every man with a little pluck and energy has those moments?
@@ -130,7 +130,7 @@
         <hr class="white thin">
         <p>A few years ago I worked at the Electronic Frontier Foundation, where I quickly bonded with art director Hugh D'Andrade over our shared affinity for fonts derived from the DIN Engschrift grid, and we agreed there wasn't a good open source option. Somewhere along the line I got good photo of the original Engschrift grid from designer <a href="http://nitrofurano.altervista.org/">Paulo Silva</a> and started to draw out some ideas. Over the next few months I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors Dave Crossland and Thomas Phinney, and then another, along with my colleague Soraya Okuda. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
         <img src="~/assets/early.jpg">
-        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked. I asked a lawyer who asked a designer who asked a squire about Barlow, and eventually I met with the man himself while <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a> happened to be around. Gilmore and Barlow debated the techno dystopia and utopia as it can play out in the world of web fonts, content distribution, and life; it was a conversation I was grateful to have been a part of.</p>
+        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked. I asked a lawyer who asked a designer who asked a squire about Barlow, and eventually I met with the man himself while <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a> happened to be around. Gilmore and Barlow debated the techno dystopia and utopia as it can play out in the world of web fonts, content distribution, and life; it was a conversation I am grateful to have been a part of.</p>
         <p>As I worked on the font family and thought about my meeting with giants of activism in California, I looked at ways to incorporate the public aspects of my native state -- its highway and train signs, and license plates, especially -- deeper into the font's aesthetic. Parts of our train system (BART) use a Helvetica-like typeface, a bit rounder than the DIN heritage of the average street sign, and you can see this especially in Barlow's heavier weights.</p>
         <p>Barlow is free software, released under the SIL Open Font License. Please donate to the <a href="https://www.johnperrybarlow-wellnesstrust.com/">John Perry Barlow Wellness Trust</a>, and if you find the fonts useful and you'd like to throw a zillionth of a bitcoin my way, the address is:</p>
         <p class="btc">12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf</p>
@@ -504,6 +504,11 @@ h1.title {
   text-transform: none;
   color: $black;
 }
+.title.sub {
+  font-family: 'BarlowSemiCondensed-Regular';
+  line-height: 1.666em;
+  max-width: $md;
+}
 h2.title {
   font-family: 'Barlow-Regular';
   font-size: 20px;
@@ -632,6 +637,9 @@ span {
 }
 
 .section.examples {
+  *:focus {
+    outline: 0;
+  }
   padding-top: 100px;
   padding-bottom: 140px;
 
