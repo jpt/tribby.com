@@ -440,7 +440,8 @@ div.story {
     font-weight: 400;
     font-size: 13px;
     @include breakpoint($sm) {
-      font-size: inherit;
+      font-size: 17.5px;
+      letter-spacing: 0.05em;
     }
   }
   p:first-of-type {
