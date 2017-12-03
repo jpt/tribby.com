@@ -674,7 +674,7 @@ span {
   h4 {
     font-family: 'BarlowSemiCondensed-Italic';
     opacity: 0.35;
-    font-style: italic;
+    font-style: normal;
     padding-bottom: 0px;
     font-weight: 400;
     font-size: 33px;
@@ -852,7 +852,8 @@ hr.black {
   vertical-align: top;
   text-transform: none;
   font-family: 'Barlow-ExtraLight';
-  font-weight: 275;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .intro {
