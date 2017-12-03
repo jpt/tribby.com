@@ -888,6 +888,7 @@ hr.black {
 
 
 .hero {
+  max-width: $xxl;
   // overflow-x: auto;
 
   // padding-top: 30px;
@@ -897,7 +898,7 @@ hr.black {
   }
 
   // @include breakpoint($xxl) {
-  //   font-size: 56px;
+  //   font-size: 48px;
   // }
 
   display: flex;
