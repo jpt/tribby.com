@@ -415,7 +415,7 @@ $white: #fafaf0;
 $black: #15161c;
 
 
-// ::-webkit-scrollbar { display: none; }
+::-webkit-scrollbar { display: none; }
 
 div.story {
   img {
@@ -1014,7 +1014,7 @@ h1.barlow {
   }
 }
 .styles-wrapper {
-  -webkit-overflow-scrolling: touch;
+  // -webkit-overflow-scrolling: touch;
   clear: both;
   display: block;
   overflow-x: scroll;
@@ -1038,7 +1038,7 @@ h1.barlow {
   max-width: 820px;
   min-width: 650px;
   float: left;
-  -webkit-overflow-scrolling: touch;
+  // -webkit-overflow-scrolling: touch;
   padding-bottom: 40px;
 
 
