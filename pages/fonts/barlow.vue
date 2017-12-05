@@ -130,7 +130,13 @@
         <hr class="white thin">
         <p>A few years ago I worked at the Electronic Frontier Foundation, where I quickly bonded with art director Hugh D'Andrade over our shared affinity for fonts derived from the DIN Engschrift grid, and we agreed there wasn't a good open source option. Somewhere along the line I got a good photo of the original Engschrift grid from designer <a href="http://nitrofurano.altervista.org/">Paulo Silva</a> and started to draw out some ideas. Over the next few months I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors Dave Crossland and Thomas Phinney, and then another, along with my colleague Soraya Okuda. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
         <img src="~/assets/early.jpg">
-        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked. I asked a lawyer who asked a designer who asked a squire about Barlow, and eventually I met with the man himself while <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a> happened to be around. Gilmore and Barlow debated the techno dystopia and utopia as it can play out in the world of web fonts, content distribution, and life; it was a conversation I am grateful to have been a part of.</p>
+        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked. I asked a lawyer who asked a designer who asked a squire about Barlow, and eventually I met with the man himself while <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a> happened to be around. Gilmore and Barlow debated the techno dystopia and utopia as it can play out in the world of licensing, web fonts, content distribution, and life. It was a conversation I am grateful to have been a part of, and it inspired me to incorporate more aspects of the California landscape into the design. Our BART train system, for example, incorporates a very round Basel-school typeface in its public signage, possibly Helvetica -- and this is reflected especially at Barlow's heavier weights. Clearview, Highway Gothic, DIN, the street signs, the car plates: you can see their many subtle faces in Barlow's different weights and widths.</p>
+        <p><video height="320" width="320" autoplay loop>
+          <source src="/e.mp4" type="video/mp4"/>
+        </video>
+        </p>
+
+
 <!--         <p>As I worked on the font family and thought about my meeting with giants of activism in California, I looked at ways to incorporate the public aspects of my native state -- its highway and train signs, and license plates, especially -- deeper into the font's aesthetic. Parts of our train system (BART) use a Helvetica-like typeface, a bit rounder than the DIN heritage of the average street sign, and you can see this especially in Barlow's heavier weights.</p> -->
         <p>Barlow is free software, released under the SIL Open Font License. Please donate to the <a href="https://www.johnperrybarlow-wellnesstrust.com/">John Perry Barlow Wellness Trust</a>, and if you find the fonts useful and you'd like to throw a zillionth of a bitcoin my way, the address is:</p>
         <p class="btc">12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf</p>
@@ -412,7 +418,7 @@ $xxl: 1440px;
 
 $bg: #15161c;
 $white: #fafaf0;
-$black: #15161c;
+$black: #13151a;
 
 
 ::-webkit-scrollbar { display: none; }
