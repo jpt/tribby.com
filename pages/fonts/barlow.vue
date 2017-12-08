@@ -421,7 +421,7 @@ $xl: 1220px;
 $xxl: 1440px;
 
 $bg: #15161c;
-$white: #fafaf0;
+$white: #f9f9f9;
 $black: #13151a;
 
 
@@ -666,6 +666,7 @@ span {
   .example {
     max-width: $xl;
     column-count: 1;
+    padding-top: 40px;
     @include breakpoint($md) {
      column-count: 2;
      column-gap: 60px;
@@ -904,7 +905,7 @@ hr.black {
   // padding-top: 30px;
   font-size: 2.5vw;
   @include breakpoint($sm) {
-    font-size: 3.3vw;
+    font-size: 3.1vw;
   }
 
   // @include breakpoint($xxl) {
@@ -1002,7 +1003,7 @@ h1.barlow {
   @include breakpoint($md) {
     padding-top: 80px;
   }
-  padding-bottom: 90px;
+  padding-bottom: 120px;
 }
 
 
