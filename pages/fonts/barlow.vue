@@ -146,10 +146,10 @@ export default {
   head () {
     return {
       meta: [
-        { name: 'og:image', content:'https://raw.githubusercontent.com/jpt/barlow/master/documentation/barlow.gif' },
-        { hid: 'description', name: 'description', content: 'Barlow, a grotesk font superfamily by Jeremy Tribby' }
+        { property: 'og:image', content:'https://raw.githubusercontent.com/jpt/barlow/master/documentation/barlow.gif' },
+        { hid: 'description', name: 'description', content: 'Barlow, a grotesk variable font superfamily by Jeremy Tribby' }
       ],
-      title: 'Barlow: A font superfamily by Jeremy Tribby'
+      title: 'Barlow: A grotesk font superfamily by Jeremy Tribby'
     }
   },
   data () {
