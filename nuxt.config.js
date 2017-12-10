@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Tribby',
+    title: 'Tribby Type Co.',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'tribby.com on nuxt' }
+      { hid: 'description', name: 'description', content: 'Tribby Type Co. (TTC) is a font foundry started in 2017 by Jeremy Tribby. TTC offers clients a wide range of servides including custom type design, font engineering, web design and engineering, and product design.' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
