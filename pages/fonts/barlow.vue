@@ -24,7 +24,7 @@
           <div>
             <p>Barlow is a slightly rounded, low-contrast, grotesk font superfamily designed by Jeremy Tribby. The typeface draws from the visual style of the California public, sharing qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software.</p>
             <div class="download">
-              <a href="/fonts/barlow/download/barlow-1.207.zip">Download Barlow v1.2</a>
+              <a href="/fonts/barlow/download/barlow-1.208.zip">Download Barlow v1.2</a>
               <a href="https://fonts.google.com/specimen/Barlow" target="_blank">Google Fonts</a>
             </div>
           </div>
@@ -99,8 +99,8 @@
       </div>
       <div class="section examples">
         <hr class="black">
-        <h3 contenteditable="true">Vincent to Theo Van Gogh</h3>
-        <h4 contenteditable="true">The Hague, 1883</h4>
+        <h3 contenteditable="true" spellcheck="false">Vincent to Theo Van Gogh</h3>
+        <h4 contenteditable="true" spellcheck="false">The Hague, 1883</h4>
         <hr class="black thin">
         <!-- <div class="size">16px / 36px</div> -->
           <!-- <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: '18px', lineHeight: '25px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
@@ -108,7 +108,7 @@
 <!--   <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
 </div> -->
           <div class="example">
-            <p :style="{ display: 'inline', fontFamily: selectedFontFamily, textTransform: caseCSS }" contenteditable="true">In my opinion, I am often rich as Crœsus, not in money, but (though it doesn't happen every day) rich, because I have found in my work something to which I can devote myself heart and soul, and which gives inspiration and significance to life.
+            <p spellcheck="false" :style="{ display: 'inline', fontFamily: selectedFontFamily, textTransform: caseCSS }" contenteditable="true">In my opinion, I am often rich as Crœsus, not in money, but (though it doesn't happen every day) rich, because I have found in my work something to which I can devote myself heart and soul, and which gives inspiration and significance to life.
             <br><br>Of course my moods vary, but there is an average of serenity. I have a sure faith in art, a sure confidence that it is a powerful stream, which hears a man to harbour, though he himself must do his bit too; and at all events I think it such a great blessing, when a man has found his work, that I cannot count myself among the unfortunate. I mean, I may be in certain relatively great difficulties, and there may be gloomy days in my life, but I shouldn't want to be counted among the unfortunate nor would it be correct.
             <br><br>You write in your letter something which I sometimes feel also: “Sometimes I do not know how I shall pull through.”
             <br><br>Look here, I often feel the same in more than one respect, not only in financial things, but in art itself, and in life in general. But do you think that something exceptional? Don't you think every man with a little pluck and energy has those moments?

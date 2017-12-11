@@ -3,16 +3,18 @@
     <div>
       <p>A note from Jeremy Tribby:</p>
 
-      <p>Interesting things ahead for tribby.com, which will be returning shortly. In the meantime, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my latest typeface.</p>
-
-      
-
-      <p><a class="email" href="mailto:jeremy@tribby.com">Jeremy</a></p>
+      <p>Interesting things ahead for tribby.com, which is currently being redeveloped. In the meantime, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my new font superfamily. It's free and open source.
+      <p>Jeremy (<a class="email" href="mailto:jeremy@tribby.com">email</a>)</p>
     </div>
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~assets/styles/globals.scss";
+@import "~assets/styles/fonts.scss";
+@import "~susy/sass/susy";
+@import "~breakpoint-sass/stylesheets/breakpoint";
+
 html {
   -webkit-font-smoothing: antialiased;
 }
@@ -54,7 +56,12 @@ div p {
 
 p:first-of-type {
   font-family: 'Akademie Bold';
-  font-size: 1.2em;
+  font-size: 1.1em;
+  max-width: 390px;
+  @include breakpoint (664px) {
+    max-width: 100%;
+
+  }
 }
 
 a.email {
