@@ -134,7 +134,7 @@
         <p><video autoplay muted loop><source src="/e.mp4" type="video/mp4"/></video></p>
         <p>Barlow is free software, released under the SIL Open Font License. Please donate to the <a href="https://www.johnperrybarlow-wellnesstrust.com/">John Perry Barlow Wellness Trust</a>, and if you find the fonts useful and you'd like to throw a zillionth of a bitcoin my way, the address is:</p>
         <p class="btc">12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf</p>
-        <p>Jeremy Tribby<br>TSC/Tribby Supply Co.</p>
+        <p>Jeremy Tribby<br>TSCO/Tribby Supply Co.</p>
       </div>
     </div> 
   </div>
