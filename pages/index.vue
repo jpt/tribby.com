@@ -3,8 +3,8 @@
     <div>
       <p>A note from Jeremy Tribby:</p>
 
-      <p>Interesting things ahead for tribby.com, which is currently being redeveloped. In the meantime, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my new font superfamily. It's free and open source.
-      <p>Jeremy (<a class="email" href="mailto:jeremy@tribby.com">email</a>)</p>
+      <p>Interesting things ahead here at the Tribby Supply Co., with a new website in the works. In the meantime, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my new font superfamily. It's free and open source.</p>
+      <p>Jeremy Tribby (<a class="email" href="mailto:jeremy@tribby.com">email</a>)</p>
     </div>
   </section>
 </template>
@@ -12,7 +12,6 @@
 <style lang="scss" scoped>
 @import "~assets/styles/globals.scss";
 @import "~assets/styles/fonts.scss";
-@import "~susy/sass/susy";
 @import "~breakpoint-sass/stylesheets/breakpoint";
 
 html {
@@ -26,11 +25,6 @@ html {
   align-items: center;
   text-align: left;
 }
-
-/*@media all (min-width: 768px) {
-
-}*/
-
 @font-face {
   font-family: 'Escrow Light';
   src: url('~assets/fonts/Escrow-Light.woff');  
