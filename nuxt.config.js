@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Tribby Supply Co.',
+    title: 'Tribby Type Co.',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Tribby Supply Co. (TSCO) is a multidisciplinary creative studio founded by Jeremy Tribby in 2001. TSCO offers clients a wide range of servides including type design; product, graphic, and interactive design; and engineering.' }
+      { hid: 'description', name: 'description', content: 'Tribby Type Co. (TTC) is a custom font software and type design studio founded by Jeremy Tribby in 2017. TTC offers clients a wide range of servides including custom type design, product, graphic, and interactive design, as well as engineering.' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }

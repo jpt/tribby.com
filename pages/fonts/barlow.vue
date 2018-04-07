@@ -22,9 +22,9 @@
             <h1>Ba</h1>
           </div>
           <div>
-            <p>Barlow is a slightly rounded, low-contrast, grotesk font superfamily designed by Jeremy Tribby. The typeface draws from the visual style of the California public, sharing qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software.</p>
+            <p>Barlow is a slightly rounded, low-contrast, grotesk font superfamily designed by Jeremy Tribby. The typeface draws from the visual style of the California public, sharing qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software. <a href="https://paypal.me/tribbytypeco">Click to donate.</a></p>
             <div class="download">
-              <a href="/fonts/barlow/download/barlow-1.400.zip">Download Barlow v1.4</a>
+              <a href="/fonts/barlow/download/barlow-1.403.zip">Download Barlow v1.4</a>
               <a href="https://fonts.google.com/specimen/Barlow" target="_blank">Google Fonts</a>
             </div>
           </div>
@@ -128,13 +128,14 @@
         <a name="story" id="story"></a>
         <h1 class="title">Story</h1>
         <hr class="white thin">
-        <p>A few years ago I worked at the Electronic Frontier Foundation, where I quickly bonded with art director Hugh D'Andrade over our shared affinity for fonts derived from the DIN Engschrift grid, and we agreed there wasn't a good open source option. Somewhere along the line I got a good photo of the original Engschrift grid from designer <a href="http://nitrofurano.altervista.org/">Paulo Silva</a> and started to draw out some ideas. Over the next few months I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors Dave Crossland and Thomas Phinney, and then another, along with my colleague Soraya Okuda. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
+        <p>A few years ago I worked at EFF, a non-profit organization fighting for privacy and freedom in the digital world. While I as was there, EFF's Hugh D'Andrade and I bonded over our shared affinity for fonts derived from the DIN Engschrift grid, and we agreed there wasn't a good open source option. Somewhere along the line I got a good photo of the original Engschrift grid from a comment left somewhere on the Internet by designer <a href="http://nitrofurano.altervista.org/">Paulo Silva</a> and started to draw out some ideas. Over the next few months I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors Dave Crossland and Thomas Phinney, and then another, along with my colleague Soraya Okuda. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
         <img src="~/assets/early.jpg">
-        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked. I asked a lawyer who asked a designer who asked a squire about Barlow, and eventually I met with the man himself while <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a> happened to be around. Gilmore and Barlow debated the techno dystopia and utopia as it can play out in the world of licensing, web fonts, content distribution, and life. It was a conversation I am grateful to have been a part of, and it inspired me to incorporate more aspects of the California landscape into the design. Our BART train system, for example, incorporates a very round Basel-school typeface in its public signage, possibly Helvetica -- and this is reflected especially at Barlow's heavier weights. Clearview, Highway Gothic, DIN, the street signs, the car plates: you can see their many subtle faces in Barlow's different weights and widths.</p>
-        <p><video autoplay muted loop><source src="/e.mp4" type="video/mp4"/></video></p>
-        <p>Barlow is free software, released under the SIL Open Font License. Please donate to the <a href="https://www.johnperrybarlow-wellnesstrust.com/">John Perry Barlow Wellness Trust</a>, and if you find the fonts useful and you'd like to throw a zillionth of a bitcoin my way, the address is:</p>
+        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked, so I went to see him over at <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a>'s house. I'd talked shop about everything from EFF stuff to drug policy with Gilmore before (having previously worked at EFF as a web dev), but I'd never formally met Barlow, and I was pretty nervous. Hugh D'Andrade, EFF's art director, drove us over and we were greeted by Alden, who Barlow called his squire. We all proceeded to debate the techno dystopia and utopia as it can play out in the world of licensing, web fonts, content distribution, and life. Seeing Gilmore and Barlow debate their very different viewpoints was surreal -- two old friends and legends of the early Internet having the same conversations they'd been having for decades, just this time about fonts! In the end I walked away with a great font name and even better memory.</p>
+        <p>My meeting with giants inspired me to more deeply integrate the California landscape into the design. Our BART train system, for example, incorporates a very round Basel-school typeface in its public signage -- and this is reflected especially at Barlow's heavier weights. Clearview, Highway Gothic, DIN, the street signs, the car plates: you can see their many subtle faces in Barlow's different weights and widths.</p>
+        <p><video autoplay="true" muted="true" loop="true"><source src="/e.mp4" type="video/mp4"/></video></p>
+        <p>Barlow is free software, released under the SIL Open Font License. Please consider making a donation to the <a href="https://supporters.eff.org/donate" target="_new">the Electronic Frontier Foundation</a> in JPB's memory. If you find the fonts useful and you'd like to tip the author, you <a href="https://paypal.me/tribbytypeco">can use PayPal</a> or send some tiny bitcoins to 
         <p class="btc">12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf</p>
-        <p>Jeremy Tribby<br>TSCO/Tribby Supply Co.</p>
+        <p>Jeremy Tribby<br>Tribby Type Co.</p>
       </div>
     </div> 
   </div>
@@ -875,7 +876,9 @@ hr.black {
 }
 
 .intro {
-
+  a {
+    color: $white;
+  }
   display: flex;
   flex-direction: column;
   @include breakpoint($lg) {
@@ -954,6 +957,18 @@ hr.black {
 
 }
 
+.donate-link {
+  padding-top: 1em;
+  a {
+    color: $white;
+    font-size: 20px;
+    text-decoration: none;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
 
 h1.barlow {
 

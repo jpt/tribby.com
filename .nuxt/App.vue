@@ -19,7 +19,7 @@ let layouts = {
 let resolvedLayouts = {}
 
 export default {
-  head: {"title":"Tribby Type Co.","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Tribby Supply Co. (TSC) is a multidisciplinary creative studio started by Jeremy Tribby in 2001. TSC offers clients a wide range of servides including type design, product design, graphic and interactive design, and engineering."}],"link":[{"rel":"icon","type":"image/png","href":"/favicon.png"}],"style":[],"script":[]},
+  head: {"title":"Tribby Type Co.","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Tribby Type Co. (TTC) is a custom font software and type design studio founded by Jeremy Tribby in 2017. TTC offers clients a wide range of servides including custom type design, product, graphic, and interactive design, as well as engineering."}],"link":[{"rel":"icon","type":"image/png","href":"/favicon.png"}],"style":[],"script":[]},
   data: () => ({
     layout: null,
     layoutName: ''

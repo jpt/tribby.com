@@ -3,8 +3,9 @@
     <div>
       <p>A note from Jeremy Tribby:</p>
 
-      <p>Interesting things ahead here at the Tribby Supply Co., with a new website in the works. In the meantime, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my new font superfamily. It's free and open source.</p>
-      <p>Jeremy Tribby (<a class="email" href="mailto:jeremy@tribby.com">email</a>)</p>
+      <p>Interesting things ahead here at tribby.com, which has become the Tribby Type Co. as more and more of my computer-y free time is spent on fonts. While I redesign things here, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my new font superfamily. It's free and open source, and there's an experimental variable font included. Also, while you're at it, check out <a href="https://vpn.cash/">VPN Cash</a>, a mysterious new crypto project.</p>
+      <p>- Jeremy (<a class="email" href="mailto:jeremy@tribby.com">email</a>)</p>
+      </p>
     </div>
   </section>
 </template>
