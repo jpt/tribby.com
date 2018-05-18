@@ -97,9 +97,10 @@ html {
 }
 #app.vpn-cash {
   color: $white;
-  background: linear-gradient(to bottom right, $darkish-blue, $dark-blue);
+  // background: linear-gradient(to bottom right, $darkish-blue, $dark-blue);
+  background-color: $dark-blue !important;
   nav {
-    background: transparent;
+    background: $dark-blue !important;
   }
 }
 #app.chefs-feed {
@@ -182,7 +183,7 @@ body.active {
 }
 
 #app > * {
-  transition: all 120ms ease-in-out;
+  transition: transform 120ms ease-out, opacity 120ms ease-in-out, background-color 300ms linear;
 }
 
 
@@ -264,7 +265,7 @@ body {
 
 #app {
   background-color: $white;
-  transition: all 120ms ease-out;
+  transition: transform 120ms ease-out, opacity 120ms ease-in-out, background-color 300ms linear;
 }
 #app.front-page {
 
