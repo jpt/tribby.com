@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/vue@2.5.9"></script>
+    <script src="https://unpkg.com/markdown-it@8.3.2/dist/markdown-it.min.js"></script>
+    <script src="./vue-headroom.js"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <vue-headroom>
+        <header>
+          <div class="wrapper">
+            vue-headroom
+          </div>
+        </header>
+      </vue-headroom>
+      <main>
+        <div class="wrapper">
+          <p><a href="https://github.com/dalphyx/vue-headroom">Code on Github</a></p>
+
+          <p>Vue-headroom is a vue component to let headroom work with vue. The original idea of headroom come from <a href="https://github.com/WickyNilliams/headroom.js">headroom.js</a>. vue-headroom heavily inspired by headroom.js and <a href="https://github.com/KyleAMathews/react-headroom">react-headroom</a>.</p>
+
+          <h1>Installation</h1>
+
+          <p><code>npm install vue-headroom</code></p>
+
+          <h1>Usage</h1>
+
+          <p v-html="usage"></p>
+
+          <h1>Props</h1>
+
+          <p v-html="props"></p>
+        </div>
+      </main>
+    </div>
+    <script type="text/template" id="props-content">
+`speed`
+
+Transition speed, in ms. Default: `350`
+
+`easing`
+
+Transition function. Default: `ease-in-out`
+
+`disabled`
+
+Disable the headroom. Default: false
+
+`upTolerance`
+
+Scroll tolerance when scrolling up before component is pinned, in px. Default: `5`
+
+`downTolerance`
+
+Scroll tolerance when scrolling down before component is pinned, in px. Default: `0`
+
+`scroller`
+
+Element to listen to scroll events on. Default: () => `window`
+
+`classes`
+
+Css classes to apply. Default:
+```html
+{
+  // when element is initialised
+  initial : "headroom",
+  // when scrolling up
+  pinned : "headroom--pinned",
+  // when scrolling down
+  unpinned : "headroom--unpinned",
+  // when above offset
+  top : "headroom--top",
+  // when below offset
+  notTop : "headroom--not-top",
+  // when at bottom of scoll area
+  bottom : "headroom--bottom",
+  // when not at bottom of scroll area
+  notBottom : "headroom--not-bottom"
+}
+```
+
+`onPin`
+
+Callback when header is pinned.
+
+`onUnpin`
+
+Callback when header is unpinned.
+
+`onTop`
+
+Callback when above offset.
+
+`onNotTop`
+
+Callback when below offset.
+
+`onBottom`
+
+Callback when at bottom of page.
+
+`onNotBottom`
+
+Callback when moving away from bottom of page.
+
+`offset`
+
+Height in px where the header should start and stop pinning. Default: `0`
+
+`zIndex`
+
+The z-index of component. Default: `9999`
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>

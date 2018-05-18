@@ -14,22 +14,29 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
-    "breakpoint-sass": "^2.7.1",
-    "node-sass": "^4.7.2",
-    "nuxt": "^1.0.0-rc11",
-    "sass-loader": "^6.0.6",
-    "susy": "^3.0.1",
-    "vue-analytics": "^5.6.0"
+    "node-sass": "^4.9.0",
+    "nuxt": "^1.0.0-gh-b83d745",
+    "raf": "^3.4.0",
+    "sass-loader": "^6.0.7",
+    "susy": "^3.0.5",
+    "vue-analytics": "^5.10.6",
+    "vue-observe-visibility": "^0.3.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
+    "breakpoint-sass": "^2.7.1",
+    "eslint": "^4.19.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.1.1",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "vue-in-viewport-directive": "^1.1.4",
+    "vue-in-viewport-mixin": "^1.0.4",
+    "vue-is-in-view": "^1.0.7",
+    "vue2-scrollspy": "^2.2.2"
   }
 }

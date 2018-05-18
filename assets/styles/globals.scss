@@ -1,5 +1,4 @@
-@import '~susy/sass/susy';
-$susy: (columns: 12, gutters: 0, math: fluid, output: float, gutter-position: inside, global-box-sizing: border-box);
+@import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
 
 $container: 85%;
 
@@ -21,7 +20,7 @@ $grey-medium: rgba(120,120,120,1);
 
 $body-bg-color: $grey-white;
 
-$heading-font-family: 'Akademie';
+$heading-font-family: 'Barlow-Bold';
 $heading-font-weight: 700;
 
 $body-font-family: 'Escrow';

@@ -1,76 +1,96 @@
 <template>
-  <section class="container">
-    <div>
-      <p>A note from Jeremy Tribby:</p>
-
-      <p>Interesting things ahead here at tribby.com, which after 17 years will now strictly focus on fonts by the Tribby Type Co. New website is in the works &mdash; in the meantime, check out the minisite for <nuxt-link to="/fonts/barlow">Barlow</nuxt-link>, my new font superfamily. It's free and open source, and there's an experimental variable font included.</p>
-      <p>- Jeremy (<a class="email" href="mailto:jeremy@tribby.com">email</a>)</p>
-      </p>
+  <div class="container">
+    <div class="index">
+      <div class="announce" v-in-viewport.once>
+        <h1>Designing and engineering type, products, and digital experiences.</h1>
+      </div>
+      <div class="soon" v-observe-visibility="visibilityChanged">
+        <h1>Coming soon.</h1>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
+<script>
+import Vue from 'vue'
+import Vuex from 'vuex'
 
+import { ObserveVisibility } from 'vue-observe-visibility'
+import inViewportDirective from 'vue-in-viewport-directive'
+
+Vue.directive('observe-visibility', ObserveVisibility)
+Vue.directive('in-viewport', inViewportDirective)
+
+export default {
+
+  data() {
+    return {
+      animate: true
+    }
+
+  },
+  transition: 'page',
+  methods: {
+    visibilityChanged (isVisible) {
+      this.$store.commit('setDark', isVisible)
+    }
+  }
+}
+</script>
 <style lang="scss" scoped>
-@import "~assets/styles/globals.scss";
-@import "~assets/styles/fonts.scss";
-@import "~breakpoint-sass/stylesheets/breakpoint";
 
-html {
-  -webkit-font-smoothing: antialiased;
-}
-.container {
-  padding: 0 1em;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-}
-@font-face {
-  font-family: 'Escrow Light';
-  src: url('~assets/fonts/Escrow-Light.woff');  
+@import "~assets/css/globals.scss";
+@import "~assets/css/fonts.scss";
+
+.soon h1 {
+  color: $white;
+  margin-top: 20em;
+  margin-bottom: 2em;
 }
 
-@font-face {
-  font-family: 'Akademie Bold';
-  src: url('~assets/fonts/Akademie-Bold.woff');  
+.announce.in-viewport {
+  opacity: 1;
+  transform: translate3d(0,0,0);
 }
+.announce {
+  transition: opacity 800ms ease-out, transform 500ms ease-out;
+  transform: translate3d(0,50px,0);
+  margin-bottom: 200px;
 
-div {
-  font-family: 'Escrow Light';
-  display: block;
-  font-size: 24px;
-  color: #35495e;
-  letter-spacing: 1px;
+  top: 0;
+  opacity: 0;
+  height: 100vh;
+  padding-top: 33vh;
+  @include breakpoint($md) {
+    padding-top:40px;
+  }
+
+  margin-right: 10%;
+  max-width: 1150px;
+
+  h1 {
+    font-family: 'Akademie Bold';
+    font-size: 8vw;
+    @include breakpoint($md) {
+      font-size: 3.5em;
+      font-family: 'Akademie Bold';
+    }
+  }
 }
-
-div p {
-  max-width: 600px;
-  margin-top: 2em;
-}
-
-p:first-of-type {
-  font-family: 'Akademie Bold';
-  font-size: 1.1em;
-  max-width: 390px;
-  @include breakpoint (664px) {
-    max-width: 100%;
-
+img {
+  width: 100%;
+  @include breakpoint($md) {
+     max-width: 1440px;
+    padding-left: (100% - $container) / 2;
+     padding-right: (100% - $container) / 2;
   }
 }
 
-a.email {
-  text-decoration: none;
-}
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+h1 {
+  // word-break: break-all;
+  font-family: 'Akademie Bold';
+  letter-spacing: -0.2px;
+  font-size: 2em;
 }
 
-.links {
-  padding-top: 15px;
-}
+
 </style>

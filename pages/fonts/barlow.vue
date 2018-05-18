@@ -95,6 +95,12 @@
               <a :class="{ active: isCase(caseKind) }" @click="updateCase(caseKind)">{{ caseKind }} </a>
             </li>
           </ul>
+          <ul>
+            <li>Size</li>
+            <li v-for="size in sizes">
+              <a :class="{ active: isSize(size) }" @click="updateSize(size)">{{ size }} </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="section examples">
@@ -108,7 +114,7 @@
 <!--   <p contenteditable spellcheck="false" @input="updateText" :style="{ display: 'inline', fontSize: pair[0] + 'px', lineHeight: pair[1] + 'px', fontFamily: selectedFontFamily, textTransform: caseCSS }">{{ bodyText }}</p>
 </div> -->
           <div class="example">
-            <p spellcheck="false" :style="{ display: 'inline', fontFamily: selectedFontFamily, textTransform: caseCSS }" contenteditable="true">In my opinion, I am often rich as Crœsus, not in money, but (though it doesn't happen every day) rich, because I have found in my work something to which I can devote myself heart and soul, and which gives inspiration and significance to life.
+            <p contenteditable="true" spellcheck="false" :style="{ display: 'inline', fontSize: selectedSize, fontFamily: selectedFontFamily, textTransform: caseCSS }">In my opinion, I am often rich as Crœsus, not in money, but (though it doesn't happen every day) rich, because I have found in my work something to which I can devote myself heart and soul, and which gives inspiration and significance to life.
             <br><br>Of course my moods vary, but there is an average of serenity. I have a sure faith in art, a sure confidence that it is a powerful stream, which hears a man to harbour, though he himself must do his bit too; and at all events I think it such a great blessing, when a man has found his work, that I cannot count myself among the unfortunate. I mean, I may be in certain relatively great difficulties, and there may be gloomy days in my life, but I shouldn't want to be counted among the unfortunate nor would it be correct.
             <br><br>You write in your letter something which I sometimes feel also: “Sometimes I do not know how I shall pull through.”
             <br><br>Look here, I often feel the same in more than one respect, not only in financial things, but in art itself, and in life in general. But do you think that something exceptional? Don't you think every man with a little pluck and energy has those moments?
@@ -130,7 +136,7 @@
         <hr class="white thin">
         <p>A few years ago I worked on engineering and design at the <a target="_new" href="https://eff.org/">Electronic Frontier Foundation</a>, a non-profit organization fighting for privacy and freedom in the digital world. EFF's art director <a target="_new" href="http://hughillustration.com/">Hugh D'Andrade</a> and I share an affinity for fonts derived from the DIN Engschrift grid, and we agreed back then that there wasn't a good open source option. I can't remember how it happened but at some point I stumbled upon a good photo of the Engschrift grid in a comment left somewhere on the Internet by designer <a href="http://nitrofurano.altervista.org/">Paulo Silva</a>. Inspired by its simplicity, I began sketching and working with hand tools. Over the months that followed I helped to host a <a target="_new" href="https://craftingtype.com/">Crafting Type</a> workshop with instructors <a target="_new" href="https://fonts.google.com/">Dave Crossland</a> and <a target="_new" href="https://www.fontlab.com/">Thomas Phinney</a>, and then another, along with my colleague <a target="_new" href="https://www.eff.org/about/staff/soraya-okuda">Soraya Okuda</a>. Dave and Thomas were excited about variable fonts and I began to form ideas about Barlow with the new font technology in mind.</p>
         <img src="~/assets/early.jpg">
-        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked or anything else about the project, so I set out to see him over at <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a>'s house. I'd talked shop about everything from EFF stuff to drug policy with Gilmore before, but I'd never formally met Barlow, and I was pretty nervous. Hugh drove us over and managed to find a parking spot in the Haight which I thought was pretty impressive. We were greeted by Alden, a designer who Barlow called his squire and who watched after him in poor health. Seated around Gilmore's dining table, we all proceeded to dissect the political implications of putting a font out into the world: the techno dystopia and utopia as it can play out in the world of licensing, data collection, content distribution, and life. Seeing Gilmore and Barlow debate their very different viewpoints was surreal -- two old friends and legends of the early Internet having the same debates they'd been having for decades, just this time about fonts. In the end I walked away with a great font name and even better memory.</p>
+        <p>The font was named after EFF co-founder, activist, songwriter, and cattle rancher <a target="_new" href="https://en.wikipedia.org/wiki/John_Perry_Barlow">John Perry Barlow</a>, in tribute to his lasting impact on the information superhighway. Even in tribute, I didn't want to name the font after someone who didn't like the way it looked or anything else about the project, so I set out to see him over at <a href="https://en.wikipedia.org/wiki/John_Gilmore_(activist)">John Gilmore</a>'s house. I'd talked shop about everything from EFF stuff to drug policy with Gilmore before, but I'd never formally met Barlow, and I was pretty nervous. Hugh drove us over and managed to find a parking spot in the Haight which was maybe the most mind-blowing thing that happened all day. We were greeted by Alden, a designer who Barlow called his squire. Seated around Gilmore's dining table, we all proceeded to dissect the political implications of putting a font out into the world: the techno dystopia and utopia as it can play out in the world of licensing, data collection, content distribution, and life. Seeing Gilmore and Barlow debate their very different viewpoints was surreal -- two old friends and legends of the early Internet having the same debates they'd been having for decades, just this time about fonts. In the end I walked away with a great font name and even better memory.</p>
         <p>My meeting with giants inspired me to more deeply integrate the California landscape into the design. Our BART train system, for example, incorporates a very round Basel-school typeface in its public signage -- and this is reflected especially at Barlow's heavier weights. Clearview, Highway Gothic, DIN, the street signs, the car plates: you can see their many subtle faces in Barlow's different weights and widths.</p>
         <p><video autoplay="true" muted="true" loop="true"><source src="/e.m4v" type="video/mp4"/></video></p>
         <p>Barlow is free software, released under the SIL Open Font License. Please consider making a <a href="https://supporters.eff.org/donate" target="_new">donation to the the Electronic Frontier Foundation</a> in JPB's memory. If you find the fonts useful and you'd like to tip the author (me), you <a href="https://paypal.me/tribbytypeco">can use PayPal</a> or send some tiny bitcoins to 
@@ -171,6 +177,7 @@ export default {
       selectedWidth: 'Regular',
       selectedWeight: 'Regular',
       selectedCase: 'Default',
+      selectedSize: '16px',
       bodyText: '',
       types: [
         // 'Headline',
@@ -229,6 +236,14 @@ export default {
         'Lowercase',
         'Default',
         'Title Case'
+      ],
+      sizes: [
+        '12px',
+        '16px',
+        '24px',
+        '36px',
+        '54px',
+        '72px'
       ]
     }
   },
@@ -300,6 +315,9 @@ export default {
     updateType: function (type) {
       this.selectedType = type
     },
+    updateSize: function (size) {
+      this.selectedSize = size
+    },
     fontWeightCSS: function (fontWeight) {
       return this.weights[fontWeight].css
     },
@@ -308,6 +326,9 @@ export default {
     },
     isWidth: function (width) {
       return this.selectedWidth === width || (this.selectedWidth === '' && width === 'Regular')
+    },
+    isSize: function (size) {
+      return this.selectedSize === size
     },
     isStyle: function (style) {
       return (this.selectedStyle === '' && this.selectedWeight === 'Regular') || this.selectedStyle === style || (this.selectedStyle === '' && style === 'Roman')
@@ -402,10 +423,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/styles/globals.scss";
-@import "~assets/styles/fonts.scss";
-@import "~susy/sass/susy";
-@import "~breakpoint-sass/stylesheets/breakpoint";
+@import "~assets/css/globals.scss";
+@import "~assets/css/fonts.scss";
 
 $sm: 480px;
 $md: 786px;
@@ -417,7 +436,12 @@ $bg: #15161c;
 $white: #f9f9f9;
 $black: #13151a;
 
-
+#minisite * {
+    -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
 ::-webkit-scrollbar { display: none; }
 
 div.story {
@@ -433,7 +457,7 @@ div.story {
   padding-bottom: 120px;
   p {
     padding-bottom: 42px;
-    font-family: 'Barlow-Medium';
+    font-family: 'Barlow-Regular';
     font-weight: 500;
     max-width: 700px;
     font-size: 18px;
@@ -658,7 +682,7 @@ span {
   margin-top: 0;
   p {
     font-size: 16px;
-    line-height: 36px;
+    line-height: 2em;
     letter-spacing: 0;
   }
 
@@ -907,14 +931,7 @@ hr.black {
   // overflow-x: auto;
 
   // padding-top: 30px;
-  font-size: 2.5vw;
-  @include breakpoint($sm) {
-    font-size: 3.1vw;
-  }
 
-  @include breakpoint($xxl) {
-    font-size: 44px;
-  }
 
 
 
@@ -922,6 +939,17 @@ hr.black {
   flex-direction: column;
   flex-wrap: wrap;
 
+}
+.hero .headline h2 {
+
+  font-size: 2.5vw;
+  @include breakpoint($sm) {
+    font-size: 4.4vw;
+  }
+
+  @include breakpoint($xl) {
+    font-size: 54px;
+  }
 }
 .header {
 
@@ -949,7 +977,7 @@ hr.black {
   @include breakpoint($xxl) {
     width: 700px;
   }
-  font-family: 'Barlow-Medium';
+  font-family: 'Barlow-Regular';
   font-weight: 500;
   font-size: 16px;
   line-height: 1.8em;
