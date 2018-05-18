@@ -183,7 +183,7 @@ body.active {
 }
 
 #app > * {
-  transition: transform 120ms ease-out, opacity 120ms ease-in-out, background-color 300ms linear;
+  transition: color 300ms linear, transform 120ms ease-out, opacity 120ms ease-in-out, background-color 300ms linear;
 }
 
 
@@ -265,7 +265,7 @@ body {
 
 #app {
   background-color: $white;
-  transition: transform 120ms ease-out, opacity 120ms ease-in-out, background-color 300ms linear;
+  transition: color 300ms linear, transform 120ms ease-out, opacity 120ms ease-in-out, background-color 300ms linear;
 }
 #app.front-page {
 

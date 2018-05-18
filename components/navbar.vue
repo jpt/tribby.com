@@ -210,6 +210,9 @@ nav.side ul.menu {
   display: none;
 }
 
+.headroom .navbar {
+  background-color: rgba(253,253,253,0.9);
+}
 .navbar {
   transition: background-color 500ms linear;
   position: relative;
@@ -227,7 +230,7 @@ nav.side ul.menu {
   padding-top: 15px;
   padding-bottom: 8px;
   // background-color: rgba(255,255,255,0.9);
-  background-color: rgba(253,253,253,0.9);
+  background-color: $white;
   height: 50px;
 }
 
