@@ -63,6 +63,9 @@ export default {
   @include breakpoint($md) {
     padding-top:40px;
   }
+   @include breakpoint($lg) {
+    padding-top:80px;
+  }
 
   margin-right: 10%;
   max-width: 1150px;

@@ -42,10 +42,19 @@ export default {
   computed: {
     pageClass: function () {
       if(this.$route.path == '/') {
+        this.$store.commit('setDark', false)
         return 'front-page'
       } else if(this.$route.path.startsWith('/fonts/barlow')) {
+        this.$store.commit('setDark', true)
         return 'barlow'
+      } else if(this.$route.path.startsWith('/projects/chefs')) {
+        this.$store.commit('setDark', false)
+        return 'sub-page chefs-feed'
+      } else if(this.$route.path.startsWith('/projects/vpn')) {
+        this.$store.commit('setDark', true)
+        return 'sub-page vpn-cash'
       } else {
+        this.$store.commit('setDark', false)
         return 'sub-page'
       }
     }
@@ -82,6 +91,23 @@ html {
   // display: none !important;
 }
 
+#app {
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+#app.vpn-cash {
+  color: $white;
+  background: linear-gradient(to bottom right, $darkish-blue, $dark-blue);
+  nav {
+    background: transparent;
+  }
+}
+#app.chefs-feed {
+  background-color: #fef301 !important;
+  nav {
+    background-color: #fef301 !important;
+  }
+}
 nav.navbar.header {
 
   position: absolute !important;
@@ -238,7 +264,7 @@ body {
 
 #app {
   background-color: $white;
-  transition: all 500ms ease-out;
+  transition: all 120ms ease-out;
 }
 #app.front-page {
 
