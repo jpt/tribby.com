@@ -1,13 +1,13 @@
 <template>
   <div id="app" :class="[pageClass, { dark: this.$store.state.dark }]">
     <navbar class="header" :class="pageClass"></navbar>
-    <img class="hamburger top" @click="toggleSide" src="~assets/nav.svg" alt="Open Menu"/>
+    <img class="hamburger top" @click="toggleSide" :src="navDark" alt="Open Menu"/>
     <headroom :offset="280">
       <navbar class="sticky" :class="[ pageClass, {dark: this.$store.state.dark}]"></navbar>
-      <img class="hamburger" @click="toggleSide" src="~assets/nav.svg" alt="Open Menu"/>
+      <img class="hamburger" @click="toggleSide" :src="navDark" alt="Open Menu"/>
     </headroom>
     <navbar class="side" :class="pageClass"></navbar>
-    <img class="close" @click="toggleSide" src="~assets/close.svg" alt="Close Menu"/>
+    <img class="close" @click="toggleSide" :src="closeDark" alt="Close Menu"/>
     <nuxt/>
   </div>
 </template>
@@ -15,6 +15,11 @@
 import navbar from '@/components/navbar.vue';
 import headroom from '@/components/vue-headroom/src/headroom.vue';
 
+const n = require('@/assets/nav.svg')
+const nw = require('@/assets/nav-white.svg')
+
+const c = require('@/assets/close.svg')
+const cw = require('@/assets/close-white.svg')
 
 export default {
   data: function() {
@@ -38,6 +43,24 @@ export default {
     }
   },
   computed: {
+    navDark: function () {
+      if(this.$store.state.dark) {
+        
+        return nw
+      } else {
+
+        return n
+      }
+    },
+    closeDark: function () {
+      if(this.$store.state.dark) {
+        
+        return cw
+      } else {
+
+        return c
+      }
+    },
     pageClass: function () {
       if(this.$route.path == '/') {
         this.$store.commit('setDark', false)
@@ -204,9 +227,9 @@ img.close {
 img.hamburger {
 
   position: fixed;
-  right: 20px;
-  height: 1.2em;
-  top: 14px;
+  right: 5%;
+  height: 10px;
+  top: 20px;
   width: auto;
   z-index: 9999999;
 
@@ -223,9 +246,9 @@ img.hamburger {
 img.close {
 
   position: fixed;
-  right: 18px;
-  height: 1.5em;
-  top: 12px;
+  right: 5%;
+  height: 12px;
+  top: 20px;
   width: auto;
   z-index: 9999999;
 

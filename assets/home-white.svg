@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="417px" height="401px" viewBox="0 0 417 401" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
-    <title>home</title>
+    <title>home-white</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="home" fill-rule="nonzero" fill="#000000">
+        <g id="home-white" fill-rule="nonzero" fill="#FDFDFD">
             <path d="M416.8,104.8 L208.8,0.8 L0.8,104.8 L18.8,140.8 L208.8,45.8 L398.8,140.8 L416.8,104.8 Z M349.8,400.8 L349.8,143.8 L309.8,143.8 L309.8,400.8 L349.8,400.8 Z M107.8,400.8 L107.8,143.8 L67.8,143.8 L67.8,400.8 L107.8,400.8 Z" id="Shape"></path>
         </g>
     </g>

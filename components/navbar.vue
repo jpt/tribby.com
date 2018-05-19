@@ -8,7 +8,7 @@
       <template v-for="route in routes">
         <li v-if="route.path=='/'">
           <nuxt-link class="img" to="/">
-            <img class="home" :class="{ active: isParent(route.path) }" src="~assets/home.svg" alt="home"/>
+            <img class="home" :class="{ active: isParent(route.path) }" :src="homeDark" alt="home"/>
           </nuxt-link>
         </li>
         <li v-else :class="{ active: isParent(route.path) }">
@@ -26,6 +26,8 @@
   </nav>
 </template>
 <script>
+  const hw = require('@/assets/home-white.svg')
+  const h = require('@/assets/home.svg')
 export default {
   data: function() {
     return {
@@ -73,6 +75,15 @@ export default {
     }
   },
   computed: {
+    homeDark: function () {
+      if(this.$store.state.dark) {
+        
+        return hw
+      } else {
+
+        return h
+      }
+    },
     offsetpx: function () {
       if(this.$route.path == '/') {
         return 280
