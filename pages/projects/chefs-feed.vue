@@ -25,7 +25,7 @@
 	img {
 		display: block;
 		width: 100%;
-		border: 20px solid $white;
+		border: 10px solid $not-black;
 		// padding: 0 7.5% 2em 7.5%;
 		margin-bottom: 2em;
 
