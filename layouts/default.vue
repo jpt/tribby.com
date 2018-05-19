@@ -113,6 +113,7 @@ html {
 }
 
 #app {
+  backface-visibility: hidden;
   min-height: 100vh;
   padding-bottom: 20px;
 }
@@ -121,7 +122,7 @@ html {
   // background: linear-gradient(to bottom right, $darkish-blue, $dark-blue);
   background-color: $dark-blue !important;
   nav {
-    background: $dark-blue !important;
+    background-color: $dark-blue !important;
   }
 }
 #app.chefs-feed {

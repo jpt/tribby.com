@@ -37,10 +37,10 @@ Vue.use(Meta, {
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp (ssrContext) {
-  const router = createRouter()
+  const router = createRouter(ssrContext)
 
   
-  const store = createStore()
+  const store = createStore(ssrContext)
   // Add this.$router into store actions/mutations
   store.$router = router
   

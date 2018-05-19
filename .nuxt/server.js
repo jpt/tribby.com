@@ -47,13 +47,12 @@ export default async ssrContext => {
   ssrContext.next = createNext(ssrContext)
   // Used for beforeNuxtRender({ Components, nuxtState })
   ssrContext.beforeRenderFns = []
-
+  // Nuxt object (window.__NUXT__)
+  ssrContext.nuxt = { layout: 'default', data: [], error: null, state: null, serverRendered: true }
   // Create the app definition and the instance (created for each request)
   const { app, router, store } = await createApp(ssrContext)
   const _app = new Vue(app)
 
-  // Nuxt object (window.__NUXT__)
-  ssrContext.nuxt = { layout: 'default', data: [], error: null, state: null, serverRendered: true }
   // Add meta infos (used in renderer.js)
   ssrContext.meta = _app.$meta()
   // Keep asyncData for each matched component in ssrContext (used in app/utils.js via this.$ssrContext)
@@ -77,7 +76,7 @@ export default async ssrContext => {
     return _app
   }
   const render404Page = () => {
-    app.context.error({ statusCode: 404, message: 'This page could not be found' })
+    app.context.error({ statusCode: 404, path: ssrContext.url, message: 'This page could not be found' })
     return renderErrorPage()
   }
 
@@ -110,7 +109,7 @@ export default async ssrContext => {
   midd = midd.map((name) => {
     if (typeof name === 'function') return name
     if (typeof middleware[name] !== 'function') {
-      ssrContext.error({ statusCode: 500, message: 'Unknown middleware ' + name })
+      app.context.error({ statusCode: 500, message: 'Unknown middleware ' + name })
     }
     return middleware[name]
   })

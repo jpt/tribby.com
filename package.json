@@ -14,8 +14,9 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
+    "hoek": "^4.2.1",
     "node-sass": "^4.9.0",
-    "nuxt": "^1.0.0-gh-b83d745",
+    "nuxt": "^1.4.0",
     "raf": "^3.4.0",
     "sass-loader": "^6.0.7",
     "susy": "^3.0.5",
