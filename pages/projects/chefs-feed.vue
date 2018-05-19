@@ -5,9 +5,9 @@
 <!--       <h2>Lead Interactive Designer, ca. 2015</h2> -->
     </div>
     <div class="white">
-	    
-	    <img src="~assets/chefs1.png">
 	    <img src="~assets/cf.jpeg">
+	    <img src="~assets/chefs1.png">
+	    
 	    <img src="~assets/chefs4.png" >
 	    <img src="~assets/cf2.jpeg">
 	</div>

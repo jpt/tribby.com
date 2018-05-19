@@ -205,7 +205,7 @@ body.active {
 }
 
 #app > * {
-  transition: all 240ms linear;
+  transition: all 240ms ease-out;
 }
 
 

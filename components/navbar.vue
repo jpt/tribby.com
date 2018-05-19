@@ -50,6 +50,7 @@ export default {
             { path: '', name: 'Projects' },
             { path: 'vpn-cash', name: 'VPN Cash' },
             { path: 'chefs-feed', name: 'Chefs Feed' },
+            { path: 'edupath', name: 'Edupath' },
             { path: 'eff', name: 'EFF' },
 
 
@@ -148,7 +149,7 @@ nav.side {
   z-index: 1;
   display: block;
   padding: 0;
-  transition: all 120ms ease-in-out;
+  transition: all 240ms ease-out;
   @include breakpoint($md) {
     display: none;
   }
