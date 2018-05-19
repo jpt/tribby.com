@@ -1,13 +1,19 @@
 <template>
   <div id="app" :class="[pageClass, { dark: this.$store.state.dark }]">
     <navbar class="header" :class="pageClass"></navbar>
-    <img class="hamburger top" @click="toggleSide" :src="navDark" alt="Open Menu"/>
+    <div class="menu-item" @click="toggleSide">
+      <img class="hamburger top" :src="navDark" alt="Open Menu"/>
+    </div>
     <headroom :offset="280">
       <navbar class="sticky" :class="[ pageClass, {dark: this.$store.state.dark}]"></navbar>
-      <img class="hamburger" @click="toggleSide" :src="navDark" alt="Open Menu"/>
+      <div class="menu-item" @click="toggleSide">
+        <img class="hamburger" :src="navDark" alt="Open Menu"/>
+      </div>
     </headroom>
     <navbar class="side" :class="pageClass"></navbar>
-    <img class="close" @click="toggleSide" :src="closeDark" alt="Close Menu"/>
+    <div class="close" @click="toggleSide">
+      <img class="close-img"  :src="closeDark" alt="Close Menu"/>
+    </div>
     <nuxt/>
   </div>
 </template>
@@ -89,6 +95,41 @@ export default {
 <style lang="scss">
 @import '~assets/css/globals.scss';
 @import '~assets/css/fonts.scss';
+.menu-item {
+  position: fixed;
+  padding-right: 7.5%;
+  padding-top: 19px;
+  padding-left: 20px;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  z-index: 999999999;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    display: inline;
+  }
+}
+
+img.hamburger {
+
+  
+  
+  height: 10px;
+  
+  width: auto;
+  z-index: 9999999;
+
+  &:hover {
+    cursor: pointer;
+  }
+  @include breakpoint($md) {
+    display: none;
+  }
+
+}
+
 
 body, html {
   background-color: $white;
@@ -198,7 +239,7 @@ body.active {
   }
 
   #app {
-    img.close {
+    .close {
       display: block;
     }
   }
@@ -210,7 +251,7 @@ body.active {
 
 
 
-img.close {
+.close {
   display: none;
 }
 
@@ -225,40 +266,36 @@ img.close {
 #app.barlow img.hamburger {
   display: none;
 }
-img.hamburger {
 
+.close {
   position: fixed;
-  right: 5%;
-  height: 10px;
-  top: 20px;
-  width: auto;
-  z-index: 9999999;
+  right: 0;
+  z-index: 999999;
+  right: 0;
+  padding-top: 16px;
+  // width: 50px;
+  height: 50px;
+  padding-right: 5%;
+  padding-left: 5%;
+    @include breakpoint($md) {
+    display: none;
+  }
 
   &:hover {
     cursor: pointer;
   }
-  @include breakpoint($md) {
-    display: none;
-  }
-
 }
-
-
-img.close {
-
-  position: fixed;
-  right: 5%;
+img.close-img {
+  display: inline;
   height: 12px;
-  top: 20px;
-  width: auto;
-  z-index: 9999999;
 
-  &:hover {
-    cursor: pointer;
-  }
-  @include breakpoint($md) {
-    display: none;
-  }
+  
+  
+  
+  width: auto;
+  // z-index: 9999999;
+
+
 
 }
 

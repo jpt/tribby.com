@@ -259,6 +259,9 @@ li.menu {
     height: 1.2em;
     width: auto;
   }
+  a {
+    padding: 2em;
+  }
   @include breakpoint($md) {
     display: none;
   }
