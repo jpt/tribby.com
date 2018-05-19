@@ -291,7 +291,7 @@ body {
 
 #app {
   background-color: $white;
-  transition: all 240ms linear;
+  transition: all 240ms ease-out;
 }
 #app.front-page {
 

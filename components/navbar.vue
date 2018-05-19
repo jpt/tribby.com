@@ -201,12 +201,12 @@ nav.side ul.menu {
     visibility: hidden;
   }
 
-  transition: height 120ms ease-in-sout;
+  transition: height 240ms ease-out;
   overflow: hidden;
 }
 
 .headroom .navbar.active {
-  transition: height 120ms ease-in-out;
+  transition: height 240ms ease-out;
   @include breakpoint($md) {
     height: 200px;
     max-height: 500px;

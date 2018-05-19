@@ -7,7 +7,7 @@
     <div class="white">
 	    <img src="~assets/cf.jpeg">
 	    <img src="~assets/chefs1.png">
-	    
+	    <img src="~assets/chefs2.png">
 	    <img src="~assets/chefs4.png" >
 	    <img src="~assets/cf2.jpeg">
 	</div>
