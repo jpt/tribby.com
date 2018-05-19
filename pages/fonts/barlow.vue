@@ -793,7 +793,10 @@ hr.black {
   @include breakpoint($lg) {
     flex-direction: column;
   }
-  font-size: 16px;
+  font-size: 13px;
+  @include breakpoint($sm) {
+    font-size: 16px;
+  }
 
   a {
     width: 350px;
@@ -942,7 +945,7 @@ hr.black {
 }
 .hero .headline h2 {
 
-  font-size: 2.5vw;
+  font-size: 18px;
   @include breakpoint($sm) {
     font-size: 4.4vw;
   }

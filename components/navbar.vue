@@ -12,11 +12,11 @@
           </nuxt-link>
         </li>
         <li v-else :class="{ active: isParent(route.path) }">
-          <nuxt-link class="title" :to="route.path" @click.prevent="removeActive">{{ route.children[0].name }}</nuxt-link>
+          <nuxt-link class="title" :to="route.path" @click.native.prevent="removeActive">{{ route.children[0].name }}</nuxt-link>
           <ul v-if="route.children[1]">
             <li v-for="child in route.children">
               <template v-if="child.path != '' || child.name === 'All'">
-                <nuxt-link class="child" :to="route.path + '/' + child.path" @click.prevent="removeActive">{{ child.name }}</nuxt-link>
+                <nuxt-link class="child" :to="route.path + '/' + child.path" @click.native.prevent="removeActive">{{ child.name }}</nuxt-link>
               </template>
             </li>
           </ul>
@@ -83,7 +83,7 @@ export default {
     pageClass: function () {
       if(this.$route.path == '/') {
         return 'front-page'
-      } else if(this.$route.path == '/fonts/barlow/') {
+      } else if(this.$route.path.startsWith('/fonts/barlow')) {
         return 'barlow'
       } else {
         return ''
@@ -92,8 +92,11 @@ export default {
   },
   methods: {
     removeActive() {
-      if(document.body.classList == 'active') {
+      if(document.body.classList.contains('active')) {
         document.body.classList = ''
+        console.log(document.body.classList)
+      } else {
+        console.log(document.body.classList)
       }
     },
     isParent(route) {
@@ -127,7 +130,7 @@ nav > ul > li:not(.menu) {
 
 nav.side {
   position: fixed;
-  top: 0;
+  top: -40px;
   right: -270px;
   width: 270px;
   height: 100%;

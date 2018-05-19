@@ -2,15 +2,13 @@
   <div id="app" :class="[pageClass, { dark: this.$store.state.dark }]">
     <navbar class="header" :class="pageClass"></navbar>
     <img class="hamburger top" @click="toggleSide" src="~assets/nav.svg" alt="Open Menu"/>
-    <headroom :offset="380">
+    <headroom :offset="280">
       <navbar class="sticky" :class="[ pageClass, {dark: this.$store.state.dark}]"></navbar>
       <img class="hamburger" @click="toggleSide" src="~assets/nav.svg" alt="Open Menu"/>
     </headroom>
     <navbar class="side" :class="pageClass"></navbar>
     <img class="close" @click="toggleSide" src="~assets/close.svg" alt="Close Menu"/>
-   
-      <nuxt/>
-   
+    <nuxt/>
   </div>
 </template>
 <script>
@@ -200,6 +198,9 @@ img.close {
   padding-right: (100% - $container) / 2;
 }
 
+#app.barlow img.hamburger {
+  display: none;
+}
 img.hamburger {
 
   position: fixed;
@@ -236,6 +237,7 @@ img.close {
   }
 
 }
+
 
 .hamburger.top {
   position: absolute;
