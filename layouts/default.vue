@@ -273,8 +273,8 @@ body.active {
 }
 
 body.active .close {
-  padding-top: 13px;
-  padding-right: 5.5%;
+  padding-top: 14.5px;
+  padding-right: 5.6%;
 }
 .close {
   position: fixed;
