@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="[pageClass, { dark: this.$store.state.dark }]">
     <navbar class="header" :class="pageClass"></navbar>
-    <div class="menu-item" @click="toggleSide">
+    <div class="menu-item abs" @click="toggleSide">
       <img class="hamburger top" :src="navDark" alt="Open Menu"/>
     </div>
     <headroom :offset="280">
@@ -96,9 +96,10 @@ export default {
 @import '~assets/css/globals.scss';
 @import '~assets/css/fonts.scss';
 .menu-item {
+  top: 0;
   position: fixed;
   padding-right: 7.5%;
-  padding-top: 19px;
+  padding-top: 12px;
   padding-left: 20px;
   width: 50px;
   height: 50px;
@@ -112,6 +113,10 @@ export default {
   }
 }
 
+.menu-item.abs {
+  padding-top: 19px;
+  position: absolute;
+}
 img.hamburger {
 
   
@@ -267,6 +272,10 @@ body.active {
   display: none;
 }
 
+body.active .close {
+  padding-top: 13px;
+  padding-right: 5.5%;
+}
 .close {
   position: fixed;
   right: 0;
@@ -280,7 +289,7 @@ body.active {
     @include breakpoint($md) {
     display: none;
   }
-
+  top: 0;
   &:hover {
     cursor: pointer;
   }

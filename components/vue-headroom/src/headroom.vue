@@ -61,12 +61,12 @@ export default {
 
     speed: {
       type: Number,
-      default: 120
+      default: 240
     },
 
     easing: {
       type: String,
-      default: 'ease-in-out'
+      default: 'ease-out'
     },
 
     zIndex: {
