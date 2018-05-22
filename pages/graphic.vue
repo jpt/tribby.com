@@ -4,7 +4,7 @@
       <h1>Graphic</h1>
     </div>
     <div class="sub-body">
-      <img src="~assets/marytodd.jpg">
+      <img src="~assets/marytodd.png">
       <img src="~assets/megkath.png">
       <img src="~assets/notbad.jpg">
       <video autoplay="autoplay" loop>
