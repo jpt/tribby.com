@@ -3,7 +3,7 @@
     <div class="eff">
       <div class="heading">
         <h1>Electronic Frontier Foundation</h1>
-        <p>is a digital civil liberties non-profit. I worked here as a front-end engineer on a lot of internal and external tools, including Certbot.</p>
+        <p>is a digital civil liberties non-profit. I worked here as a front-end engineer on a lot of internal and external tools, including Certbot and the redesign of EFF.org to support mobile devices.</p>
       </div>
       <div class="sub-body">
       	<img src="~assets/certbot.png">
