@@ -3,12 +3,12 @@
     <div class="edupath">
       <div class="heading">
         <h1>Edupath</h1>
-        <p>is a Berkeley-based iOS test prep app and non-profit tutoring center. I worked here as a visual designer, illustrator, front-end engineer, and product designer, amongst other "hats!"</p>
+        <p>is a Berkeley-based iOS test prep app and non-profit tutoring center. I worked here as a visual and graphic designer, front-end engineer, and UX designer.</p>
       </div>
     </div>
-    <img src="~assets/edupath3.jpg">
     <img src="~assets/edupath.jpg">
     <img src="~assets/edudash.jpg">
+    <img src="~assets/edupath3.jpg">
   </div>
 </template>
 <style lang="scss" scoped>

@@ -205,8 +205,20 @@ body,#app,html {
 .sub-body {
   // background-color: $white;
   width: 100%;
-  padding: 0 7.5% 2em 7.5%;
+  // padding: 0 7.5% 2em 7.5%;
   margin: 0;
+    img {
+    display: block;
+    width: 100%;
+    border: 1px solid #eee;
+    // padding: 0 7.5% 2em 7.5%;
+    margin-bottom: 2em;
+    // @include breakpoint($md) {
+    //   width: 85%;
+    //   margin: 0 auto 3em auto;
+    // }
+  }
+
 }
 
 
@@ -262,7 +274,7 @@ body.active {
 }
 
 #app > * {
-  transition: all 240ms ease-out;
+  transition: transform 240ms ease-out;
 }
 
 
@@ -360,7 +372,7 @@ body,div,p {
     font-size: 22px !important;
     // line-height: 1.5em !important;
   }
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 
 
@@ -382,6 +394,13 @@ body {
 #app.dark {
   background-color: $not-black;
 }
+
+ #app.dark a {
+    color: $light-grey;
+    &:hover {
+      color: $white;
+    }
+  }
 
 #app {
  
@@ -449,5 +468,7 @@ hr {
 .view {
   clear: both;
 }
-
+#app {
+  padding-bottom: 7em;
+}
 </style>

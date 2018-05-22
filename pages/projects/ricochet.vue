@@ -1,25 +1,20 @@
 <template>  
   <div class="container">
     <div class="ricochet">
-
-      <h1>Ricochet</h1>
+      <div class="heading">
+        <h1>Ricochet</h1>
+        <p>is a metadata-resistant, end-to-end encrypted chat app. It is free and open source. I've contributed a lot of product help to the project, you can see the <a href="https://github.com/ricochet-im/ricochet/issues?utf8=%E2%9C%93&q=is%3Aissue+author%3Ajpt+">relevant contributions on Github.</a></p>
+      </div>
     </div>
-
+    <div class="sub-body">
+      <img src="~assets/ricochet.png">
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "~assets/css/fonts";
 @import "~assets/css/globals";
-	img {
-		display: block;
-		width: 100%;
-		border: 1px solid #eee;
-		// padding: 0 7.5% 2em 7.5%;
-		margin-bottom: 2em;
-		@include breakpoint($md) {
-			width: 85%;
-			margin: 0 auto 3em auto;
-		}
-
-	}
+img {
+  max-width: 840px;
+}
 </style>
