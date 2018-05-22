@@ -3,7 +3,7 @@
     <div class="chefs-feed">
       <div class="heading">
         <h1>Chefs Feed</h1>
-        <p>is a San Francisco brand that flips Yelp on its head with restaurant reviews from local chefs. I worked here as Lead Interactive Designer.</p>
+        <p>is a San Francisco food media brand that flips Yelp on its head with restaurant reviews from local chefs. I worked here as Lead Interactive Designer on their iOS app and website.</p>
       </div>
     </div>
     <div class="sub-body">
