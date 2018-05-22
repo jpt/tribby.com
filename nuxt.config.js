@@ -26,6 +26,7 @@ module.exports = {
   ],
 
   build: {
+    vendor: ['intersection-observer']
     /*
     ** Run ESLint on save
     */

@@ -14,7 +14,7 @@
 	</div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~assets/css/globals";
 
 	.duo {
@@ -34,7 +34,7 @@
 					max-height: 50%;
 					width: 100%;
 					height: 100%;
-					margin-bottom: 0;
+					margin-bottom: -5px;
 					
 				
 				
@@ -45,9 +45,9 @@
 			flex-direction: row;
 			
 		}
-		&:last-of-type {
-			margin-bottom: 5em;
-		}
 
+	}
+	.container {
+		padding-bottom: 2em;
 	}
 </style>

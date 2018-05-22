@@ -49,6 +49,7 @@ export default {
           children: [
             { path: '', name: 'Projects' },
             { path: 'vpn-cash', name: 'VPN Cash' },
+            { path: 'ricochet', name: 'Ricochet' },
             { path: 'chefs-feed', name: 'Chefs Feed' },
             { path: 'edupath', name: 'Edupath' },
             { path: 'eff', name: 'EFF' },
@@ -65,8 +66,7 @@ export default {
         { path: '/about', 
           children: [
             { path: '', name: 'About' },
-            { path: 'contact', name: 'Contact' },
-            { path: 'bio', name: 'Bio' }
+            { path: '', name: '&nbsp;' }
           ]
         }
       ],
@@ -407,6 +407,7 @@ a.title {
   color: $grey-black;
   font-size: 1em;
   margin-bottom: 8px;
+  opacity: 0.86;
   &:after {
     content: '';
     display: block;
@@ -417,11 +418,15 @@ a.title {
   font-family: 'Akademie Bold';
   font-weight: $heading-font-weight;
   letter-spacing: 0.012em;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 
 
 a.title.nuxt-link-active {
+  opacity: 1;
   &:after {
     content: '';
     display: block;

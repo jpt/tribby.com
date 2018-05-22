@@ -17,6 +17,12 @@ import Vuex from 'vuex'
 import { ObserveVisibility } from 'vue-observe-visibility'
 import inViewportDirective from 'vue-in-viewport-directive'
 
+
+
+  // import VueIsInView from 'vue-is-in-view';
+  // Vue.use(VueIsInView);
+
+  
 Vue.directive('observe-visibility', ObserveVisibility)
 Vue.directive('in-viewport', inViewportDirective)
 

@@ -199,6 +199,17 @@ nav.navbar.header {
     }
   }
 }
+body,#app,html {
+  height: 100%;
+}
+.sub-body {
+  // background-color: $white;
+  width: 100%;
+  padding: 0 7.5% 2em 7.5%;
+  margin: 0;
+}
+
+
 #app.front-page  {
   padding-top: 0;
   @include breakpoint($md) {
@@ -325,6 +336,31 @@ img.close-img {
 body,div,p {
   font-family: $body-font-family;
   font-size: 16px;
+}
+
+.sub-page .container > div {
+  display: block;
+  margin-bottom: 0;
+  
+}
+
+.heading {
+  h1 {
+    display: inline;
+    margin-right: 0.5em;
+    margin-bottom: 0;
+    padding: 0;
+    line-height: 1em;
+  }
+  max-width: 660px;
+  p {
+
+    display: inline;
+    margin-bottom: 2em;
+    font-size: 22px !important;
+    // line-height: 1.5em !important;
+  }
+  margin-bottom: 2em;
 }
 
 
