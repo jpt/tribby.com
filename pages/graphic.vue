@@ -18,10 +18,10 @@
       <img src="~assets/rene.png">
       <img src="~assets/hds.jpg">
       <img src="~assets/orion.gif">
-      <img src="~assets/barlow_poster_3.png">
+
       <img src="~assets/robottos2.png">
       <img src="~assets/robottos.png">
-      <img src="~assets/rasputins.jpg">
+    
       
       
     </div>
