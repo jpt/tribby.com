@@ -386,6 +386,7 @@ a {
     color: $white;
   }
   a.title.nuxt-link-active {
+    opacity: 1;
     &:after {
       content: '';
       display: block;

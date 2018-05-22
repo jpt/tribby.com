@@ -397,7 +397,7 @@ body {
   background-color: $not-black;
 }
 
- #app.dark a {
+ #app.dark:not(nav) p a {
     color: $light-grey;
     &:hover {
       color: $white;
