@@ -7,6 +7,8 @@
       </div>
       <div class="sub-body">
       	<img src="~assets/certbot.png">
+      	<img src="~assets/turner.png">
+      	<p>I'll wrote more about my time at EFF soon!</p>
       </div>
     </div>
   </div>

@@ -72,7 +72,7 @@ export default {
         this.$store.commit('setDark', false)
         return 'front-page'
       } else if(this.$route.path.startsWith('/fonts/barlow')) {
-        this.$store.commit('setDark', true)
+        this.$store.commit('setDark', false)
         return 'barlow'
       } else if(this.$route.path.startsWith('/projects/chefs')) {
         this.$store.commit('setDark', false)
@@ -207,17 +207,19 @@ body,#app,html {
   width: 100%;
   // padding: 0 7.5% 2em 7.5%;
   margin: 0;
-    img {
-    display: block;
+  img {
+    display: inline-block;
     width: 100%;
     border: 1px solid #eee;
     // padding: 0 7.5% 2em 7.5%;
     margin-bottom: 2em;
-    // @include breakpoint($md) {
-    //   width: 85%;
-    //   margin: 0 auto 3em auto;
-    // }
+    @include breakpoint($md) {
+      // width: 100%;
+      // margin: 0 auto 3em auto;
+    }
   }
+
+
 
 }
 
@@ -274,7 +276,7 @@ body.active {
 }
 
 #app > * {
-  transition: transform 240ms ease-out;
+  transition: all 240ms ease-out;
 }
 
 

@@ -57,9 +57,9 @@ export default {
 
           ]
         },
-        { path: '/sketchbook', 
+        { path: '/graphic', 
           children: [
-            { path: '', name: 'Sketchbook' },
+            { path: '', name: 'Graphic' },
             { path: '', name: '&nbsp;' }
           ]
         },
