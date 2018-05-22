@@ -32,7 +32,10 @@
 @import '~assets/css/fonts.scss';
 @import '~assets/css/globals.scss';
 	img, video {
-	width: 600px;
+	width: 100%;
+  @include breakpoint($md) {
+    width: 600px;
+  }
   display: block;
   clear: both;
 
