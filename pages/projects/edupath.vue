@@ -12,6 +12,7 @@
 	    <img src="~assets/edudash.jpg">
 	    <p>I designed and implemented our website and its front-end code. I also designed and built the parent/student dashboard on the front-end.</p>
 	    <img src="~assets/edupath3.jpg">
+	    <img src="~assets/edupath3.png">
 	</div>
   </div>
 </template>

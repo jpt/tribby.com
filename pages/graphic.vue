@@ -31,18 +31,14 @@
 
 @import '~assets/css/fonts.scss';
 @import '~assets/css/globals.scss';
-@include breakpoint($md) {
 	img, video {
 	width: 600px;
+  display: block;
+  clear: both;
 
 }
-img {
-		display: block;
-	clear: both;
-}
 video {
-	margin: 1em 0;
-}
+  margin: 1em 0 2em;
 }
 /*	img {
 		border: none !important;
