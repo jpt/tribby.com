@@ -8,7 +8,7 @@
     </div>
     <div class="sub-body">
 	    <img src="~assets/edupath.jpg">
-	    <p>Edupath was a company that wanted to eliminate the cost of SAT and ACT test prep and make it more effective in the process. We worked with local libraries to give away tutoring to students in our pilot program. The product was deeply rooted in aspirational photography, a bit of an Instagram aesthetic as an aesthetic equalizer for kids and parents.</p>
+	    <p>Edupath was a company that wanted to eliminate the cost of SAT and ACT test prep and make it more effective in the process. We worked with local libraries to give away tutoring to students in our pilot program. The product was deeply rooted in aspirational photography, with a bit of an Instagram look as an aesthetic equalizer for kids and parents.</p>
 	    <img src="~assets/edudash.jpg">
 	    <p>I designed and implemented our website and its front-end code. I also designed and built the parent/student dashboard on the front-end.</p>
 	    <img src="~assets/edupath3.jpg">
