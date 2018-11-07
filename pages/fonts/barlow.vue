@@ -141,7 +141,7 @@
         <p><video autoplay="true" muted="true" loop="true"><source src="/e.m4v" type="video/mp4"/></video></p>
         <p>Barlow is free software, released under the SIL Open Font License. Please consider making a <a href="https://supporters.eff.org/donate" target="_new">donation to the the Electronic Frontier Foundation</a> in JPB's memory. If you find the fonts useful and you'd like to tip the author (me), you <a href="https://paypal.me/tribbytypeco">can use PayPal</a> or send some tiny bitcoins to 
         <p class="btc">12KGiXzkWnkyw9KRC1Fa1RBSFg6TMvYThf</p>
-        <p>Jeremy Tribby<br>Tribby Type Co.</p>
+        <p>Jeremy Tribby<br>Tribby Type</p>
       </div>
     </div> 
   </div>

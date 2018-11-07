@@ -16,11 +16,12 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "hoek": "^4.2.1",
     "node-sass": "^4.9.0",
-    "nuxt": "^1.4.0",
+    "nuxt": "^1.4.1",
     "raf": "^3.4.0",
     "sass-loader": "^6.0.7",
     "susy": "^3.0.5",
-    "vue-analytics": "^5.10.6",
+    "tunnel-agent": "^0.6.0",
+    "vue-analytics": "^5.12.2",
     "vue-observe-visibility": "^0.3.1",
     "vuex": "^3.0.1"
   },
@@ -33,12 +34,12 @@
     "eslint-plugin-html": "^3.1.1",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "intersection-observer": "^0.5.0",
     "vue-in-viewport-directive": "^1.1.4",
     "vue-in-viewport-mixin": "^1.0.4",
     "vue-is-in-view": "^1.0.7",
-    "vue2-scrollspy": "^2.2.2"
+    "vue2-scrollspy": "^2.3.0"
   }
 }
