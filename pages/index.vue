@@ -77,11 +77,13 @@ export default {
   max-width: 1150px;
 
   h1 {
-    font-family: 'Akademie Bold';
+    font-family: 'Tribby No 5';
+    font-weight: 500;
     font-size: 8vw;
     @include breakpoint($md) {
       font-size: 3.5em;
-      font-family: 'Akademie Bold';
+      font-family: 'Tribby No 5';
+      font-weight: 500;
     }
   }
 }
@@ -96,9 +98,11 @@ img {
 
 h1 {
   // word-break: break-all;
-  font-family: 'Akademie Bold';
-  letter-spacing: -0.2px;
+  font-family: 'Tribby No 5';
+  font-weight: 500;
+  letter-spacing: -3px;
   font-size: 2em;
+  line-height: 1.25em;
 }
 
 

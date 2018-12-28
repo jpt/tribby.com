@@ -24,7 +24,7 @@
           <div>
             <p>Barlow is a slightly rounded, low-contrast, grotesk font superfamily designed by Jeremy Tribby. The typeface draws from the visual style of the California public, sharing qualities with the state's car plates, highway signs, busses, and trains. Barlow is free, open source software. <a href="https://paypal.me/tribbytypeco">Click to donate.</a></p>
             <div class="download">
-              <a href="/fonts/barlow/download/barlow-1.403.zip">Download Barlow v1.4</a>
+              <a href="/fonts/barlow/download/barlow-1.408.zip">Download Barlow v1.4</a>
               <a href="https://fonts.google.com/specimen/Barlow" target="_blank">Google Fonts</a>
             </div>
           </div>

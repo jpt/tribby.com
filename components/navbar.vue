@@ -416,8 +416,8 @@ a.title {
     height: 3px;
     width: 0%;
   }
-  font-family: 'Akademie Bold';
-  font-weight: $heading-font-weight;
+  font-family: 'Tribby No 5';
+  font-weight: 500;
   letter-spacing: 0.012em;
   &:hover {
     opacity: 1;

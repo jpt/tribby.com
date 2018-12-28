@@ -7,7 +7,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Tribby Type designs fonts and offers clients a wide range of servides including custom type design, product, graphic, and interactive design, as well as engineering for web and mobile.' }
+      { hid: 'description', name: 'description', content: 'Tribby Type: designing and and engineering typefaces, products, and digital experiences. Founded by Jeremy Tribby in 2001, the creative studio renamed itself to Tribby Type 16 years later to emphasize its focus on all things typographic.' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
