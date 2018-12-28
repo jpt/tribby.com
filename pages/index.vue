@@ -100,7 +100,7 @@ h1 {
   // word-break: break-all;
   font-family: 'Tribby No 5';
   font-weight: 500;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   font-size: 2em;
   line-height: 1.25em;
 }
