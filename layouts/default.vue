@@ -454,7 +454,7 @@ h5 {
   font-size: 0.9em;
   margin-top: 0.6em;
   font-family: $interface-font-family;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.03em;
 }
 

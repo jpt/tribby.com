@@ -406,7 +406,7 @@ a {
 a.title {
   line-height: 0.9em;
   color: $grey-black;
-  font-size: 1em;
+  font-size: 0.85em;
   margin-bottom: 8px;
   opacity: 0.86;
   &:after {
