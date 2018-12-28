@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" :class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="closeMenu">
     <div class="branding">
-      <nuxt-link to="/" class="tribby">TRIBBY</nuxt-link>
+      <nuxt-link to="/" class="tribby">Tribby <span class="light">Type</span></nuxt-link>
         <p class="intro">Designing and engineering type, products, and digital experiences.</p>
     </div>
     <ul class="menu">
@@ -155,12 +155,16 @@ nav.side {
   }
 }
 
+.light {
+  // color: #666;
+}
 .tribby {
   position: relative;
-  font-family: 'BarlowCondensed-SemiBold';
-  font-size: 1.2em;
+  font-family: 'Tribby No 5';
+  font-size: 0.95em;
   color: #000;
   opacity: 1;
+  letter-spacing: -0.2px;
   &:hover {
     opacity: 1;
   }
@@ -276,14 +280,14 @@ a.child {
 .branding {
   a {
     padding: 0;
-    margin-top: -4px;
+    margin-top: -1px;
     float: left;
   }
 
   p {
     display: none;
     max-width: 260px;
-    margin-left: 120px;
+    margin-left: 155px;
     font-size: 0.9em;
     color: $grey-medium;
     font-family: 'Escrow-Light';
