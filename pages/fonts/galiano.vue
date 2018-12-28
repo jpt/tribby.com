@@ -1,7 +1,7 @@
 <template>  
   <div class="container">
     <div class="galiano">
-      <h1>Galiano (Coming Soon)</h1>
+      <h1>Galiano - Coming Soon</h1>
     </div>
 
     <div class="duo">
