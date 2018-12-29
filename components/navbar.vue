@@ -161,7 +161,7 @@ nav.side {
 .tribby {
   position: relative;
   font-family: 'Tribby No 5';
-  font-size: 0.95em;
+  font-size: 1em;
   color: #000;
   opacity: 1;
   letter-spacing: -0.2px;
@@ -367,6 +367,8 @@ a {
     color: $grey-black;
   }
 
+
+
 }
 
 .dark {
@@ -410,7 +412,7 @@ a {
 a.title {
   line-height: 0.9em;
   color: $grey-black;
-  font-size: 0.85em;
+  font-size: 0.92em;
   margin-bottom: 8px;
   opacity: 0.86;
   &:after {
