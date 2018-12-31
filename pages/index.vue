@@ -77,12 +77,12 @@ export default {
   max-width: 1150px;
 
   h1 {
-    font-family: 'Tribby No 5';
+    font-family: 'Tribby Grotesk';
     font-weight: 500;
     font-size: 8vw;
     @include breakpoint($md) {
       font-size: 3.5em;
-      font-family: 'Tribby No 5';
+      font-family: 'Tribby Grotesk';
       font-weight: 500;
     }
   }
@@ -98,7 +98,7 @@ img {
 
 h1 {
   // word-break: break-all;
-  font-family: 'Tribby No 5';
+  font-family: 'Tribby Grotesk';
   font-weight: 500;
   letter-spacing: -0.007em;
   font-size: 2em;

@@ -160,7 +160,7 @@ nav.side {
 }
 .tribby {
   position: relative;
-  font-family: 'Tribby No 5';
+  font-family: 'Tribby Grotesk';
   font-size: 1em;
   color: #000;
   opacity: 1;
@@ -422,7 +422,7 @@ a.title {
     height: 3px;
     width: 0%;
   }
-  font-family: 'Tribby No 5';
+  font-family: 'Tribby Grotesk';
   font-weight: 500;
   letter-spacing: 0.012em;
   &:hover {
