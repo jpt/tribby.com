@@ -297,6 +297,15 @@ body.active {
   display: none;
 }
 
+
+#app.barlow .menu-item.abs {
+  display: none;
+}
+
+#app.barlow nav {
+  display: none;
+
+}
 body.active .close {
   padding-top: 14.5px;
   padding-right: 5.6%;
@@ -454,7 +463,7 @@ h5 {
   font-size: 0.9em;
   margin-top: 0.6em;
   font-family: $interface-font-family;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.03em;
 }
 

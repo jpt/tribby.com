@@ -418,12 +418,12 @@ a.title {
   &:after {
     content: '';
     display: block;
-    margin-top: 3px;
-    height: 3px;
+    margin-top: 5px;
+    height: 2px;
     width: 0%;
   }
   font-family: 'Tribby Grotesk';
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.012em;
   &:hover {
     opacity: 1;
@@ -437,8 +437,8 @@ a.title.nuxt-link-active {
   &:after {
     content: '';
     display: block;
-    margin-top: 3px;
-    height: 3px;
+    margin-top: 5px;
+    height: 2px;
     width: 100%;
     background: $grey-black;
     transition: width 0.2s;
