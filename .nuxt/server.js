@@ -1,4 +1,5 @@
 import { stringify } from 'querystring'
+import consola from 'consola'
 import Vue from 'vue'
 import fetch from 'node-fetch'
 import middleware from './middleware.js'
@@ -11,9 +12,6 @@ Vue.component(NuxtLink.name, NuxtLink)
 Vue.component('NLink', NuxtLink)
 
 if (!global.fetch) { global.fetch = fetch }
-
-const debug = require('debug')('nuxt:render')
-debug.color = 4 // force blue color
 
 const noopApp = () => new Vue({ render: h => h('div') })
 
@@ -66,9 +64,10 @@ export default async (ssrContext) => {
   const beforeRender = async () => {
     // Call beforeNuxtRender() methods
     await Promise.all(ssrContext.beforeRenderFns.map(fn => promisify(fn, { Components, nuxtState: ssrContext.nuxt })))
-
-    // Add the state from the vuex store
-    ssrContext.nuxt.state = store.state
+    ssrContext.rendered = () => {
+      // Add the state from the vuex store
+      ssrContext.nuxt.state = store.state
+    }
   }
   const renderErrorPage = async () => {
     // Load layout for error page
@@ -96,7 +95,7 @@ export default async (ssrContext) => {
     try {
       await store.dispatch('nuxtServerInit', app.context)
     } catch (err) {
-      debug('error occurred when calling nuxtServerInit: ', err.message)
+      consola.debug('Error occurred when calling nuxtServerInit: ', err.message)
       throw err
     }
   }
@@ -216,7 +215,7 @@ export default async (ssrContext) => {
     return Promise.all(promises)
   }))
 
-  if (asyncDatas.length) debug('Data fetching ' + ssrContext.url + ': ' + (Date.now() - s) + 'ms')
+  if (asyncDatas.length) consola.debug('Data fetching ' + ssrContext.url + ': ' + (Date.now() - s) + 'ms')
 
   // datas are the first row of each
   ssrContext.nuxt.data = asyncDatas.map(r => r[0] || {})

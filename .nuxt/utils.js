@@ -169,16 +169,16 @@ export async function setContext(app, context) {
       // "/absolute/route", "./relative/route" or "../relative/route"
       if (/(^[.]{1,2}\/)|(^\/(?!\/))/.test(path)) {
         app.context.next({
-          path: path,
-          query: query,
-          status: status
+          path,
+          query,
+          status
         })
       } else {
         path = formatUrl(path, query)
         if (process.server) {
           app.context.next({
-            path: path,
-            status: status
+            path,
+            status
           })
         }
         if (process.client) {
@@ -215,7 +215,7 @@ export async function setContext(app, context) {
   app.context.next = context.next
   app.context._redirected = false
   app.context._errored = false
-  app.context.isHMR = !!context.isHMR
+  app.context.isHMR = Boolean(context.isHMR)
   app.context.params = app.context.route.params || {}
   app.context.query = app.context.route.query || {}
 }
@@ -257,14 +257,14 @@ export function promisify(fn, context) {
 
 // Imported from vue-router
 export function getLocation(base, mode) {
-  let path = window.location.pathname
+  let path = decodeURI(window.location.pathname)
   if (mode === 'hash') {
     return window.location.hash.replace(/^#\//, '')
   }
   if (base && path.indexOf(base) === 0) {
     path = path.slice(base.length)
   }
-  return decodeURI(path || '/') + window.location.search + window.location.hash
+  return (path || '/') + window.location.search + window.location.hash
 }
 
 export function urlJoin() {
@@ -308,7 +308,7 @@ export function normalizeError(err) {
   }
   return {
     ...err,
-    message: message,
+    message,
     statusCode: (err.statusCode || err.status || (err.response && err.response.status) || 500)
   }
 }
@@ -382,11 +382,11 @@ function parse(str, options) {
     tokens.push({
       name: name || key++,
       prefix: prefix || '',
-      delimiter: delimiter,
-      optional: optional,
-      repeat: repeat,
-      partial: partial,
-      asterisk: !!asterisk,
+      delimiter,
+      optional,
+      repeat,
+      partial,
+      asterisk: Boolean(asterisk),
       pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
     })
   }
@@ -556,8 +556,7 @@ function formatUrl(url, query) {
   let hash
   parts = path.split('#')
   if (parts.length === 2) {
-    path = parts[0]
-    hash = parts[1]
+    [path, hash] = parts
   }
 
   result += path ? '/' + path : ''

@@ -25,8 +25,8 @@ module.exports = {
     'assets/css/transitions.css'
   ],
 
-  build: {
-    vendor: ['intersection-observer']
+  // build: {
+  //   vendor: ['intersection-observer']
     /*
     ** Run ESLint on save
     */
@@ -40,5 +40,5 @@ module.exports = {
     //     })
     //   }
     // }
-  }
+  // }
 }

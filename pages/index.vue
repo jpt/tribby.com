@@ -83,7 +83,7 @@ export default {
     @include breakpoint($md) {
       font-size: 3.5em;
       font-family: 'Tribby Grotesk';
-      font-weight: 400;
+      font-weight: 600;
     }
   }
 }
