@@ -1,12 +1,12 @@
 <template>
   <nav class="navbar" :class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="closeMenu">
     <div class="branding">
-      <nuxt-link to="/" class="tribby">Tribby <span class="light">Type</span></nuxt-link>
+      <nuxt-link to="/" class="tribby">Tribby Type</nuxt-link>
         <p class="intro">Designing and engineering type, products, and digital experiences.</p>
     </div>
     <ul class="menu">
       <template v-for="route in routes">
-        <li v-if="route.path=='/'">
+        <li v-if="route.path=='/'" class="home-li">
           <nuxt-link class="img" to="/">
             <img class="home" :class="{ active: isParent(route.path) }" :src="homeDark" alt="home"/>
           </nuxt-link>
@@ -41,8 +41,9 @@ export default {
         { path: '/fonts',
           children: [
             { path: '', name: 'Fonts' },
-            { path: 'barlow', name: 'Barlow' },
+            { path: 'tribby-grotesk', name: 'Tribby Grotesk'},
             { path: 'galiano', name: 'Galiano' },
+            { path: 'barlow', name: 'Barlow' },
           ]
         },
         { path: '/projects',
@@ -183,10 +184,21 @@ nav.side > ul > li:not(.menu) {
   display: block;
 }
 
+.li {
+
+}
+
 nav.side > ul > li.menu {
   display: none;
 }
 
+ul.menu > li:not(.home-li) {
+  width: 200px;
+}
+
+ul.menu > li:last-of-type {
+  width: auto;
+}
 nav.side > ul > li > ul {
   margin-bottom: 30px;
 }
@@ -282,6 +294,9 @@ a.child {
     padding: 0;
     margin-top: -1px;
     float: left;
+    display: inline;
+    font-weight: 500;
+
   }
 
   p {
@@ -291,7 +306,7 @@ a.child {
     font-size: 0.9em;
     color: $grey-medium;
     font-family: 'Escrow-Light';
-    @include breakpoint($lg) {
+    @include breakpoint($xl) {
       
       display: block;
     }
@@ -309,6 +324,9 @@ img.logo {
   display: block;
   margin-top: 6px;
   z-index: 10000;
+}
+.home-li {
+  width: 100px;
 }
 
 img.home {
@@ -339,7 +357,8 @@ img.home {
   @include breakpoint($md) {
     justify-content: space-between;
     margin-left: auto;
-    max-width: 500px;
+    max-width: 640px;
+    min-width: 540px;
   }
 }
 

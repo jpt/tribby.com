@@ -9,6 +9,7 @@ const _56b77358 = () => interopDefault(import('../pages/graphic.vue' /* webpackC
 const _21df787e = () => interopDefault(import('../pages/projects/index.vue' /* webpackChunkName: "pages/projects/index" */))
 const _fc4945e0 = () => interopDefault(import('../pages/fonts/barlow.vue' /* webpackChunkName: "pages/fonts/barlow" */))
 const _004a0a0c = () => interopDefault(import('../pages/fonts/galiano.vue' /* webpackChunkName: "pages/fonts/galiano" */))
+const _be478706 = () => interopDefault(import('../pages/fonts/tribby-grotesk.vue' /* webpackChunkName: "pages/fonts/tribby-grotesk" */))
 const _32b81e9f = () => interopDefault(import('../pages/projects/chefs-feed.vue' /* webpackChunkName: "pages/projects/chefs-feed" */))
 const _da97d4ec = () => interopDefault(import('../pages/projects/edupath.vue' /* webpackChunkName: "pages/projects/edupath" */))
 const _abdd69d8 = () => interopDefault(import('../pages/projects/eff.vue' /* webpackChunkName: "pages/projects/eff" */))
@@ -118,6 +119,10 @@ export function createRouter() {
       path: "/fonts/galiano",
       component: _004a0a0c,
       name: "fonts-galiano"
+    }, {
+      path: "/fonts/tribby-grotesk",
+      component: _be478706,
+      name: "fonts-tribby-grotesk"
     }, {
       path: "/projects/chefs-feed",
       component: _32b81e9f,

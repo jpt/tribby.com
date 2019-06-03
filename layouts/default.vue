@@ -4,7 +4,7 @@
     <div class="menu-item abs" @click="toggleSide">
       <img class="hamburger top" :src="navDark" alt="Open Menu"/>
     </div>
-    <headroom :offset="280">
+    <headroom :offset="320">
       <navbar class="sticky" :class="[ pageClass, {dark: this.$store.state.dark}]"></navbar>
       <div class="menu-item" @click="toggleSide">
         <img class="hamburger" :src="navDark" alt="Open Menu"/>
@@ -147,7 +147,8 @@ body, html {
   display: none !important;
 }
 html {
-  font-family: "Barlow Regular", "Helvetica Neue", -apple-system,  Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  touch-action: manipulation;
+  font-family: "Tribby Grotesk", "Barlow Regular", "Helvetica Neue", -apple-system,  Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -157,7 +158,7 @@ html {
   margin: 0;
 }
 .headroom--top.headroom--pinned {
-  transform: translate3d(0,-300%,0) !important;
+  transform: translate3d(0,-100%,0) !important;
   z-index: -20 !important;
   // display: none !important;
 }
