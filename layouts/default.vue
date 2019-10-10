@@ -1,75 +1,126 @@
 <template>
   <div id="app" :class="[pageClass, { dark: this.$store.state.dark }]">
-    <navbar class="header" :class="pageClass"></navbar>
+    <navbar class="header" @click.prevent.stop="toggleCart" :class="pageClass"></navbar>
     <div class="menu-item abs" @click="toggleSide">
-      <img class="hamburger top" :src="navDark" alt="Open Menu"/>
+     <!--  <img class="hamburger top" :src="navDark" alt="Open Menu"/> -->
+       <hamburger />
     </div>
-    <headroom :offset="320">
+    <headroom :offset="640">
       <navbar class="sticky" :class="[ pageClass, {dark: this.$store.state.dark}]"></navbar>
       <div class="menu-item" @click="toggleSide">
-        <img class="hamburger" :src="navDark" alt="Open Menu"/>
+        <hamburger />
+        <!-- <img class="hamburger" :src="navDark" alt="Open Menu"/> -->
       </div>
     </headroom>
     <navbar class="side" :class="pageClass"></navbar>
-    <div class="close" @click="toggleSide">
-      <img class="close-img"  :src="closeDark" alt="Close Menu"/>
+    <div class="cart-side">
+      <cartlist />
     </div>
-    <nuxt/>
+    <div v-if="this.$store.state.cartOpen" @click="bodyClose" class="cart-open-overlay"/>
+    <div v-if="this.$store.state.menuOpen" @click="bodyClose" class="menu-open-overlay"/>
+    <div class="close" @click="toggleSide">
+      <hamburger open="true" />
+    </div>
+
+    <div id="nuxt">
+      <nuxt/>
+    </div>
+
   </div>
 </template>
 <script>
-import navbar from '@/components/navbar.vue';
-import headroom from '@/components/vue-headroom/src/headroom.vue';
+import HR from '@/components/HR.vue'
+import cartlist from '@/components/cartlist.vue'
+import hamburger from '@/components/hamburger.vue'
+import navbar from '@/components/navbar.vue'
+import headroom from '@/components/vue-headroom/src/headroom.vue'
 
-const IntersectionObserverPolyfill = process.client ? require('intersection-observer') : undefined;
+const IntersectionObserverPolyfill = process.client ? require('intersection-observer') : undefined
 
 
-const n = require('@/assets/nav.svg')
-const nw = require('@/assets/nav-white.svg')
+// const n = require('@/assets/nav.svg')
+// const nw = require('@/assets/nav-white.svg')
 
-const c = require('@/assets/close.svg')
-const cw = require('@/assets/close-white.svg')
+// const c = require('@/assets/close.svg')
+// const cw = require('@/assets/close-white.svg')
+
+
+
+
 
 export default {
-  data: function() {
-    return {
-      menuPinned: false
+  // data: function() {
+  //   return {
+  //     menuPinned: false
+  //   }
+  // },
+  watch: {
+    '$route.path': function() {
+      document.body.classList = ''
     }
   },
   methods: {
+    // mounted() {
+    //   document.body.addEventListener("click", this.toggleSide())
+    // },
+    bodyClose() {
+      if(this.$store.state.menuOpen || this.$store.state.cartOpen) {
+        this.$store.commit('toggleMenu', false)
+        this.$store.commit('toggleCart', false)
+        this.closeSide()
+      }
+    },
+    closeSide() {
+      document.body.classList = ''
+
+    },
+    closeCart()  {
+
+      if(document.body.classList == 'active cart-side') {
+        document.body.classList = 'active';
+      } else if (document.body.classList == 'cart-side') {
+        document.body.classList = ''
+      } else {
+        document.body.classList = ''
+      }
+      this.$store.commit('toggleCart', false)
+
+    },
+
     toggleSide () {
       if(document.body.classList == 'active') {
         document.body.classList = '';
       } else {
         document.body.classList = 'active';
       }
+      this.$store.commit('toggleMenu', !this.$store.state.menuOpen)
     },
-    menuPin () {
-      this.menuPinned = true
-    },
-    menuUnpin () {
-      this.menuPinned = false
-    }
+    // menuPin () {
+    //   this.menuPinned = true
+    // },
+    // menuUnpin () {
+    //   this.menuPinned = false
+    // }
   },
   computed: {
-    navDark: function () {
-      if(this.$store.state.dark) {
+    // navDark: function () {
+    //   if(this.$store.state.dark) {
         
-        return nw
-      } else {
+    //     return nw
+    //   } else {
 
-        return n
-      }
-    },
-    closeDark: function () {
-      if(this.$store.state.dark) {
+    //     return n
+    //   }
+    // },
+    // closeDark: function () {
+    //   if(this.$store.state.dark) {
         
-        return cw
-      } else {
+    //     return cw
+    //   } else {
 
-        return c
-      }
-    },
+    //     return c
+    //   }
+    // },
     pageClass: function () {
       if(this.$route.path == '/') {
         this.$store.commit('setDark', false)
@@ -90,7 +141,7 @@ export default {
     }
   },
   components: { 
-    navbar, headroom
+    navbar, headroom, HR, hamburger, cartlist
   }
 }
 </script>
@@ -98,6 +149,83 @@ export default {
 <style lang="scss">
 @import '~assets/css/globals.scss';
 @import '~assets/css/fonts.scss';
+#app.dark {
+  #hamburger span {
+    background: #fff;
+  }
+}
+body.cart-side {
+  
+
+  @include breakpoint($md) {
+    overflow: hidden;
+    #app > *:not(.close) {
+
+      transform: translate3d(-270px, 0, 0); 
+
+    }
+
+
+    #app .headroom--not-top {
+      overflow: hidden;
+      transform: translate3d(-270px,0,0) !important;
+      top: 0;
+    }
+   #app {
+      .cart-close {
+        display: block;
+        transform: translate3d(0, 0, 0); 
+
+      }
+    }
+  }
+}
+
+#app > * {
+  transition: all 240ms ease-out;
+}
+
+// .cart-side {
+//   position: fixed;
+//   top: -40px;
+//   right: -270px;
+//   width: 270px;
+//   height: 100%;
+//   z-index: 1;
+//   display: block;
+//   padding: 0;
+//   transition: all 240ms ease-out;
+//   @include breakpoint($md) {
+//     display: none;
+//   }
+// }
+
+
+nav.side {
+  position: fixed;
+  top: -40px;
+  right: -270px;
+  width: 270px;
+  height: 100%;
+  z-index: 1;
+  display: block;
+  padding: 0;
+  transition: all 240ms ease-out;
+  @include breakpoint($md) {
+    display: none;
+  }
+}
+
+.cart-open-overlay, .menu-open-overlay {
+  z-index:9999999999999;
+  cursor: pointer;
+  position: absolute;
+  height: 200vh;
+  width: 100vw;
+  top: -50px;
+  background-color: transparent;
+}
+
 .menu-item {
   top: 0;
   position: fixed;
@@ -108,6 +236,10 @@ export default {
   height: 50px;
   right: 0;
   z-index: 999999999;
+  display: block;
+  @include breakpoint($md) {
+    display: none;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -150,7 +282,6 @@ html {
   touch-action: manipulation;
   font-family: "Tribby Grotesk", "Barlow Regular", "Helvetica Neue", -apple-system,  Arial, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
-  box-sizing: border-box;
 }
 
 *, *:before, *:after {
@@ -161,6 +292,10 @@ html {
   transform: translate3d(0,-100%,0) !important;
   z-index: -20 !important;
   // display: none !important;
+}
+.headroom--not-top.headroom--pinned .top-hr {
+  display:none;
+
 }
 
 #app {
@@ -189,6 +324,7 @@ nav.navbar.header {
   top: 0;
   @include breakpoint($md) {
     padding-top: 4em;
+
      p {
       visibility: hidden;
     }
@@ -196,7 +332,17 @@ nav.navbar.header {
       visibility: visible;
     }
   }
+
 }
+// nav.navbar.header::before {
+//   content: '';
+//   position: absolute;
+//   margin-top: -20px;
+//   width: $container;
+//   left: ((100% -($container))/2);
+//   border-top: 1px solid #000;
+// }
+
 .sub-page nav.navbar.header {
   @include breakpoint($md) {
     p {
@@ -230,16 +376,16 @@ body,#app,html {
 
 
 #app.front-page  {
-  padding-top: 0;
+  // padding-top: 0;
   @include breakpoint($md) {
-    padding-top: 280px;
+    padding-top: 320px;
   }
 }
 
 #app.sub-page {
   padding-top: 25vh;
   @include breakpoint($md) {
-    padding-top: 280px;
+    padding-top: 320px;
   }
 }
 
@@ -276,18 +422,21 @@ body.active {
   #app {
     .close {
       display: block;
+      transform: translate3d(0, 0, 0); 
+
     }
   }
 }
 
-#app > * {
-  transition: all 240ms ease-out;
-}
+// #app > * {
+//   transition: all 180ms ease-out;
+// }
 
 
 
 .close {
-  display: none;
+
+  transform: translate3d(270px, 0, 0); 
 }
 
 
@@ -312,7 +461,7 @@ body.active {
 
 }
 body.active .close {
-  padding-top: 14.5px;
+  padding-top: 18px;
   padding-right: 5.6%;
 }
 .close {
@@ -353,15 +502,7 @@ img.close-img {
 }
 
 
-* {
-  -webkit-font-smoothing: subpixel-antialiased;
-  box-model: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-
-body,div,p {
+.page div,p {
   font-family: $body-font-family;
   font-size: 16px;
 }

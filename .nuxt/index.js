@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
+import ClientOnly from 'vue-client-only'
+import NoSsr from 'vue-no-ssr'
 import { createRouter } from './router.js'
-import NoSsr from './components/no-ssr.js'
 import NuxtChild from './components/nuxt-child.js'
 import NuxtError from '../layouts/error.vue'
 import Nuxt from './components/nuxt.js'
@@ -11,8 +12,21 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-// Component: <NoSsr>
-Vue.component(NoSsr.name, NoSsr)
+import nuxt_plugin_vwaypoint_5dfe6f6e from 'nuxt_plugin_vwaypoint_5dfe6f6e' // Source: ../plugins/v-waypoint (mode: 'client')
+
+// Component: <ClientOnly>
+Vue.component(ClientOnly.name, ClientOnly)
+// TODO: Remove in Nuxt 3: <NoSsr>
+Vue.component(NoSsr.name, {
+  ...NoSsr,
+  render(h, ctx) {
+    if (process.client && !NoSsr._warned) {
+      NoSsr._warned = true
+      console.warn(`<no-ssr> has been deprecated and will be removed in Nuxt 3, please use <client-only> instead`)
+    }
+    return NoSsr.render(h, ctx)
+  }
+})
 
 // Component: <NuxtChild>
 Vue.component(NuxtChild.name, NuxtChild)
@@ -114,6 +128,32 @@ async function createApp(ssrContext) {
     ssrContext
   })
 
+  const inject = function (key, value) {
+    if (!key) throw new Error('inject(key, value) has no key provided')
+    if (typeof value === 'undefined') throw new Error('inject(key, value) has no value provided')
+    key = '$' + key
+    // Add into app
+    app[key] = value
+
+    // Add into store
+    store[key] = app[key]
+
+    // Check if plugin not already installed
+    const installKey = '__nuxt_' + key + '_installed__'
+    if (Vue[installKey]) return
+    Vue[installKey] = true
+    // Call Vue.use() to install the plugin into vm
+    Vue.use(() => {
+      if (!Vue.prototype.hasOwnProperty(key)) {
+        Object.defineProperty(Vue.prototype, key, {
+          get() {
+            return this.$root.$options[key]
+          }
+        })
+      }
+    })
+  }
+
   if (process.client) {
     // Replace store state before plugins execution
     if (window.__NUXT__ && window.__NUXT__.state) {
@@ -122,6 +162,10 @@ async function createApp(ssrContext) {
   }
 
   // Plugin execution
+
+  if (process.client && typeof nuxt_plugin_vwaypoint_5dfe6f6e === 'function') {
+    await nuxt_plugin_vwaypoint_5dfe6f6e(app.context, inject)
+  }
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {

@@ -1,5 +1,4 @@
 import { stringify } from 'querystring'
-import consola from 'consola'
 import Vue from 'vue'
 import fetch from 'node-fetch'
 import middleware from './middleware.js'
@@ -95,7 +94,7 @@ export default async (ssrContext) => {
     try {
       await store.dispatch('nuxtServerInit', app.context)
     } catch (err) {
-      consola.debug('Error occurred when calling nuxtServerInit: ', err.message)
+      console.debug('Error occurred when calling nuxtServerInit: ', err.message)
       throw err
     }
   }
@@ -215,7 +214,7 @@ export default async (ssrContext) => {
     return Promise.all(promises)
   }))
 
-  if (asyncDatas.length) consola.debug('Data fetching ' + ssrContext.url + ': ' + (Date.now() - s) + 'ms')
+  if (process.env.DEBUG && asyncDatas.length)console.debug('Data fetching ' + ssrContext.url + ': ' + (Date.now() - s) + 'ms')
 
   // datas are the first row of each
   ssrContext.nuxt.data = asyncDatas.map(r => r[0] || {})

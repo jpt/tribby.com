@@ -7,7 +7,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Tribby Type: designing and and engineering typefaces, products, and digital experiences.' }
+      { hid: 'description', name: 'description', content: 'Tribby Type: designing and and engineering fonts, products, and digital experiences.' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
@@ -24,7 +24,10 @@ module.exports = {
   css: [ 
     'assets/css/transitions.css'
   ],
-
+  plugins: [
+    { src: '~/plugins/v-waypoint', ssr: false },
+    // { src: '~/plugins/v-anime', ssr: false }
+  ]
   // build: {
   //   vendor: ['intersection-observer']
     /*

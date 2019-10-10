@@ -61,7 +61,7 @@ export default {
 
     speed: {
       type: Number,
-      default: 360
+      default: 240
     },
 
     easing: {

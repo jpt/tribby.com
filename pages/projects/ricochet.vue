@@ -1,6 +1,6 @@
 <template>  
   <div class="container">
-    <div class="ricochet">
+    <div class="page ricochet">
       <div class="heading">
         <h1>Ricochet</h1>
         <p>is a free and open source encrypted chat app. It's metadata-resistant, runs over Tor, and is currently the most anonymous way to communicate online. I've contributed a lot of product and design thoughts to the project and you can see the <a href="https://github.com/ricochet-im/ricochet/issues?utf8=%E2%9C%93&q=is%3Aissue+author%3Ajpt+">relevant discussions on Github.</a></p>

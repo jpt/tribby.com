@@ -1,54 +1,75 @@
 <template>
-  <nav class="navbar" :class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="closeMenu">
-    <div class="branding">
-      <nuxt-link to="/" class="tribby">Tribby Type</nuxt-link>
-        <p class="intro">Designing and engineering type, products, and digital experiences.</p>
-    </div>
-    <ul class="menu">
-      <template v-for="route in routes">
-        <li v-if="route.path=='/'" class="home-li">
-          <nuxt-link class="img" to="/">
-            <img class="home" :class="{ active: isParent(route.path) }" :src="homeDark" alt="home"/>
-          </nuxt-link>
-        </li>
-        <li v-else :class="{ active: isParent(route.path) }">
-          <nuxt-link class="title" :to="route.path" @click.native.prevent="removeActive">{{ route.children[0].name }}</nuxt-link>
-          <ul v-if="route.children[1]">
-            <li v-for="child in route.children">
-              <template v-if="child.path != '' || child.name === 'All'">
-                <nuxt-link class="child" :to="route.path + '/' + child.path" @click.native.prevent="removeActive">{{ child.name }}</nuxt-link>
-              </template>
-            </li>
-          </ul>
-        </li>
-      </template>
-    </ul>
-  </nav>
+    <nav class="navbar" :class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="closeMenu">
+      <HR height="1px"  :style="{ backgroundColor: '#ccc'}" class="hr-hide"/>
+      <div class="branding">
+        <nuxt-link to="/" class="tribby">Tribby Type</nuxt-link>
+         <!--  <p class="intro">Designing and engineering type, products, and digital experiences.</p>
+     -->  </div>
+      <ul class="menu">
+        <template v-for="route in routes">
+          <li v-if="route.path=='/'" class="home-li">
+            <nuxt-link class="img" to="/">
+              <img class="home" :class="{ active: isParent(route.path) }" :src="homeDark" alt="home"/>
+            </nuxt-link>
+          </li>
+          <li class="cart" v-else-if="route.path=='/cart'">
+            <a class="title cart-regular" @click.prevent="toggleCart">
+            Cart ({{ $store.state.cartItems.length }})</a>
+            <nuxt-link to="/cart" class="title cart-small"><span  @click="closeCart">
+            Cart ({{ $store.state.cartItems.length }})</span></nuxt-link>
+           <!--  <div class="mini-cart" v-if="cartOpen"></div> -->
+
+          </li>
+          <li v-else :class="{ active: isParent(route.path)}">
+            <nuxt-link class="title" :to="route.path" @click.native.prevent="removeActive">{{ route.children[0].name }}</nuxt-link>
+            <ul v-if="route.children[1]">
+              <li v-for="child in route.children">
+                <template v-if="child.path != '' || child.name === 'All'">
+                  <nuxt-link class="child" :to="route.path + '/' + child.path" @click.native.prevent="removeActive">{{ child.name }}</nuxt-link>
+                </template>
+              </li>
+            </ul>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
 </template>
 <script>
+  import HR from '@/components/HR';
   const hw = require('@/assets/home-white.svg')
   const h = require('@/assets/home.svg')
 export default {
   data: function() {
     return {
       route: '/',
-      routes: [
-        { path: '/',
+      routes: {
+        '/': { path: '/',
           children: [
             { path: '/', name: 'Home' }
           ]
         },
-        { path: '/fonts',
+        '/fonts': { path: '/fonts',
           children: [
             { path: '', name: 'Fonts' },
+
             { path: 'tribby-grotesk', name: 'Tribby Grotesk'},
             { path: 'galiano', name: 'Galiano' },
             { path: 'barlow', name: 'Barlow' },
           ]
         },
-        { path: '/projects',
+        // '/case-studies': { path: 'case-studies',
+        //   children: [
+        //     { path: '', name: 'Case Studies' },
+        //     { path: 'nbc-universal', name: 'NBC Universal' }
+        //   ]
+        // },
+
+        '/projects': { path: '/projects',
           children: [
             { path: '', name: 'Projects' },
+            { path: 'nbc-universal', name: 'NBC Universal' },
+            { path: 'shift', name: 'Shift' },
             { path: 'vpn-cash', name: 'VPN Cash' },
             { path: 'ricochet', name: 'Ricochet' },
             { path: 'chefs-feed', name: 'Chefs Feed' },
@@ -58,21 +79,28 @@ export default {
 
           ]
         },
-        { path: '/graphic', 
-          children: [
-            { path: '', name: 'Graphic' },
-            { path: '', name: '&nbsp;' }
-          ]
-        },
-        { path: '/about', 
+        // '/blog':{ path: '/blog', 
+        //   children: [
+        //     { path: '', name: 'Blog' },
+        //     { path: '', name: '&nbsp;' }
+        //   ]
+        // },
+        '/about': { path: '/about', 
           children: [
             { path: '', name: 'About' },
             { path: '', name: '&nbsp;' }
           ]
-        }
-      ],
+        },
+        // '/cart':{ path: '/cart', 
+        //   children: [
+        //     { path: '', name: 'Cart' },
+        //     { path: '', name: '' }
+        //   ]
+        // }
+      },
       active: false,
-      menuOpen: false
+      menuOpen: false,
+      cartOpen: false,
 
     }
   },
@@ -103,7 +131,23 @@ export default {
       }
     }
   },
+
   methods: {
+    toggleCart () {
+      if(document.body.classList == 'active') {
+        document.body.classList = 'active cart-side';
+      } else if (document.body.classList == '') {
+
+        document.body.classList = 'cart-side'
+      } else {
+        document.body.classList = ''
+      }
+      this.$store.commit('toggleCart', !this.$store.state.cartOpen)
+    },
+  //     toggleCart() {
+  //       console.log('toggle')
+  //   // this.$store.dispatch(toggleCart);
+  // },
     removeActive() {
       if(document.body.classList.contains('active')) {
         document.body.classList = ''
@@ -121,7 +165,18 @@ export default {
     },
     closeMenu() {
       this.menuOpen = false;
+    },
+    openCart() {
+      this.cartOpen = true;
+    },
+    closeCart() {
+        document.body.classList = ''
+      this.$store.commit('toggleCart', false)
+      this.cartOpen = false;
     }
+  },
+  components: {
+    HR
   }
 }
 
@@ -129,21 +184,65 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/css/globals.scss';
 @import '~assets/css/fonts.scss';
-.headroom .barlow {
-  display: none !important;
-}
 
-
-nav > ul > li:not(.menu) {
+.hr-hide {
+  height: 1px;
+  margin-top: -20px;
+  margin-bottom: 20px;
   display: none;
   @include breakpoint($md) {
     display: block;
   }
 }
+.headroom .barlow {
+  display: none !important;
+}
 
+
+.mini-cart {
+  display: block;
+  width: 280px;
+  opacity: 0.9;
+  position: absolute;
+  height: 180px;
+  background-color: red;
+  right: 7.5%;
+  margin-top: 10px;
+
+
+}
+
+.cart-regular {
+  display: none;
+  @include breakpoint($md) {
+    display: inline-block;
+  }
+}
+.cart-small {
+  display: inline-block;
+  @include breakpoint($md) {
+    display: none;
+  }
+}
+.cart {
+  // width: 200px;
+}
+nav > ul > li:not(.menu) {
+  display: none;
+  @include breakpoint($md) {
+    display: block;
+  }
+
+}
+.top-hr {
+  @include breakpoint(0 $md) {
+    display: none;
+  }
+  margin-bottom: 30px;
+}
 nav.side {
   position: fixed;
-  top: -40px;
+  top: 0px;
   right: -270px;
   width: 270px;
   height: 100%;
@@ -165,6 +264,7 @@ nav.side {
   font-size: 1em;
   color: #000;
   opacity: 1;
+  font-weight: 500;
   letter-spacing: -0.2px;
   &:hover {
     opacity: 1;
@@ -193,12 +293,12 @@ nav.side > ul > li.menu {
 }
 
 ul.menu > li:not(.home-li) {
-  width: 200px;
+  // width: 200px;
 }
 
-ul.menu > li:last-of-type {
-  width: auto;
-}
+// ul.menu > li:last-of-type {
+//   width: auto;
+// }
 nav.side > ul > li > ul {
   margin-bottom: 30px;
 }
@@ -224,11 +324,14 @@ nav.side ul.menu {
 .headroom .navbar.active {
   transition: height 240ms ease-out;
   @include breakpoint($md) {
-    height: 200px;
+    height: 240px;
     max-height: 500px;
   }
 }
-
+span.title {
+  position: absolute;
+  right: 20px;
+}
 .header .headroom .navbar {
   padding-top: 3em;
   @include breakpoint($md) {
@@ -295,7 +398,7 @@ a.child {
     margin-top: -1px;
     float: left;
     display: inline;
-    font-weight: 500;
+
 
   }
 
@@ -308,7 +411,7 @@ a.child {
     font-family: 'Escrow-Light';
     @include breakpoint($xl) {
       
-      display: block;
+      // display: block;
     }
   }
   float: left;
@@ -323,10 +426,10 @@ img.logo {
   height: auto;
   display: block;
   margin-top: 6px;
-  z-index: 10000;
+  z-index: 100;
 }
 .home-li {
-  width: 100px;
+  width: 20px;
 }
 
 img.home {
@@ -357,8 +460,7 @@ img.home {
   @include breakpoint($md) {
     justify-content: space-between;
     margin-left: auto;
-    max-width: 640px;
-    min-width: 540px;
+    max-width: 840px;
   }
 }
 
@@ -373,7 +475,7 @@ ul {
 a {
 
   display: inline-block;
-  margin-right: 1em;
+ 
   font-family: 'Barlow';
   font-weight: 400;
   font-size: 0.85em;
@@ -409,6 +511,7 @@ a {
   }
   a.title {
     color: $white;
+
   }
   a.title.nuxt-link-active {
     opacity: 1;
@@ -429,6 +532,7 @@ a {
 }
 
 a.title {
+  white-space: nowrap;
   line-height: 0.9em;
   color: $grey-black;
   font-size: 0.92em;
@@ -442,10 +546,11 @@ a.title {
     width: 0%;
   }
   font-family: 'Tribby Grotesk';
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.012em;
   &:hover {
     opacity: 1;
+    cursor: pointer;
   }
 }
 

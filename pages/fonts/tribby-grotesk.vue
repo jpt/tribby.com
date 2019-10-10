@@ -1,7 +1,8 @@
 <template>  
   <div class="container">
-    <div class="tribby-grotesk">
+    <div class="page tribby-grotesk">
       <h1>Tribby Grotesk - Coming Soon</h1>
+      <p>You're reading it in the "coming soon" headline above -- and throughout the site</p>
     </div>
 
     <!-- <div class="duo">

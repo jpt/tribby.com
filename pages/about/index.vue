@@ -1,6 +1,6 @@
 <template>  
   <div class="container">
-    <div class="about">
+    <div class="page about">
       <h1>About</h1>
       <p>Tribby Type is custom typography, design, and engineering shop run by Jeremy Tribby. Jeremy is a designer native to California, where he studied art at UC Berkeley. He has worked with large brands like Google and NBC, non-profits like EFF and Edupath, agencies like Instrument and Character, and startups like Chefs Feed and Shift.<p>
 

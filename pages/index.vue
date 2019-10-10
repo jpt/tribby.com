@@ -1,31 +1,38 @@
 <template>
   <div class="container">
+   
     <div class="index">
-      <div class="announce" v-in-viewport.once>
-        <h1>Designing and engineering type, products, and digital experiences.</h1>
+
+ 
+<!--   <div class="hr" :style="{ backgroundColor: this.$store.state.dark?  '#fff' : '#000', height: '4px', width: '100%' }">
+  &nbsp;</div>
+ -->
+      <div class="big-type">
+    
+       <BigType :style="{ color: this.$store.state.dark?  '#fff' : '#000'}"/>
+
       </div>
-      <div class="soon" v-observe-visibility="visibilityChanged">
+<!--       <div class="announce" v-in-viewport.once>
+       
+        <h1>Designing and engineering type, products, and digital experiences.</h1>
+      </div> -->
+      <div class="soon">
         <h1>Coming soon.</h1>
+        <p>Tribby Type is currently undergoing a transition from a general product shop to selling fonts. Stay tuned for more information, and for our upcoming grotesk available in 18 styles!</p>
       </div>
     </div>
   </div>
-</template>
+</template> 
 <script>
-import Vue from 'vue'
+import HR from '@/components/HR'
 import Vuex from 'vuex'
-
-import { ObserveVisibility } from 'vue-observe-visibility'
-import inViewportDirective from 'vue-in-viewport-directive'
-
+import BigType from '@/components/index/bigtype.vue'
 
 
   // import VueIsInView from 'vue-is-in-view';
   // Vue.use(VueIsInView);
 
   
-Vue.directive('observe-visibility', ObserveVisibility)
-Vue.directive('in-viewport', inViewportDirective)
-
 export default {
 
   data() {
@@ -38,7 +45,20 @@ export default {
   methods: {
     visibilityChanged (isVisible) {
       this.$store.commit('setDark', isVisible)
-    }
+    },
+    onInterval: function () {
+      let now = Date.now()
+      this.elapsed = now - this.then
+      if (this.elapsed > this.fpsInterval) {
+        this.then = now - (this.elapsed % this.fpsInterval)
+      }
+
+      requestAnimationFrame(this.onInterval)
+    },
+  },
+  components: {
+    BigType,
+    HR
   }
 }
 </script>
@@ -46,11 +66,33 @@ export default {
 
 @import "~assets/css/globals.scss";
 @import "~assets/css/fonts.scss";
+.hr {
+  display: none;
+  @include breakpoint($md) {
+    display: block;
+  }
+}
+.big-type {
+
+
+  padding-top: 18vw;
+  @include breakpoint($md) {
+    padding-top:0px;
+  }
+   @include breakpoint($lg) {
+    padding-top:10px;
+  }
+  max-width: 1150px;
+}
 
 .soon h1 {
   color: $white;
-  margin-top: 20em;
+  margin-top: 6em;
   margin-bottom: 2em;
+}
+
+.soon p {
+  color: $white;
 }
 
 .announce.in-viewport {

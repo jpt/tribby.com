@@ -1,6 +1,6 @@
 <template>  
   <div class="container">
-    <div class="galiano">
+    <div class="page galiano">
       <h1>Galiano - Coming Soon</h1>
     </div>
 
@@ -14,7 +14,7 @@
 	</div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~assets/css/globals";
 
 	.duo {

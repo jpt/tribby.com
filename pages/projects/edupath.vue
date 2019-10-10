@@ -1,6 +1,6 @@
 <template>  
   <div class="container">
-    <div class="edupath">
+    <div class="page edupath">
       <div class="heading">
         <h1>Edupath</h1>
         <p>is a Berkeley-based iOS test prep app and non-profit tutoring center. I worked here as a visual and graphic designer, front-end engineer, and UX designer.</p>
