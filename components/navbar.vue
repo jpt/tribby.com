@@ -85,6 +85,12 @@ export default {
         //     { path: '', name: '&nbsp;' }
         //   ]
         // },
+        '/graphic': { path: '/graphic', 
+          children: [
+            { path: '', name: 'Graphic' },
+            { path: '', name: '&nbsp;' }
+          ]
+        },
         '/about': { path: '/about', 
           children: [
             { path: '', name: 'About' },
