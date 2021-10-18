@@ -19,6 +19,8 @@
     "susy": "^3.0.7",
     "tunnel-agent": "^0.6.0",
     "vue-analytics": "^5.22.1",
+    "vue-in-viewport-directive": "^2.0.2",
+    "vue-is-in-view": "^1.0.7",
     "vuex": "^3.6.2"
   },
   "devDependencies": {

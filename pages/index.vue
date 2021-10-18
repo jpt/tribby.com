@@ -12,7 +12,7 @@
        <BigType :style="{ color: this.$store.state.dark?  '#fff' : '#000'}"/>
 
       </div>
-<!--       <div class="announce" v-in-viewport.once>
+      <!-- <div class="announce" v-in-viewport.once>
        
         <h1>Designing and engineering type, products, and digital experiences.</h1>
       </div> -->
@@ -29,10 +29,6 @@ import Vuex from 'vuex'
 import BigType from '@/components/index/bigtype.vue'
 
 
-  // import VueIsInView from 'vue-is-in-view';
-  // Vue.use(VueIsInView);
-
-  
 export default {
 
   data() {

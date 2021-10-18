@@ -22,7 +22,7 @@ export default {
 
   data: function() {
     return {
-      string: 'Tribby',
+      string: 'Tribby Type',
       
       
       topEnter: 0,
