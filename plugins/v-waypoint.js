@@ -1,4 +1,3 @@
 import Vue from "vue"
-import VueWaypoint from "vue-waypoint"
-
+import * as VueWaypoint from "vue-waypoint"
 Vue.use(VueWaypoint)

@@ -1,9 +1,9 @@
 <template>  
   <div class="container">
     <div class="page edupath">
+		<h1>Edupath</h1>
       <div class="heading">
-        <h1>Edupath</h1>
-        <p>is a Berkeley-based iOS test prep app and non-profit tutoring center. I worked here as a visual and graphic designer, front-end engineer, and UX designer.</p>
+        <p>Edupath is a Berkeley-based iOS test prep app and non-profit tutoring center. I worked here as a visual and graphic designer, front-end engineer, and UX designer.</p>
       </div>
     </div>
     <div class="sub-body">

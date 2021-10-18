@@ -1,9 +1,10 @@
 <template>  
   <div class="container">
     <div class="page shift">
+		<h1>Shift</h1>
       <div class="heading">
-        <h1>Shift</h1>
-        <p>is a two-sided talent marketplace, helping veterans find work at tech companies.</p>
+		  
+        <p>Shift is a two-sided talent marketplace, helping veterans find work at tech companies.</p>
       </div>
     </div>
     <div class="sub-body">
@@ -15,7 +16,7 @@
 
 		<p>One of the pain points in the Shift process when I arrived was onboarding. Getting anything done in the military is an almost entirely paper process that involves chain-of-command approval for every step. Realistically, our fellows needed to start thinking about their separation at least a year in advance. As users, keeping them engaged during this process was a challenge. As I would find, many easily-answerable questions would end up overwhelming our customer support department.</p>
 
-		<p>I went on to build out a fellow/applicant-facing profile page with a steady drip of emails, notifications, and timeline updates. I spoke with active and prospective fellows going through the process, conducted competitor analysis, did testing, and built the web app. I ran the process from pen on paper, to wireframes, through UX mockups and then implementing the UI itself in React. Engagement went up, and the load on customer support went down.</p>
+		<p>I went on to build out a fellow/applicant-facing profile page with a steady drip of emails, notifications, and timeline updates. I spoke with active and prospective fellows going through the process, conducted competitor analysis, did testing, and built the web app. I ran the process from pen on paper, to wireframes, through UX mockups and then implementing the UI itself in React, spinning up a small design system library in Storybook. Engagement went up, and the load on customer support went down.</p>
 
 <img src="~assets/UX_flow_2.png">
 		<img style="width:320px;" src="~assets/shift1.png">

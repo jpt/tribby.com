@@ -1,12 +1,10 @@
 <template>  
   <div class="container">
     <div class="page nbc-universal">
+		<h1>NBC</h1>
       <div class="heading">
-        <h1>NBC Universal</h1>
-        <p>commissioned a DIN-like font family called Arthouse Owned.</p>
-
-
-</p>
+		  
+        <p>NBC Universal commissioned a DIN-like font family called Arthouse Owned.</p>
       </div>
     </div>
     <div class="sub-body">

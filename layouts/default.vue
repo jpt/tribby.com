@@ -35,9 +35,6 @@ import hamburger from '@/components/hamburger.vue'
 import navbar from '@/components/navbar.vue'
 import headroom from '@/components/vue-headroom/src/headroom.vue'
 
-const IntersectionObserverPolyfill = process.client ? require('intersection-observer') : undefined
-
-
 // const n = require('@/assets/nav.svg')
 // const nw = require('@/assets/nav-white.svg')
 

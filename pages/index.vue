@@ -18,7 +18,7 @@
       </div> -->
       <div class="soon">
         <h1>Coming soon.</h1>
-        <p>Tribby Type is currently undergoing a transition from a general product shop to selling fonts. Stay tuned for more information, and for our upcoming grotesk available in 18 styles!</p>
+        <p>As of 2021, tribby.com hasn't been updated in a number years. New site on the way soon.</p>
       </div>
     </div>
   </div>

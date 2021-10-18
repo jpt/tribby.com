@@ -1,5 +1,6 @@
 <style>
 #nuxt-loading {
+  background: white;
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -59,7 +60,7 @@
   position: relative;
   text-indent: -9999em;
   border: .5rem solid #F5F5F5;
-  border-left: .5rem solid #000000;
+  border-left: .5rem solid black;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
@@ -98,7 +99,9 @@
 <script>
 window.addEventListener('error', function () {
   var e = document.getElementById('nuxt-loading');
-  if (e) e.className += ' error';
+  if (e) {
+    e.className += ' error';
+  }
 });
 </script>
 

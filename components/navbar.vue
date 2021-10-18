@@ -2,7 +2,7 @@
     <nav class="navbar" :class="{ active: menuOpen }" @mouseenter="openMenu" @mouseleave="closeMenu">
       <HR height="1px"  :style="{ backgroundColor: '#ccc'}" class="hr-hide"/>
       <div class="branding">
-        <nuxt-link to="/" class="tribby">Tribby Type</nuxt-link>
+        <nuxt-link to="/" class="tribby">Tribby</nuxt-link>
          <!--  <p class="intro">Designing and engineering type, products, and digital experiences.</p>
      -->  </div>
       <ul class="menu">
@@ -53,8 +53,8 @@ export default {
           children: [
             { path: '', name: 'Fonts' },
 
-            { path: 'tribby-grotesk', name: 'Tribby Grotesk'},
-            { path: 'galiano', name: 'Galiano' },
+            // { path: 'tribby-grotesk', name: 'Tribby Grotesk'},
+            // { path: 'galiano', name: 'Galiano' },
             { path: 'barlow', name: 'Barlow' },
           ]
         },
