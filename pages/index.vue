@@ -18,7 +18,7 @@
       </div> -->
       <div class="soon">
         <h1>Tribby: designing and engineering type, products, and digital experiences.</h1>
-        <p>Jeremy Tribby has designed and created companies, products, video art, typefaces and digital experiences for small companies and Fortune 500s alike. Tribby, his online digital studio, has been in business for 21 years. </p>
+        <p>Jeremy Tribby has designed and created companies, products, video, typefaces and digital experiences for small companies and Fortune 500s alike. Tribby, his online digital studio, has been in business for 21 years. </p>
       </div>
     </div>
   </div>
