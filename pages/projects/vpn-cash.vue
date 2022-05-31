@@ -3,7 +3,7 @@
     <div class="page vpn-cash">
       <h1>VPN Cash</h1>
       <div class="heading">
-        <p>VPN Cash was the first truly anonymous VPN provider, accepting only Zcash and Monero privacy coins as payment. At VPN Cash I functioned as head of product.</p>
+        <p>VPN Cash was the first truly anonymous VPN provider, accepting only Zcash and Monero privacy coins as payment.</p>
       </div>
       <video autoplay="autoplay" loop>
 	  	<source src="~assets/comcast.mp4" type="video/mp4">
