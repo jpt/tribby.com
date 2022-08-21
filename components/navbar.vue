@@ -71,7 +71,7 @@ export default {
             { path: 'nbc-universal', name: 'NBC Universal' },
             { path: 'shift', name: 'Shift' },
             { path: 'vpn-cash', name: 'VPN Cash' },
-            { path: 'ricochet', name: 'Ricochet' },
+            // { path: 'ricochet', name: 'Ricochet' },
             { path: 'chefs-feed', name: 'Chefs Feed' },
             { path: 'edupath', name: 'Edupath' },
             { path: 'eff', name: 'EFF' },
