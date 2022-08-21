@@ -9,7 +9,7 @@
     </div>
     <div class="sub-body">
       <img src="~assets/ricochet.png">
-      <p>Ricochet presents a lot of interesting design challenges due to its built-in threat model. For example, being forced to confirm the domain name of a link you click on can be annoying, but it's a necessary security precaution for Ricochet's high-risk users, which include whistleblowers, academics, and government officials. These types of users are often the subject of spearphishing attacks and Ricochet's UX helps mitigate the risks.</p>
+      <p>Ricochet presents a lot of interesting design challenges due to its built-in threat model. For example, being forced to confirm the domain name of a link you click on can be a point of friction for the user, but it's a necessary security precaution for Ricochet's generally high-risk users, which include whistleblowers, academics, and government officials. These types of users are often the subject of spearphishing attacks and Ricochet's UX helps mitigate the risks.</p>
     </div>
   </div>
 </template>

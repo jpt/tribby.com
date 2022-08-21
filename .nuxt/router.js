@@ -9,6 +9,7 @@ const _1f7d8edf = () => interopDefault(import('../pages/blog.vue' /* webpackChun
 const _426baeda = () => interopDefault(import('../pages/fonts/index.vue' /* webpackChunkName: "pages/fonts/index" */))
 const _b2d1748a = () => interopDefault(import('../pages/graphic.vue' /* webpackChunkName: "pages/graphic" */))
 const _ffad1b0c = () => interopDefault(import('../pages/projects/index.vue' /* webpackChunkName: "pages/projects/index" */))
+const _a269f250 = () => interopDefault(import('../pages/works/index.vue' /* webpackChunkName: "pages/works/index" */))
 const _2a9a33ee = () => interopDefault(import('../pages/fonts/barlow.vue' /* webpackChunkName: "pages/fonts/barlow" */))
 const _9b38bf9a = () => interopDefault(import('../pages/fonts/galiano.vue' /* webpackChunkName: "pages/fonts/galiano" */))
 const _57888714 = () => interopDefault(import('../pages/fonts/tribby-grotesk.vue' /* webpackChunkName: "pages/fonts/tribby-grotesk" */))
@@ -52,6 +53,10 @@ export const routerOptions = {
     path: "/projects",
     component: _ffad1b0c,
     name: "projects"
+  }, {
+    path: "/works",
+    component: _a269f250,
+    name: "works"
   }, {
     path: "/fonts/barlow",
     component: _2a9a33ee,

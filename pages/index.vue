@@ -17,8 +17,8 @@
         <h1>Designing and engineering type, products, and digital experiences.</h1>
       </div> -->
       <div class="soon">
-        <h1>Tribby: designing and engineering type, products, and digital experiences.</h1>
-        <p>Jeremy Tribby has designed and created companies, products, video, typefaces and digital experiences for small companies and Fortune 500s alike. Tribby, his online digital studio, has been operating for 21 years. <a href="">Contact now.</a></a></p>
+        <h1>Jeremy Tribby: designing and engineering type, products, and digital experiences.</h1>
+        <p>Jeremy Tribby has designed and built products, typefaces and digital experiences for small companies and Fortune 500s alike for the past 21 years. <a href="">Contact now.</a></a></p>
       </div>
     </div>
   </div>
