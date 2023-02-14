@@ -16,9 +16,9 @@
        
         <h1>Designing and engineering type, products, and digital experiences.</h1>
       </div> -->
-      <div class="soon">
-        <h1>Jeremy Tribby: designing and engineering type, products, and digital experiences.</h1>
-        <p>Jeremy Tribby has designed and built products, typefaces and digital experiences for small companies and Fortune 500s alike for the past 21 years. <a href="">Contact now.</a></a></p>
+      <div class="soon" :class="this.$store.state.dark? 'dark' : ''">
+        <h1 >Jeremy Tribby: designing and engineering type, products, and digital experiences.</h1>
+        <p>Jeremy Tribby has designed and built products, typefaces and digital experiences for small companies and Fortune 500s alike for the past 20 years. <a href="mailto:jeremy@tribby.com">Contact now.</a></a></p>
       </div>
     </div>
   </div>
@@ -82,12 +82,24 @@ export default {
 }
 
 .soon h1 {
-  color: $white;
+  color: $not-black;
   margin-top: 6em;
   margin-bottom: 2em;
 }
 
 .soon p {
+  color: $not-black;
+}
+
+.soon.dark h1 {
+  color: $white;
+}
+
+.soon a {
+  color: $grey-dark;
+}
+
+.soon.dark p {
   color: $white;
 }
 

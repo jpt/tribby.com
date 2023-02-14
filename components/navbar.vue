@@ -52,9 +52,9 @@ export default {
         '/fonts': { path: '/fonts',
           children: [
             { path: '', name: 'Fonts' },
-            // { path: 'nbc-universal', name: 'NBC Universal' },
-            { path: 'tribby-grotesk', name: 'Tribby Grotesk'},
-            { path: 'galiano', name: 'Galiano' },
+            { path: 'nbc-universal', name: 'NBC Universal' },
+            // { path: 'tribby-grotesk', name: 'Tribby Grotesk'},
+            // { path: 'galiano', name: 'Galiano' },
             { path: 'barlow', name: 'Barlow' },
           ]
         },
@@ -65,32 +65,32 @@ export default {
         //   ]
         // },
 
-        '/projects': { path: '/projects',
-          children: [
-            { path: '', name: 'Projects' },
-            { path: 'nbc-universal', name: 'NBC Universal' },
-            { path: 'shift', name: 'Shift' },
-            { path: 'vpn-cash', name: 'VPN Cash' },
-            // { path: 'ricochet', name: 'Ricochet' },
-            { path: 'chefs-feed', name: 'Chefs Feed' },
-            { path: 'edupath', name: 'Edupath' },
-            { path: 'eff', name: 'EFF' },
-
-
-          ]
-        },
-        // '/works':{ path: '/works', 
+        // '/projects': { path: '/projects',
         //   children: [
-        //     { path: '', name: 'Works' },
-        //     { path: '', name: '&nbsp;' }
+        //     { path: '', name: 'Projects' },
+        //     { path: 'nbc-universal', name: 'NBC Universal' },
+        //     { path: 'shift', name: 'Shift' },
+        //     { path: 'vpn-cash', name: 'VPN Cash' },
+        //     // { path: 'ricochet', name: 'Ricochet' },
+        //     { path: 'chefs-feed', name: 'Chefs Feed' },
+        //     { path: 'edupath', name: 'Edupath' },
+        //     { path: 'eff', name: 'EFF' },
+
+
         //   ]
         // },
-        '/graphic': { path: '/graphic', 
+        '/works':{ path: '/works', 
           children: [
-            { path: '', name: 'Graphic' },
+            { path: '', name: 'Works' },
             { path: '', name: '&nbsp;' }
           ]
         },
+        // '/graphic': { path: '/graphic', 
+        //   children: [
+        //     { path: '', name: 'Graphic' },
+        //     { path: '', name: '&nbsp;' }
+        //   ]
+        // },
         '/about': { path: '/about', 
           children: [
             { path: '', name: 'About' },
@@ -466,7 +466,7 @@ img.home {
   @include breakpoint($md) {
     justify-content: space-between;
     margin-left: auto;
-    max-width: 840px;
+    max-width: 640px;
   }
 }
 

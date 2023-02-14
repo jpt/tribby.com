@@ -4,12 +4,12 @@
 		<h1>NBC</h1>
       <div class="heading">
 		  
-        <p>NBC Universal commissioned a DIN-like font family consisting of 25 styles called Arthouse.</p>
+        <p>A DIN-like font family consisting of 25 styles called Arthouse.</p>
       </div>
     </div>
     <div class="sub-body">
     	
-<p>It was my great fortune that the project was overseen by and largely a collaboration with Bruce Fallini, NBC Design Standards Manager. We went through many, many rounds of visual, technical, and philosophical revisions. The font was kerned and spaced by Igino Marini, whose theory on letter-fitting is worth a read! The font went live on air in Q4 2019, and can be seen on your local NBC and Telemundo affiliate station.</p>
+<p>In 2019 NBCUniversal commissioned the Arthouse series of typefaces for use in broadcast on NBC and Telemundo, and on digital properties worldwide. Direction by Bruce Fallini. Letterfitting by Igino Marini. Design, production, and engineering by Jeremy Tribby.</p>
 
 <img src="~assets/arthouse2.jpg" />
 
